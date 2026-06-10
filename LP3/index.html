@@ -1,456 +1,440 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Travel Mantra | Travel Smarter, Not Harder</title>
-  <meta name="description" content="Plan, compare, and book your dream trip in minutes with Travel Mantra. Curated packages, real reviews, and exclusive deals."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link rel="stylesheet" href="styles.css"/>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Travels Mantra | Bespoke Luxury Escapes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-fixed": "#f1e0c3",
+                  "on-primary": "#313030",
+                  "error-container": "#93000a",
+                  "on-background": "#e3e3de",
+                  "error": "#ffb4ab",
+                  "on-secondary-container": "#dab36a",
+                  "on-error-container": "#ffdad6",
+                  "on-tertiary": "#392f1b",
+                  "surface": "#121411",
+                  "surface-bright": "#383a36",
+                  "on-tertiary-fixed": "#231a08",
+                  "surface-container-highest": "#333532",
+                  "secondary-fixed": "#ffdea5",
+                  "surface-container": "#1e201d",
+                  "on-secondary": "#412d00",
+                  "surface-dim": "#121411",
+                  "surface-tint": "#c9c6c5",
+                  "on-primary-container": "#7b7979",
+                  "surface-container-low": "#1a1c19",
+                  "surface-variant": "#333532",
+                  "on-primary-fixed": "#1c1b1b",
+                  "outline-variant": "#444748",
+                  "primary-container": "#0a0a0a",
+                  "inverse-primary": "#5f5e5e",
+                  "primary": "#c9c6c5",
+                  "on-primary-fixed-variant": "#474646",
+                  "on-tertiary-fixed-variant": "#504530",
+                  "secondary-fixed-dim": "#e9c176",
+                  "surface-container-high": "#292a27",
+                  "secondary": "#e9c176",
+                  "inverse-on-surface": "#2f312e",
+                  "surface-container-lowest": "#0d0f0c",
+                  "tertiary": "#d5c5a9",
+                  "inverse-surface": "#e3e3de",
+                  "on-secondary-fixed-variant": "#5d4201",
+                  "primary-fixed": "#e5e2e1",
+                  "secondary-container": "#604403",
+                  "outline": "#8e9192",
+                  "on-surface-variant": "#c4c7c7",
+                  "primary-fixed-dim": "#c9c6c5",
+                  "background": "#121411",
+                  "on-error": "#690005",
+                  "on-surface": "#e3e3de",
+                  "on-tertiary-container": "#85785f",
+                  "tertiary-fixed-dim": "#d5c5a9",
+                  "tertiary-container": "#100900",
+                  "on-secondary-fixed": "#261900"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "gutter": "24px",
+                  "margin-desktop": "80px",
+                  "container-max": "1440px",
+                  "margin-mobile": "20px",
+                  "section-gap": "120px",
+                  "unit": "8px"
+          },
+          "fontFamily": {
+                  "label-caps": ["Montserrat"],
+                  "body-lg": ["Montserrat"],
+                  "display-lg": ["Playfair Display"],
+                  "body-md": ["Montserrat"],
+                  "button": ["Montserrat"],
+                  "headline-lg": ["Playfair Display"],
+                  "headline-md": ["Playfair Display"]
+          },
+          "fontSize": {
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                  "display-lg": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                  "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
+                  "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0A0A0A;
+      color: #e3e3de;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gold-thread {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e9c176, transparent);
+      width: 100%;
+    }
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+    .blur-overlay {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
 </head>
-<body>
-
-  <header class="header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-        <span class="logo-icon"><i class="fa-solid fa-compass"></i></span>
-        Travel Mantra
-      </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#destinations">Destinations</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#experiences">Experiences</a></li>
-        <li><a href="#deals">Deals</a></li>
-        <li><a href="#blog">Blog</a></li>
-      </ul>
-      <div class="header-actions">
-        <button class="icon-btn" aria-label="Notifications">
-          <i class="fa-regular fa-bell"></i>
-          <span class="dot"></span>
+<body class="font-body-md overflow-x-hidden">
+<!-- Section 1: Header -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto bg-transparent backdrop-blur-md transition-colors duration-500">
+<div class="font-display-lg text-headline-md text-primary tracking-tighter">
+      Travels Mantra
+    </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#">Destinations</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Experiences</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Stories</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Visa</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="font-button text-button px-8 py-3 bg-secondary text-on-secondary hover:opacity-90 transition-opacity uppercase">
+        Book Now
+      </button>
+</div>
+</nav>
+<!-- Section 2: Hero -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury yacht at sunset" class="w-full h-full object-cover brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDekl6deeC-xr4ybCYrRzrPG8ETspUSPp7GYGWrbrz3-CgeWR_cvogcgZeLp4IuEdHbAeksrkMp1T_WkCRgO11mFxBq2Aiwk42M0esvQ1DnfUfTAuatYzA5vG4SQMqGfONQ03wLC_LD8ajSt7Fh5S6OsmSxgbyKXxA4eM7goWhKJXk07N89dU3k8Plt-HILAINLFsnFPCUthaf6no9f5ibGCsBxOw2lSW4MKP_iIoy31TsHUap9xpoONJgwfxJB1wPzjjE3eC8B3h4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl">
+<span class="font-label-caps text-label-caps text-secondary mb-6 block tracking-[0.3em] uppercase">Curated International Escapes</span>
+<h1 class="font-display-lg text-display-lg mb-8 leading-none">Where Your Journey Begins</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+        Curated luxury holidays, handpicked destinations, and unforgettable travel experiences crafted by Travels Mantra.
+      </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="font-button text-button bg-secondary text-on-secondary px-12 py-4 uppercase hover:scale-105 transition-transform duration-300">
+          Explore Now
         </button>
-        <a href="#" class="sign-in">Sign In</a>
-        <a href="#deals" class="btn btn-primary">Start Planning <i class="fa-solid fa-arrow-right"></i></a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="how-it-works">
-    <div class="container hero-grid">
-      <div>
-        <h1>Travel Smarter, <span class="gradient-text">Not Harder</span></h1>
-        <p class="hero-sub">Plan, compare, and book your dream trip in minutes. We show you exactly what to do, where to stay, and how to save.</p>
-
-        <div class="search-card">
-          <div class="search-tabs">
-            <button class="search-tab active" data-tab="packages">Packages</button>
-            <button class="search-tab" data-tab="flights">Flights</button>
-            <button class="search-tab" data-tab="hotels">Hotels</button>
-          </div>
-          <div class="search-fields">
-            <div class="search-field">
-              <label><i class="fa-solid fa-location-dot"></i> Where</label>
-              <input type="text" placeholder="City or country"/>
-            </div>
-            <div class="search-field">
-              <label><i class="fa-regular fa-calendar"></i> When</label>
-              <input type="text" placeholder="Add dates" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'"/>
-            </div>
-            <div class="search-field">
-              <label><i class="fa-solid fa-user-group"></i> Guests</label>
-              <select>
-                <option>2 Adults</option>
-                <option>1 Adult</option>
-                <option>2 Adults, 1 Child</option>
-                <option>Family (4)</option>
-              </select>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-block" id="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i> Search Packages
+<button class="font-button text-button border border-secondary text-secondary px-12 py-4 uppercase hover:bg-secondary/10 transition-colors duration-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+          Watch Story
+        </button>
+</div>
+</div>
+</section>
+<!-- Section 3: Curated Places (Bento Grid Style) -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col items-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Curated Places</h2>
+<div class="gold-thread max-w-xs mb-8"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Bali -->
+<div class="md:col-span-8 group relative overflow-hidden h-[500px]">
+<img alt="Bali Tropical Paradise" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhgHBuZGIw7_lX5vRriOCREKnonBQgY-SI3KuzWdjf8H2T1N4_oPeBtk483eGiqhaZRGXOFCeh66QClbcNHLNzQijsUT1B3t4h-Ka52v0Coov2Nq3BzVO7g_UkDVoP_IZL1-DAIbK-1Witbu-7LbQinkm8mXVagtPlirLRxGzvyMOiHcWYCeGEcuIS05ywaRyU7ZATJ1_W_92ioGfufxMsxQZbmAMzxD1QR_TzT56Dd6yQ3eRvLvO6vwKAOG_BtNqjZ-ZO8ThvgAY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-secondary">7 DAYS</span>
+<h3 class="font-display-lg text-headline-lg text-white mb-2">Bali</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Tropical Paradise • From $1200</p>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary transition-all duration-500"></div>
+</div>
+</div>
+<!-- Dubai -->
+<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<img alt="Dubai Futuristic Luxury" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCheRSgNegd-mirwsgvryKCeborunFCDvbYJ9KrS7JC6nf44Fpf5WkBXMsmu-XLLvRlIGPeMzIRLLBn8GLFjxwFGR6P5AOh5pPBKizUetjW8KlRbQernL98-iUQ__I8ZdIxSRiyco4CH7J36e8vFfgSwOQVjoiZjK_5J55mPBPbCc24ENixQ6u2xqlSOUJm070FhIAHzyRWIIbE4yLUg_Z5_7PLYjOY0Os2I0BgtZLkCc9cj9rd7hi27gEfeN1D0840tno1F0sTvjU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-secondary">5 DAYS</span>
+<h3 class="font-display-lg text-headline-lg text-white mb-2">Dubai</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Futuristic Luxury • From $1500</p>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary transition-all duration-500"></div>
+</div>
+</div>
+<!-- Thailand -->
+<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<img alt="Thailand Island Serenity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArxLmUnKJJ4ffzmF9VXhwCN10fs2-5RnVlitVwApaa4RZSZcXiqLVfjR85LsF_Oo5AFPFUHWQXltEvwyK3x4INC81ESYaX5u4NoD1ngA1aL1XUfFkC5ChlqizpBXFUlspKDB1lQbdWI2Y_aMFfNIWnyVKixXeEbmBaOeH6QKiQpQE8HHU2jmEYm05Npr0au87TFA9ph0juid6xfV9Qcd2-0RgIapACTm5L9-cV2SwjJxzNmoegMF742HJpcXceiLBKEi5oyoJJ5_0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-secondary">6 DAYS</span>
+<h3 class="font-display-lg text-headline-lg text-white mb-2">Thailand</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Island Serenity • From $1100</p>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary transition-all duration-500"></div>
+</div>
+</div>
+<!-- Vietnam -->
+<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<img alt="Vietnam Ethereal Waters" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNu0L9dACaqpFn1Afl81br9jZfqIXfINTgsNlhAulVs9K4A0DTbtbGIfXVtnNZIxg_r8i1H3Y_ILj56ZKdWYiz-rs2JNsvJm2i4dg-a6eDH8nueK_FOxmkYWzLd3vbstHywTxqx5j4NjduBFtySgN0cvSOMrcMV29mgqVyl3xsKK3ie2RQbMqNm5X7zTHggFk6Z1xHqhANw5Aww-EvFYqUmWrrEIBDq1GGDKwZFdr_A06CyuWsIFKgalGl-GobhAa3pJ15jAvyE8c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-secondary">8 DAYS</span>
+<h3 class="font-display-lg text-headline-lg text-white mb-2">Vietnam</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Ethereal Waters • From $900</p>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary transition-all duration-500"></div>
+</div>
+</div>
+<!-- Baku -->
+<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<img alt="Baku Flame City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMR8N3lgRjeCHAMG7umW2gn_7LyK-hUoQm7samsAifl9zAQMrJrf9SpsVGqJl98SplNEXsq4OJJECWLayU5GfSzLtGtqKnVTMAaYWe1CSyAeb-SyOke6iIBGK5QS3NB4OjP0b2-egLHS4REeRiA1W_SC5qB9nOclRWIbTpjav0V4xUa8_grf6kGHUIcpvCA1DyJvbUxaY9uZak6te-YCeffHFuxVFSUFod51GXjeR2j0xPcyA2MwSZu816lN5tOecyFDJE5Z_iawE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<span class="font-label-caps text-label-caps text-secondary">4 DAYS</span>
+<h3 class="font-display-lg text-headline-lg text-white mb-2">Baku</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Flame City Twilight • From $850</p>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary transition-all duration-500"></div>
+</div>
+</div>
+<!-- Kazakhstan -->
+<div class="md:col-span-12 group relative overflow-hidden h-[400px]">
+<img alt="Kazakhstan Alpine Elegance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfpe0AY6iO0-L1zVR1TzmExlwWn6ZWKz-OsLkASLrPtdovalF1MJ4azKeDkIkHdm2QAcJ-_i2QDLWpysvVqQuZu52kCTspdhUkyH_oX-CLQhCmNqB1ssrEYfgT5hR53798yjC9G32F5AqQKiSs7V-5Oq9O0n5OIr_YFo9uP01x5IkrDMaFOjkmG6HfXcgb7GhAYMyw3qvk94r7tuYAibmfozf2bXOWjVYMZCOpz9wcHF4pIxrtAhhSZBVz6xiyCxIYKEYr-1G6r6s"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent p-12 flex flex-col justify-center max-w-xl">
+<span class="font-label-caps text-label-caps text-secondary">6 DAYS</span>
+<h3 class="font-display-lg text-headline-lg text-white mb-2">Kazakhstan</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">Alpine Elegance. Discover the untamed beauty of the mountains and modern luxury in perfect harmony. • From $1300</p>
+<button class="font-button text-button w-fit px-8 py-3 bg-secondary text-on-secondary uppercase transition-transform hover:scale-105">Reserve Experience</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Why Choose -->
+<section class="py-section-gap bg-surface-container">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-16">The Travels Mantra Difference</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="p-8 border border-outline-variant hover:border-secondary transition-colors duration-300 flex flex-col items-center">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-6" data-weight="fill">map</span>
+<h4 class="font-headline-md text-[20px] mb-4">Curated Itineraries</h4>
+<p class="font-body-md text-on-surface-variant">Bespoke journeys tailored precisely to your unique travel style and preferences.</p>
+</div>
+<div class="p-8 border border-outline-variant hover:border-secondary transition-colors duration-300 flex flex-col items-center">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-6" data-weight="fill">verified_user</span>
+<h4 class="font-headline-md text-[20px] mb-4">Visa Assistance</h4>
+<p class="font-body-md text-on-surface-variant">Seamless documentation and expedited processing for a stress-free travel start.</p>
+</div>
+<div class="p-8 border border-outline-variant hover:border-secondary transition-colors duration-300 flex flex-col items-center">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-6" data-weight="fill">apartment</span>
+<h4 class="font-headline-md text-[20px] mb-4">Handpicked Hotels</h4>
+<p class="font-body-md text-on-surface-variant">Exclusive access to the world's most prestigious resorts and boutique villas.</p>
+</div>
+<div class="p-8 border border-outline-variant hover:border-secondary transition-colors duration-300 flex flex-col items-center">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-6" data-weight="fill">support_agent</span>
+<h4 class="font-headline-md text-[20px] mb-4">Personalized Support</h4>
+<p class="font-body-md text-on-surface-variant">24/7 dedicated concierge service ensuring every moment of your trip is perfect.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Signature Experiences -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="editorial-grid items-center">
+<div class="col-span-12 md:col-span-5 mb-12 md:mb-0">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">BEYOND THE ORDINARY</span>
+<h2 class="font-display-lg text-display-lg mb-8">Signature Experiences</h2>
+<div class="space-y-12">
+<div class="group cursor-pointer">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">Luxury Honeymoons</h3>
+<p class="font-body-md text-on-surface-variant">Intimate escapes designed for the ultimate romantic celebration.</p>
+<div class="h-[1px] w-1/4 bg-outline-variant group-hover:w-full group-hover:bg-secondary transition-all duration-500 mt-4"></div>
+</div>
+<div class="group cursor-pointer">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">Family Holidays</h3>
+<p class="font-body-md text-on-surface-variant">Sophisticated multi-generational journeys that create lasting bonds.</p>
+<div class="h-[1px] w-1/4 bg-outline-variant group-hover:w-full group-hover:bg-secondary transition-all duration-500 mt-4"></div>
+</div>
+<div class="group cursor-pointer">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">Adventure Tours</h3>
+<p class="font-body-md text-on-surface-variant">Rugged exploration meets uncompromising high-end comfort.</p>
+<div class="h-[1px] w-1/4 bg-outline-variant group-hover:w-full group-hover:bg-secondary transition-all duration-500 mt-4"></div>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 relative">
+<div class="aspect-[4/5] w-full relative">
+<img alt="Luxury Travel Detail" class="w-full h-full object-cover" data-alt="A close up shot of an elegantly set outdoor dinner table on a private balcony overlooking a misty tropical forest at sunrise. The table features fine bone china, crystal glasses reflecting the warm morning light, and a single white orchid in a minimalist vase. The aesthetic is extremely high-end, focusing on quiet luxury, gold accents, and a tranquil atmospheric mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiaEPb0NXM4mQMBmHp5iTZNR-rz7_NoK2Cj-fGSgbfTos8Mzz-5s5ixQ9zmCzXfzdstk2tefPVKrrqxd0d2bP5Pk9hYEoht1NDfoJWZ8xxP94S1QKsKHhdDOtXL49XxGOrEnxOZCs6BpnYn-icNSlBe6kj0RHYkAblqHH5Q89BWyHrxMbvMTFhTRgP14mUlf3-fuBDQevmaZwf1qEzLgvKlL_wFqx59lyYJWsA-IFVM7JZyMRePUBP-uQ6BDllvGTrk0LGaCA56S0"/>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 border border-secondary z-[-1] hidden md:block"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Testimonials -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16 italic">Words from Our Travelers</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-10 bg-surface-container flex flex-col justify-between h-full">
+<div>
+<div class="flex text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg italic mb-8">"The attention to detail on our Bali honeymoon was beyond compare. Every villa was better than the last, and the private guides were exceptional."</p>
+</div>
+<div class="font-label-caps text-label-caps tracking-widest text-secondary">— ELEANOR VANCE</div>
+</div>
+<div class="p-10 bg-surface-container flex flex-col justify-between h-full">
+<div>
+<div class="flex text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg italic mb-8">"Our family trip to Dubai and Baku was seamless. Travels Mantra handled the complex visa requirements for all 12 of us with total ease."</p>
+</div>
+<div class="font-label-caps text-label-caps tracking-widest text-secondary">— JULIAN MARX</div>
+</div>
+<div class="p-10 bg-surface-container flex flex-col justify-between h-full">
+<div>
+<div class="flex text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg italic mb-8">"Rarely do you find a travel service that understands quiet luxury this well. They don't just book hotels; they curate emotions."</p>
+</div>
+<div class="font-label-caps text-label-caps tracking-widest text-secondary">— SARAH CHENG</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Enquiry Section -->
+<section class="py-section-gap px-margin-desktop bg-background">
+<div class="max-w-4xl mx-auto border border-outline-variant p-8 md:p-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-4">Plan Your Next Escape</h2>
+<p class="font-body-md text-on-surface-variant">Our consultants are ready to craft your masterpiece journey.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all placeholder:text-outline" placeholder="FULL NAME" type="text"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all placeholder:text-outline" placeholder="EMAIL ADDRESS" type="email"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all placeholder:text-outline" placeholder="PHONE NUMBER" type="tel"/>
+</div>
+<div class="relative group">
+<select class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all text-outline">
+<option disabled="" selected="">SELECT DESTINATION</option>
+<option>Bali</option>
+<option>Dubai</option>
+<option>Thailand</option>
+<option>Vietnam</option>
+<option>Baku</option>
+<option>Kazakhstan</option>
+</select>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all placeholder:text-outline" onfocus="(this.type='date')" placeholder="PREFERRED DATE" type="text"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all placeholder:text-outline" placeholder="NUMBER OF TRAVELERS" type="number"/>
+</div>
+<div class="md:col-span-2 relative group">
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all placeholder:text-outline resize-none" placeholder="TELL US ABOUT YOUR DREAM JOURNEY" rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex justify-center pt-8">
+<button class="font-button text-button bg-secondary text-on-secondary px-20 py-4 uppercase hover:scale-105 transition-transform" type="submit">
+            Send Enquiry
           </button>
-        </div>
-
-        <div class="trending">
-          <span>Trending:</span>
-          <button class="trend-tag"><span class="flag">JP</span> Tokyo</button>
-          <button class="trend-tag"><span class="flag">MV</span> Maldives</button>
-          <button class="trend-tag"><span class="flag">IT</span> Amalfi</button>
-          <button class="trend-tag"><span class="flag">PE</span> Machu Picchu</button>
-          <button class="trend-tag"><span class="flag">IS</span> Iceland</button>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="collage">
-          <div class="collage-item tall-left">
-            <img src="assets/hero_bg.png" alt="Rainforest bridge adventure"/>
-            <span class="collage-label">Rainforest Crossing, Costa Rica · $890</span>
-          </div>
-          <div class="collage-right-col">
-            <div class="collage-item small-top">
-              <img src="assets/swiss_alps.png" alt="Machu Picchu mountains"/>
-              <span class="collage-label overlay">Machu Picchu</span>
-            </div>
-            <div class="collage-item small-bottom">
-              <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Tokyo city nights"/>
-              <span class="collage-label overlay">Tokyo Nights</span>
-            </div>
-            <div class="collage-item tall-right">
-              <img src="assets/bali.png" alt="Couple overlooking lake"/>
-            </div>
-          </div>
-        </div>
-        <div class="stat-cards">
-          <div class="stat-card"><strong>190+</strong><span>Destinations</span></div>
-          <div class="stat-card"><strong>2.4M</strong><span>Happy Travelers</span></div>
-          <div class="stat-card"><strong>34%</strong><span>Avg. Savings</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Destinations -->
-  <section class="destinations" id="destinations">
-    <div class="container">
-      <div class="dest-head">
-        <h2>Where do you want to <span class="gradient-text">explore?</span></h2>
-        <div class="filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="asia">Asia</button>
-          <button class="filter-btn" data-filter="europe">Europe</button>
-          <button class="filter-btn" data-filter="americas">Americas</button>
-          <button class="filter-btn" data-filter="oceania">Oceania</button>
-          <button class="filter-btn" data-filter="africa">Africa</button>
-        </div>
-      </div>
-
-      <div class="dest-grid" id="dest-grid">
-        <article class="dest-card" data-region="asia">
-          <div class="dest-img">
-            <img src="assets/kyoto.png" alt="Kyoto Japan"/>
-            <span class="badge badge-purple">Editor's Pick</span>
-            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
-            <div class="img-tags">
-              <span class="img-tag">Cultural</span>
-              <span class="img-tag">Temples</span>
-              <span class="img-tag">Food</span>
-            </div>
-          </div>
-          <div class="dest-body">
-            <div class="dest-top">
-              <div><h3>Kyoto</h3><p class="loc">Japan</p></div>
-              <div class="dest-price"><strong>$1,490</strong><small>per person</small></div>
-            </div>
-            <div class="dest-meta">
-              <span class="stars"><i class="fa-solid fa-star"></i> 4.9 (2,841)</span>
-              <span><i class="fa-regular fa-clock"></i> 7 days</span>
-            </div>
-            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Cherry blossom season: April</div>
-            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </article>
-
-        <article class="dest-card" data-region="oceania">
-          <div class="dest-img">
-            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives"/>
-            <span class="badge badge-green">Best Value</span>
-            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
-            <div class="img-tags">
-              <span class="img-tag">Beach</span>
-              <span class="img-tag">Luxury</span>
-              <span class="img-tag">Snorkel</span>
-            </div>
-          </div>
-          <div class="dest-body">
-            <div class="dest-top">
-              <div><h3>Maldives</h3><p class="loc">Indian Ocean</p></div>
-              <div class="dest-price"><strong>$2,150</strong><small>per person</small></div>
-            </div>
-            <div class="dest-meta">
-              <span class="stars"><i class="fa-solid fa-star"></i> 4.8 (1,920)</span>
-              <span><i class="fa-regular fa-clock"></i> 5 days</span>
-            </div>
-            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Best Nov – Apr</div>
-            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </article>
-
-        <article class="dest-card" data-region="americas">
-          <div class="dest-img">
-            <img src="assets/swiss_alps.png" alt="Machu Picchu Peru"/>
-            <span class="badge badge-orange">Trending</span>
-            <button class="wishlist active" aria-label="Save"><i class="fa-solid fa-heart"></i></button>
-            <div class="img-tags">
-              <span class="img-tag">Hiking</span>
-              <span class="img-tag">History</span>
-              <span class="img-tag">UNESCO</span>
-            </div>
-          </div>
-          <div class="dest-body">
-            <div class="dest-top">
-              <div><h3>Machu Picchu</h3><p class="loc">Peru</p></div>
-              <div class="dest-price"><strong>$1,780</strong><small>per person</small></div>
-            </div>
-            <div class="dest-meta">
-              <span class="stars"><i class="fa-solid fa-star"></i> 4.9 (3,102)</span>
-              <span><i class="fa-regular fa-clock"></i> 6 days</span>
-            </div>
-            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Limited permits — book early</div>
-            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </article>
-
-        <article class="dest-card" data-region="asia">
-          <div class="dest-img">
-            <img src="assets/bali.png" alt="Bali Indonesia"/>
-            <span class="badge badge-blue">Most Booked</span>
-            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
-            <div class="img-tags">
-              <span class="img-tag">Wellness</span>
-              <span class="img-tag">Nature</span>
-            </div>
-          </div>
-          <div class="dest-body">
-            <div class="dest-top">
-              <div><h3>Bali</h3><p class="loc">Indonesia</p></div>
-              <div class="dest-price"><strong>$1,299</strong><small>per person</small></div>
-            </div>
-            <div class="dest-meta">
-              <span class="stars"><i class="fa-solid fa-star"></i> 4.9 (4,210)</span>
-              <span><i class="fa-regular fa-clock"></i> 8 days</span>
-            </div>
-            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Dry season: May – September</div>
-            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </article>
-
-        <article class="dest-card" data-region="europe">
-          <div class="dest-img">
-            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="Amalfi Coast Italy"/>
-            <span class="badge badge-pink">Budget Friendly</span>
-            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
-            <div class="img-tags">
-              <span class="img-tag">Coastal</span>
-              <span class="img-tag">Food</span>
-            </div>
-          </div>
-          <div class="dest-body">
-            <div class="dest-top">
-              <div><h3>Amalfi Coast</h3><p class="loc">Italy</p></div>
-              <div class="dest-price"><strong>$1,650</strong><small>per person</small></div>
-            </div>
-            <div class="dest-meta">
-              <span class="stars"><i class="fa-solid fa-star"></i> 4.8 (1,540)</span>
-              <span><i class="fa-regular fa-clock"></i> 6 days</span>
-            </div>
-            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Peak season: June – August</div>
-            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </article>
-
-        <article class="dest-card" data-region="africa">
-          <div class="dest-img">
-            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Serengeti Tanzania"/>
-            <span class="badge badge-orange">Off the Beaten Path</span>
-            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
-            <div class="img-tags">
-              <span class="img-tag">Safari</span>
-              <span class="img-tag">Wildlife</span>
-            </div>
-          </div>
-          <div class="dest-body">
-            <div class="dest-top">
-              <div><h3>Serengeti</h3><p class="loc">Tanzania</p></div>
-              <div class="dest-price"><strong>$3,200</strong><small>per person</small></div>
-            </div>
-            <div class="dest-meta">
-              <span class="stars"><i class="fa-solid fa-star"></i> 5.0 (890)</span>
-              <span><i class="fa-regular fa-clock"></i> 9 days</span>
-            </div>
-            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Great Migration: Jul – Oct</div>
-            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials" id="experiences">
-    <div class="container">
-      <div class="test-head">
-        <h2>Real Trips, Real <span class="gradient-text-warm">Stories</span></h2>
-        <p>Over 2.4 million travelers have trusted Travel Mantra to plan their journeys.</p>
-      </div>
-
-      <div class="test-grid">
-        <article class="test-card">
-          <span class="quote-mark">"</span>
-          <div class="test-user">
-            <div class="avatar avatar-blue">SC</div>
-            <div>
-              <h4>Sarah Chen</h4>
-              <p>Solo Traveler · 32 trips booked</p>
-            </div>
-          </div>
-          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-loc"><i class="fa-solid fa-location-dot"></i> Bali &amp; Japan</p>
-          <p class="test-body">"Travel Mantra found me a package that saved $620 compared to booking everything separately. The itinerary was perfect — every restaurant, every temple visit was spot on."</p>
-          <span class="test-tag tag-green"><i class="fa-solid fa-check"></i> Saved $620</span>
-        </article>
-
-        <article class="test-card">
-          <span class="quote-mark">"</span>
-          <div class="test-user">
-            <div class="avatar avatar-orange">MR</div>
-            <div>
-              <h4>Marcus Rivera</h4>
-              <p>Family of 4 · First International Trip</p>
-            </div>
-          </div>
-          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-loc"><i class="fa-solid fa-location-dot"></i> Maldives</p>
-          <p class="test-body">"We were nervous about traveling abroad with two kids. Travel Mantra handled visas, flights, kid-friendly hotels — we just showed up and had the time of our lives."</p>
-          <span class="test-tag tag-orange"><i class="fa-solid fa-check"></i> Stress-free family trip</span>
-        </article>
-
-        <article class="test-card">
-          <span class="quote-mark">"</span>
-          <div class="test-user">
-            <div class="avatar avatar-pink">PN</div>
-            <div>
-              <h4>Priya Nair</h4>
-              <p>Honeymoon Planner</p>
-            </div>
-          </div>
-          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="test-loc"><i class="fa-solid fa-location-dot"></i> Kyoto, Japan</p>
-          <p class="test-body">"They upgraded our hotel room for free and arranged a private tea ceremony. It felt like they genuinely cared about making our honeymoon magical."</p>
-          <span class="test-tag tag-purple"><i class="fa-solid fa-check"></i> Upgraded for free</span>
-        </article>
-      </div>
-
-      <div class="trust-bar">
-        <div class="avatar-stack">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <p>Join 2.4M+ travelers who planned with Travel Mantra</p>
-        <div class="trust-rating">
-          <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-          <strong>4.9</strong>
-          <span>(98,400 reviews)</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter -->
-  <section class="newsletter" id="deals">
-    <div class="container">
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('You\'re subscribed! Welcome to Travel Mantra deals.');">
-        <input type="email" placeholder="your@email.com" required/>
-        <button type="submit" class="btn btn-primary">Get Deals <i class="fa-solid fa-arrow-right"></i></button>
-      </form>
-      <p class="newsletter-note">No spam. No ads. Just deals. 680,000 subscribers.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer" id="blog">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <i class="fa-solid fa-globe globe"></i>
-          <h3>TRAVEL MANTRA</h3>
-          <p>Crafting extraordinary journeys for those who seek depth over itinerary. Travel as it was meant to be — immersive, intentional, unforgettable.</p>
-          <div class="social-row">
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>EXPLORE</h4>
-          <ul>
-            <li><a href="#destinations">Destinations</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#">Stories</a></li>
-            <li><a href="#">Travel Guides</a></li>
-            <li><a href="#">Photo Journal</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>COMPANY</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>SUPPORT</h4>
-          <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Booking FAQ</a></li>
-            <li><a href="#">Travel Insurance</a></li>
-            <li><a href="#">Cancellations</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Travel Mantra. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Cookies</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <button class="help-fab" aria-label="Help">?</button>
-
-  <script>
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      document.getElementById('nav-links').classList.toggle('open');
-    });
-
-    document.querySelectorAll('.search-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const labels = { packages: 'Search Packages', flights: 'Search Flights', hotels: 'Search Hotels' };
-        document.getElementById('search-btn').innerHTML =
-          `<i class="fa-solid fa-magnifying-glass"></i> ${labels[tab.dataset.tab]}`;
-      });
-    });
-
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const region = btn.dataset.filter;
-        document.querySelectorAll('.dest-card').forEach(card => {
-          card.style.display = region === 'all' || card.dataset.region === region ? '' : 'none';
-        });
-      });
-    });
-
-    document.querySelectorAll('.wishlist').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        const icon = btn.querySelector('i');
-        icon.className = btn.classList.contains('active') ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
-      });
+</div>
+</form>
+</div>
+</section>
+<!-- Section 8: Footer -->
+<footer class="w-full px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto border-t border-outline-variant bg-surface-container-lowest">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-lg text-primary mb-6">Travels Mantra</div>
+<p class="font-body-md text-on-surface-variant mb-8 pr-4">Crafting world-class travel stories through bespoke itineraries and unparalleled service since 2012.</p>
+<div class="flex space-x-4">
+<a class="text-on-surface hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-on-surface hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-on-surface hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-label-caps text-label-caps text-secondary">Explore</h5>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Destinations</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Cruises</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Villas</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Flights</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-label-caps text-label-caps text-secondary">Company</h5>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Our Stories</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-label-caps text-label-caps text-secondary">Support</h5>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Visa Guide</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Travel Insurance</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="col-span-1 md:col-span-4 pt-12 flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/30 mt-12 gap-6">
+<p class="font-body-md text-on-surface-variant/60">© 2024 Travels Mantra. All rights reserved.</p>
+<div class="flex space-x-6">
+<a class="font-body-md text-on-surface-variant/60 hover:text-secondary" href="#">Terms of Service</a>
+<a class="font-body-md text-on-surface-variant/60 hover:text-secondary" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<script>
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-background/95', 'py-4', 'shadow-xl');
+        nav.classList.remove('py-6', 'bg-transparent');
+      } else {
+        nav.classList.remove('bg-background/95', 'py-4', 'shadow-xl');
+        nav.classList.add('py-6', 'bg-transparent');
+      }
     });
   </script>
-</body>
-</html>
+</body></html>
