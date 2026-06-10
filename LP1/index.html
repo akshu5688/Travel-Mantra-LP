@@ -1,730 +1,902 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
-<head>
+
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Travels Mantra | Flights, Hotels, Holiday Packages &amp; Visa Assistance</title>
-<meta name="description" content="Plan your perfect holiday with Travels Mantra. Complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, and expert support."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        brand: { DEFAULT: '#0B5CAD', dark: '#084A8C', light: '#E8F2FC' },
-        cta: { DEFAULT: '#F97316', dark: '#EA580C', light: '#FFF7ED' },
-        ink: '#1A1A2E',
-        muted: '#64748B',
-        line: '#E2E8F0',
-        surface: '#F8FAFC',
-      },
-      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-      maxWidth: { content: '1200px' },
-      boxShadow: {
-        card: '0 4px 24px rgba(15, 23, 42, 0.06)',
-        search: '0 12px 48px rgba(11, 92, 173, 0.12)',
-      },
-    },
-  },
-};
-</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Travels Mantra | Plan Your Perfect Holiday</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { font-family: 'Inter', sans-serif; color: #1A1A2E; overflow-x: hidden; }
-  img { max-width: 100%; }
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  #mobile-nav { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-  #mobile-nav.open { max-height: 32rem; }
-  details summary { list-style: none; cursor: pointer; }
-  details summary::-webkit-details-marker { display: none; }
-  .tab-btn.active { background: #0B5CAD; color: #fff; border-color: #0B5CAD; }
-  .pkg-badge { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 999px; background: #E8F2FC; color: #0B5CAD; }
-  .hide-scroll::-webkit-scrollbar { display: none; }
-  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-</style>
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { overflow-x: hidden; }
+        img { max-width: 100%; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1506929113670-b43135c883ad?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        #mobile-nav { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        #mobile-nav.open { max-height: 24rem; }
+        details summary { list-style: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        @media (max-width: 767px) {
+            .hero-title { font-size: 2rem !important; line-height: 1.2 !important; }
+            .packages-offset { padding-top: 28rem; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#77d1ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#5e5c6f",
+                        "surface-tint": "#006688",
+                        "primary-container": "#01b7f2",
+                        "surface-container-low": "#f0f3ff",
+                        "price-gold": "#B45309",
+                        "surface-variant": "#dce2f3",
+                        "on-tertiary-fixed": "#1b1a2a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e7eefe",
+                        "outline": "#6d7980",
+                        "on-primary-fixed": "#001e2c",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#aba8bd",
+                        "primary-fixed-dim": "#77d1ff",
+                        "secondary-container": "#fd6e59",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-surface": "#151c27",
+                        "surface-cream": "#FAF5EE",
+                        "on-primary-fixed-variant": "#004d68",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#dce2f3",
+                        "on-secondary-fixed-variant": "#8a1b0f",
+                        "surface-bright": "#f9f9ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#00445d",
+                        "background": "#f9f9ff",
+                        "primary": "#006688",
+                        "surface-container-high": "#e2e8f8",
+                        "secondary": "#ac3324",
+                        "success-green": "#10B981",
+                        "secondary-fixed": "#ffdad4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e4e0f6",
+                        "tertiary-fixed-dim": "#c7c4da",
+                        "secondary-fixed-dim": "#ffb4a7",
+                        "on-secondary-container": "#6d0300",
+                        "surface": "#f9f9ff",
+                        "outline-variant": "#bcc8d1",
+                        "surface-dim": "#d3daea",
+                        "primary-fixed": "#c2e8ff",
+                        "on-tertiary-fixed-variant": "#464557",
+                        "on-tertiary-container": "#3e3d4f",
+                        "on-secondary-fixed": "#400100",
+                        "on-surface-variant": "#3d484f",
+                        "inverse-surface": "#2a313d",
+                        "error-container": "#ffdad6",
+                        "on-background": "#151c27"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "section-padding": "80px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "price-display": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "price-display": ["22px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
 </head>
-<body class="bg-white antialiased">
-
-<!-- Header -->
-<header class="sticky top-0 z-50 bg-white border-b border-line shadow-sm">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-[72px] gap-4">
-      <a href="#" class="flex items-center gap-2 shrink-0">
-        <span class="w-9 h-9 rounded-xl bg-brand flex items-center justify-center text-white font-extrabold text-sm">TM</span>
-        <span class="font-extrabold text-lg text-ink hidden sm:block">Travels Mantra</span>
-      </a>
-      <nav class="hidden xl:flex items-center gap-5 text-sm font-medium text-muted">
-        <a href="#services" class="hover:text-brand transition">Flights</a>
-        <a href="#services" class="hover:text-brand transition">Hotels</a>
-        <a href="#packages" class="hover:text-brand transition text-brand font-semibold">Holiday Packages</a>
-        <a href="#visa" class="hover:text-brand transition">Visa</a>
-        <a href="#offers" class="hover:text-brand transition">Hot Offers</a>
-        <a href="#enquiry" class="hover:text-brand transition">Build Your Package</a>
-        <a href="#" class="hover:text-brand transition">Blog</a>
-        <a href="#enquiry" class="hover:text-brand transition">Contact Us</a>
-      </nav>
-      <div class="flex items-center gap-2">
-        <a href="#enquiry" class="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-cta text-white text-sm font-semibold hover:bg-cta-dark transition shadow-sm">Get Free Trip Plan</a>
-        <button type="button" id="menu-toggle" class="xl:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-line" aria-label="Menu" aria-expanded="false">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div id="mobile-nav" class="xl:hidden border-t border-line bg-white">
-    <nav class="max-w-content mx-auto px-4 py-4 flex flex-col gap-1 text-sm font-medium">
-      <a href="#services" class="py-2.5 text-muted">Flights</a>
-      <a href="#services" class="py-2.5 text-muted">Hotels</a>
-      <a href="#packages" class="py-2.5 text-brand font-semibold">Holiday Packages</a>
-      <a href="#visa" class="py-2.5 text-muted">Visa</a>
-      <a href="#offers" class="py-2.5 text-muted">Hot Offers</a>
-      <a href="#enquiry" class="py-2.5 text-muted">Build Your Package</a>
-      <a href="#" class="py-2.5 text-muted">Blog</a>
-      <a href="#enquiry" class="py-2.5 text-muted">Contact Us</a>
-      <a href="#enquiry" class="mt-2 py-3 rounded-full bg-cta text-white text-center font-semibold md:hidden">Get Free Trip Plan</a>
-    </nav>
-  </div>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/90 backdrop-blur-md shadow-sm docked full-width top-0 sticky z-50 h-20" id="main-header">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="text-headline-md font-headline-md font-extrabold text-primary">Travels Mantra</div>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md" href="#packages">Holiday Packages</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#search">Flights</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#search">Hotels</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#visa">Visa</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#visa">Travel Insurance</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#offers">Hot Offers</a>
+</nav>
+<div class="flex items-center gap-2 md:gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all hidden sm:block">favorite</button>
+<button class="hidden md:block text-on-surface-variant font-label-bold px-4 py-2 hover:text-primary transition-all">My Trip</button>
+<a href="#build" class="hidden sm:inline-flex bg-primary text-on-primary font-label-bold px-4 md:px-6 py-2.5 rounded-full active:scale-95 duration-150 transition-all shadow-md">Get Free Trip Plan</a>
+<button type="button" id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg" aria-label="Menu" aria-expanded="false">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div id="mobile-nav" class="lg:hidden border-t border-outline-variant/30 bg-surface">
+<nav class="max-w-container-max mx-auto px-margin-mobile py-4 flex flex-col gap-3 text-sm font-medium">
+<a class="text-primary font-bold py-1" href="#packages">Holiday Packages</a>
+<a class="text-on-surface-variant py-1" href="#search">Flights &amp; Hotels</a>
+<a class="text-on-surface-variant py-1" href="#visa">Visa &amp; Insurance</a>
+<a class="text-on-surface-variant py-1" href="#offers">Hot Offers</a>
+<a class="text-on-surface-variant py-1" href="#build">Build Your Package</a>
+<a href="#build" class="mt-2 py-3 rounded-full bg-primary text-on-primary text-center font-label-bold sm:hidden">Get Free Trip Plan</a>
+</nav>
+</div>
 </header>
-
-<!-- Hero -->
-<section class="relative bg-gradient-to-br from-brand-light via-white to-cta-light pt-10 pb-16 lg:pt-14 lg:pb-20 overflow-hidden">
-  <div class="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative">
-    <div class="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
-      <p class="text-sm font-semibold text-brand uppercase tracking-wider mb-3">India's Trusted Travel Partner</p>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink leading-tight">Plan Your Perfect Holiday with Travels Mantra</h1>
-      <p class="mt-4 text-base lg:text-lg text-muted leading-relaxed">Book complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, insurance, and expert travel support.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-7">
-        <a href="#packages" class="inline-flex justify-center px-7 py-3 rounded-full bg-cta text-white font-semibold text-sm hover:bg-cta-dark transition shadow-md">Explore Packages</a>
-        <a href="#enquiry" class="inline-flex justify-center px-7 py-3 rounded-full border-2 border-brand text-brand font-semibold text-sm hover:bg-brand-light transition">Send Enquiry</a>
-      </div>
-    </div>
-
-    <!-- Search Box -->
-    <div class="bg-white rounded-2xl lg:rounded-3xl shadow-search border border-line p-5 sm:p-6 lg:p-8">
-      <p class="text-sm font-bold text-ink mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-brand text-xl">travel_explore</span> Plan Your Trip</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div>
-          <label class="text-xs font-semibold text-muted uppercase tracking-wide mb-1.5 block">Destination</label>
-          <select class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-            <option value="">Select destination</option>
-            <option>Dubai</option><option>Bali</option><option>Thailand</option><option>Vietnam</option>
-            <option>Baku</option><option>Malaysia</option><option>Singapore</option><option>Maldives</option>
-            <option>Kazakhstan</option><option>Uzbekistan</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted uppercase tracking-wide mb-1.5 block">Departure From</label>
-          <select class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-            <option>Delhi</option><option>Mumbai</option><option>Bengaluru</option><option>Hyderabad</option>
-            <option>Chennai</option><option>Kolkata</option><option>Ahmedabad</option><option>Pune</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted uppercase tracking-wide mb-1.5 block">Travel Month</label>
-          <select class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-            <option value="">Select month</option>
-            <option>January 2026</option><option>February 2026</option><option>March 2026</option>
-            <option>April 2026</option><option>May 2026</option><option>June 2026</option>
-            <option>July 2026</option><option>August 2026</option><option>September 2026</option>
-            <option>October 2026</option><option>November 2026</option><option>December 2026</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted uppercase tracking-wide mb-1.5 block">Travellers</label>
-          <select class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-            <option>2 Adults</option><option>1 Adult</option><option>2 Adults, 1 Child</option>
-            <option>2 Adults, 2 Children</option><option>Group (5+)</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted uppercase tracking-wide mb-1.5 block">Trip Type</label>
-          <select class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-            <option>Honeymoon</option><option>Family</option><option>Friends</option>
-            <option>Group Tour</option><option>Luxury</option><option>Budget</option><option>Visa Help</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted uppercase tracking-wide mb-1.5 block">Budget</label>
-          <select class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-            <option>Under ₹50,000</option><option>₹50,000 – ₹1,00,000</option>
-            <option>₹1,00,000 – ₹2,00,000</option><option>Above ₹2,00,000</option>
-          </select>
-        </div>
-      </div>
-      <button type="button" class="mt-5 w-full sm:w-auto px-10 py-3.5 rounded-full bg-brand text-white font-semibold text-sm hover:bg-brand-dark transition flex items-center justify-center gap-2">
-        <span class="material-symbols-outlined text-lg">search</span> Search Packages
-      </button>
-    </div>
-  </div>
+<!-- Hero Section -->
+<section class="relative min-h-[600px] md:min-h-[800px] flex items-center justify-center pt-20" id="search">
+<div class="absolute inset-0 z-0">
+<div class="hero-gradient absolute inset-0"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter text-center w-full">
+<div class="max-w-4xl mx-auto mb-8 md:mb-12">
+<h1 class="font-display-lg hero-title text-display-lg md:text-display-lg text-white mb-6">Plan Your Perfect Holiday with <span class="text-primary-container">Travels Mantra</span></h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-8 md:mb-10 px-2">Book complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, insurance, and expert travel support.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a href="#packages" class="bg-secondary-container text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-label-bold text-base md:text-lg hover:bg-secondary transition-all shadow-lg active:scale-95">Explore Packages</a>
+<a href="#build" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-label-bold text-base md:text-lg hover:bg-white/20 transition-all active:scale-95">Send Enquiry</a>
+</div>
+</div>
+<!-- Integrated Search Box -->
+<div class="glass-panel rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 max-w-5xl mx-auto md:-mb-40 border border-white/40 mx-2 sm:mx-auto">
+<!-- Service Icon Tabs -->
+<div class="flex overflow-x-auto pb-6 mb-6 md:mb-8 gap-6 md:gap-8 border-b border-outline-variant/30 scrollbar-hide">
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">flight</span>
+</div>
+<span class="font-label-bold text-on-surface-variant group-hover:text-primary">Flights</span>
+</button>
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">hotel</span>
+</div>
+<span class="font-label-bold text-on-surface-variant group-hover:text-primary">Hotels</span>
+</button>
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined">holiday_village</span>
+</div>
+<span class="font-label-bold text-primary">Holiday Packages</span>
+</button>
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">description</span>
+</div>
+<span class="font-label-bold text-on-surface-variant group-hover:text-primary">Visa</span>
+</button>
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<span class="font-label-bold text-on-surface-variant group-hover:text-primary">Insurance</span>
+</button>
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">tour</span>
+</div>
+<span class="font-label-bold text-on-surface-variant group-hover:text-primary">Sightseeing</span>
+</button>
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">airport_shuttle</span>
+</div>
+<span class="font-label-bold text-on-surface-variant group-hover:text-primary">Transfers</span>
+</button>
+<button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
+<div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">edit_calendar</span>
+</div>
+<span class="font-label-bold text-on-surface-variant group-hover:text-secondary">Build Your Package</span>
+</button>
+</div>
+<form class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+<div class="relative">
+<label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Destination</label>
+<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="Where to go?" type="text"/>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Departure From</label>
+<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<span class="material-symbols-outlined text-primary">flight_takeoff</span>
+<input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="City" type="text"/>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Travel Month</label>
+<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<select class="border-none focus:ring-0 p-0 text-sm w-full font-medium bg-transparent">
+<option>Select Month</option>
+<option>Next Month</option>
+</select>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Travellers</label>
+<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<span class="material-symbols-outlined text-primary">person</span>
+<input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="2 Adults" type="text"/>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Trip Type</label>
+<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<span class="material-symbols-outlined text-primary">groups</span>
+<select class="border-none focus:ring-0 p-0 text-sm w-full font-medium bg-transparent">
+<option>Honeymoon</option>
+<option>Family</option>
+</select>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Budget (₹)</label>
+<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<span class="material-symbols-outlined text-primary">payments</span>
+<input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="Budget per person" type="text"/>
+</div>
+</div>
+<div class="relative">
+<label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Phone Number</label>
+<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<span class="material-symbols-outlined text-primary">phone_iphone</span>
+<input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="Your WhatsApp No." type="tel"/>
+</div>
+</div>
+<button type="submit" class="sm:col-span-2 md:col-span-1 bg-secondary-container text-white font-label-bold rounded-xl py-3 shadow-lg hover:shadow-xl transition-all active:scale-95 flex items-center justify-center gap-2 min-h-[52px]">
+<span>Get Free Trip Plan</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
 </section>
-
-<!-- Service Tabs -->
-<section id="services" class="py-12 lg:py-16 border-b border-line bg-surface">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex gap-2 overflow-x-auto hide-scroll pb-2 -mx-1 px-1 flex-nowrap lg:flex-wrap lg:justify-center">
-      <button class="tab-btn active shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold transition" data-tab="flights"><span class="material-symbols-outlined text-lg">flight</span> Flights</button>
-      <button class="tab-btn shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold text-muted hover:border-brand transition" data-tab="hotels"><span class="material-symbols-outlined text-lg">hotel</span> Hotels</button>
-      <button class="tab-btn shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold text-muted hover:border-brand transition" data-tab="packages"><span class="material-symbols-outlined text-lg">luggage</span> Holiday Packages</button>
-      <button class="tab-btn shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold text-muted hover:border-brand transition" data-tab="visa"><span class="material-symbols-outlined text-lg">badge</span> Visa</button>
-      <button class="tab-btn shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold text-muted hover:border-brand transition" data-tab="insurance"><span class="material-symbols-outlined text-lg">health_and_safety</span> Travel Insurance</button>
-      <button class="tab-btn shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold text-muted hover:border-brand transition" data-tab="sightseeing"><span class="material-symbols-outlined text-lg">photo_camera</span> Sightseeing</button>
-      <button class="tab-btn shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold text-muted hover:border-brand transition" data-tab="transfers"><span class="material-symbols-outlined text-lg">directions_car</span> Transfers</button>
-      <button class="tab-btn shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border border-line text-sm font-semibold text-muted hover:border-brand transition" data-tab="build"><span class="material-symbols-outlined text-lg">tune</span> Build Your Package</button>
-    </div>
-
-    <!-- Trust Cards -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mt-10">
-      <div class="bg-white rounded-2xl p-5 shadow-card border border-line text-center">
-        <span class="material-symbols-outlined text-brand text-3xl mb-2">savings</span>
-        <h3 class="font-bold text-sm text-ink">Best Price Guarantee</h3>
-        <p class="text-xs text-muted mt-1">Transparent INR pricing</p>
-      </div>
-      <div class="bg-white rounded-2xl p-5 shadow-card border border-line text-center">
-        <span class="material-symbols-outlined text-brand text-3xl mb-2">bolt</span>
-        <h3 class="font-bold text-sm text-ink">Easy &amp; Quick Booking</h3>
-        <p class="text-xs text-muted mt-1">Fast quotes &amp; confirmation</p>
-      </div>
-      <div class="bg-white rounded-2xl p-5 shadow-card border border-line text-center">
-        <span class="material-symbols-outlined text-brand text-3xl mb-2">description</span>
-        <h3 class="font-bold text-sm text-ink">Visa Assistance</h3>
-        <p class="text-xs text-muted mt-1">End-to-end visa support</p>
-      </div>
-      <div class="bg-white rounded-2xl p-5 shadow-card border border-line text-center">
-        <span class="material-symbols-outlined text-brand text-3xl mb-2">support_agent</span>
-        <h3 class="font-bold text-sm text-ink">24/7 Travel Support</h3>
-        <p class="text-xs text-muted mt-1">Before &amp; during your trip</p>
-      </div>
-    </div>
-  </div>
+<!-- Popular Holiday Packages -->
+<section class="bg-white pt-16 md:pt-60 pb-section-padding packages-offset md:packages-offset-0" id="packages">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="text-primary font-label-bold uppercase tracking-widest mb-2 block">Top Recommendations</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Popular Holiday Packages</h2>
+</div>
+<button class="text-primary font-label-bold flex items-center gap-2 hover:underline">
+                    View All Packages <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Package Card -->
+<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Dubai skyline at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq_BVtjze_H37efxt1UhpGCoLIeKF5Tm2d92fTkiSnag9Zs6vsWOWT8YEswQlQ5tsn0hHn6Ie6aulrSO-WBquWgxX1fvspeLSR5q2PatsSRkB0js_djdkfQBAI9_7sRG6ZVfspnEhac1Thtk8a0LnDzzS_qC7rwr0Xo1jd3P46k6DqcLNu66RN_Wf1DK1yB5f_S88oUk5dlYEfLJ3qh-rlfpa3nTnmGE-M6NvTsdgDC7OE8dG4ixSA0qPTnH1E98Ks-VGL8dUBq7c"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Best for Family</div>
+<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.8</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm leading-tight">Dubai Family Holiday</h3>
+<span class="text-on-surface-variant text-sm whitespace-nowrap">5N/6D</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Flight"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Hotel"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Visa"><span class="material-symbols-outlined text-primary text-sm">description</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Sightseeing"><span class="material-symbols-outlined text-primary text-sm">photo_camera</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Transfers"><span class="material-symbols-outlined text-primary text-sm">directions_car</span></span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Starting from</p>
+<span class="font-price-display text-price-gold">₹45,000</span>
+</div>
+<div class="flex gap-2">
+<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md hover:bg-primary/90 transition-all">View</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Bali -->
+<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Bali honeymoon infinity pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD40zx9nK_ixpegi219S5xqXSLbnoeIHEvz5eo_8GssuZF4soW8vnW_43TsGbBJjs6uyN2mFJn_ot8lZtEmZpfWFZTwQyUcauHueo_XrsfWoDAAWzWkObCQYCyAwsT_Zlax0ybl2mMm0xdthXLj4-yIdOkk9YDaEt4i93_jL7Keicrmpue4bZaTOL8C8-Tk1ybeFBG5JraejIOsFEwMCUEeOayV_hAcVw8AFqpnf1jZ1xvu0cApx0Via1NyU-7SKW6pG-hQeNlcWt4"/>
+<div class="absolute top-4 left-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Best for Honeymoon</div>
+<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.9</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm leading-tight">Bali Honeymoon Package</h3>
+<span class="text-on-surface-variant text-sm whitespace-nowrap">6N/7D</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">favorite</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">restaurant</span></span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Starting from</p>
+<span class="font-price-display text-price-gold">₹38,500</span>
+</div>
+<div class="flex gap-2">
+<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md transition-all">View</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Vietnam -->
+<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Ha Long Bay Vietnam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnMsHdjhL7zUBcSVrAvfZ4CwOF5BIvdRtu9p3lssGmCyWc_8DnXmn6PiMfOap13bvUVay6n9l3YdhH7cKZwPRfUaRFJrEaccKklG1rannotTOE9jk4Y58L4DqKCm8sr7YXV2VBQ3M_ON1Zmf-B1QLpWaMwgX4zOGpAGPAcRNm_fFnLQ0S0pYwgmxeyUhLdX-8QjrQbWtqTQVY0S6mcx089l4D5DFeixCCgiHFEBNTEyx2_FZQsXDqAcb0b57rlz8NDbt_zaPn7v4s"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Best for Group</div>
+<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.7</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm leading-tight">Vietnam Group Tour</h3>
+<span class="text-on-surface-variant text-sm whitespace-nowrap">7N/8D</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">description</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">groups</span></span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Starting from</p>
+<span class="font-price-display text-price-gold">₹52,000</span>
+</div>
+<div class="flex gap-2">
+<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md transition-all">View</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Maldives -->
+<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Maldives overwater villas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWN-ZPc8DaPpzsW7NNESBr0nLVaA_-nztfNjRKZQrth3YKYRs2vOhhIJBpyU83MJLDaHSG_5jYkpNDiAyFovSgzyY5NM4D6zBDsL5qHxpBWX7ncldQZqJh-7hrdJR6MLOOhzL3o3jTyNDlv8EUNFQwsrsbGLCV6_ztjc6m6wIa_kJdBDGWDWNN4XKHyKo9Bt0oE-Vw29Zw8rY3qW_ljBlBXo46P9kffg91lRZ0JZhvoI1sT5WoaMX49mTs3gU_Ns05vn6Gl8PlMY"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Luxury Escape</div>
+<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">5.0</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-sm text-headline-sm leading-tight">Maldives Luxury Escape</h3>
+<span class="text-on-surface-variant text-sm whitespace-nowrap">4N/5D</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">pool</span></span>
+<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">spa</span></span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Starting from</p>
+<span class="font-price-display text-price-gold">₹85,000</span>
+</div>
+<div class="flex gap-2">
+<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md transition-all">View</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- Popular Packages -->
-<section id="packages" class="py-14 lg:py-20">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 lg:mb-10">
-      <div>
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-ink">Popular International Packages</h2>
-        <p class="text-muted mt-2">Complete holiday packages for Indian travellers — all prices in INR</p>
-      </div>
-      <a href="#enquiry" class="text-brand font-semibold text-sm hover:underline shrink-0">View all packages →</a>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
-
-      <!-- Dubai -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai Family Holiday" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.9</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Dubai Family Holiday</h3>
-          <p class="text-xs text-muted mt-1">4N / 5D · Best for Families</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹68,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span><span class="pkg-badge">Meals</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-      <!-- Bali -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali Honeymoon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.9</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Bali Honeymoon Package</h3>
-          <p class="text-xs text-muted mt-1">6N / 7D · Best for Couples</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹52,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span><span class="pkg-badge">Meals</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-      <!-- Thailand -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80" alt="Thailand Budget Trip" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.8</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Thailand Budget Trip</h3>
-          <p class="text-xs text-muted mt-1">5N / 6D · Best for Budget Travellers</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹39,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-      <!-- Vietnam -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" alt="Vietnam Group Tour" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.7</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Vietnam Group Tour</h3>
-          <p class="text-xs text-muted mt-1">6N / 7D · Best for Groups</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹42,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span><span class="pkg-badge">Meals</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-      <!-- Baku -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Baku Holiday" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.6</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Baku Holiday Package</h3>
-          <p class="text-xs text-muted mt-1">4N / 5D · Best for Couples &amp; Friends</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹48,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-      <!-- Malaysia -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80" alt="Malaysia Family" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.7</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Malaysia Family Package</h3>
-          <p class="text-xs text-muted mt-1">5N / 6D · Best for Families</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹44,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span><span class="pkg-badge">Meals</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-      <!-- Singapore -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" alt="Singapore Holiday" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.8</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Singapore Holiday</h3>
-          <p class="text-xs text-muted mt-1">4N / 5D · Best for Families &amp; Kids</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹62,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-      <!-- Maldives -->
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden hover:shadow-lg transition group">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives Luxury" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
-          <span class="absolute top-3 left-3 bg-white/95 text-xs font-bold px-2 py-1 rounded-full text-brand">★ 4.9</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-ink">Maldives Luxury Escape</h3>
-          <p class="text-xs text-muted mt-1">4N / 5D · Best for Honeymoon &amp; Luxury</p>
-          <p class="text-lg font-extrabold text-brand mt-2">From ₹89,999</p>
-          <div class="flex flex-wrap gap-1 mt-3">
-            <span class="pkg-badge">Flight</span><span class="pkg-badge">Hotel</span><span class="pkg-badge">Visa</span>
-            <span class="pkg-badge">Sightseeing</span><span class="pkg-badge">Transfers</span><span class="pkg-badge">Meals</span>
-          </div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full border-2 border-brand text-brand text-sm font-semibold hover:bg-brand hover:text-white transition">View Package</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
+<!-- Hot Offers Section -->
+<section class="bg-surface-cream py-section-padding" id="offers">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-secondary mb-4 flex items-center justify-center gap-3 flex-wrap">
+<span class="material-symbols-outlined text-4xl">local_fire_department</span> Hot Deals &amp; Exclusive Offers
+                </h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Limited-time discounted holiday packages for your dream destination. Grab them before they're gone!</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Offer Card -->
+<div class="relative bg-white p-2 rounded-2xl border-2 border-secondary/20 hover:border-secondary transition-all group overflow-hidden">
+<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full shadow-lg">SAVE 25%</div>
+<div class="h-40 rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Mountain landscape deal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsl_cX0kyxW2tLdsUHr9qrqzQwKaXDHxX4seDNA-IhCqW9zz6zPqzQ4ksf-Zj0r2a-2YLWUQ9T68TuUCH0UId8FFm4OIYBDu2ZbgIBeB0elUV8aHgmnOD32U9hbJZtYUXkmcV0oh8dVsNlxKdnYf2g0uzFOFaCu_xK1NUYUiE2VR6HzL40BcncHChtVO1Zhskh7VIKxejeAlQGNIguoUHfq0Cqmk8ONbJmuSsIb4cw7rYz-ZR53zHlQcrb_LWtaa2xn1IAktDcgBo"/>
+</div>
+<div class="px-4 pb-4">
+<h4 class="font-bold text-lg mb-1">Dubai Special</h4>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-secondary font-price-display">₹33,750</span>
+<span class="text-on-surface-variant line-through text-xs">₹45,000</span>
+</div>
+<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative bg-white p-2 rounded-2xl border border-outline-variant hover:border-secondary transition-all group overflow-hidden">
+<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full">SAVE 15%</div>
+<div class="h-40 rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Bali budget deal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWkFJAyHKjF6wN938XRvfjQ8AjEIbxQdPn5TuD1TR9Gwc7Tt-PFOjya70IMq7z0zaw318MtXSdTTohPa9Fp4E7OyKywbT4dekWyblfVIRX33d_E1YfQGKtjsjB3MyO9TTO2Q-1sWLS2rnZljK131I2A5C6v1qtLUYHBWcav55Ar_6NiFlQBfyK-YOGXOA-NO5ImdR3FFnmH1WHNQLF7I4ruVb8BqaIkgRYTMM3LGBdUmilMVBFi2Io-3zsum7JPJI6l48W9-jMTpE"/>
+</div>
+<div class="px-4 pb-4">
+<h4 class="font-bold text-lg mb-1">Bali Budget Deal</h4>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-secondary font-price-display">₹29,999</span>
+<span class="text-on-surface-variant line-through text-xs">₹35,000</span>
+</div>
+<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative bg-white p-2 rounded-2xl border border-outline-variant hover:border-secondary transition-all group overflow-hidden">
+<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full">SAVE 10%</div>
+<div class="h-40 rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Thailand offer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYWIVL-ESGa7l11YnF4UU4QsS8Ldw8M_h84pOJsErmhM1E4-APgQy7IYVW-fhneYadYJTZNKoCSu9x9OdzOz2Dxo8GLBgtEpZKwoT5XASmg4gFjd765YtV8Yzgib9C6F8WWBScJ89d6uolViFglsx3HKdkSGCYQ4SowTbrNhoV9NkQ1zfFGR7UkJjxJmoMuqVXObGYBsCv0A6M1eiZaYsaQ5cEsmYUH6PbiETst6XGaQcJSsnW9_Tgy2D9pFGDLKRsv7zU1TJaeME"/>
+</div>
+<div class="px-4 pb-4">
+<h4 class="font-bold text-lg mb-1">Thailand Offer</h4>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-secondary font-price-display">₹22,500</span>
+<span class="text-on-surface-variant line-through text-xs">₹25,000</span>
+</div>
+<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative bg-white p-2 rounded-2xl border border-outline-variant hover:border-secondary transition-all group overflow-hidden">
+<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full">SAVE 20%</div>
+<div class="h-40 rounded-xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Baku special offer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiXWIrbkKrMpiBjdjXwvaejplM75ALCXy44xBm4XOqCRtG4aszwYI9mUP4SpK3C9i3W-Q0mhxbgHsrYwWuHOgG8jiGgbTxirMvuesD7wx91AA2K9BnnLIQYsSm30CajViiVMagPgerrQYun0NzrtHq-YgNRmExUCi5f4bwYDhZeFKE7q1Vn_aqrLopr6WrIjSZkIlDtjotZO4Xcgm0qpYzuU_S_xe2214Xv2irERA1lLy066-3xMXPnNRssJxO1426mZMl73eYykE"/>
+</div>
+<div class="px-4 pb-4">
+<h4 class="font-bold text-lg mb-1">Baku Special</h4>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-secondary font-price-display">₹41,600</span>
+<span class="text-on-surface-variant line-through text-xs">₹52,000</span>
+</div>
+<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- Hot Offers -->
-<section id="offers" class="py-14 lg:py-20 bg-brand-light/50 border-y border-line">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl lg:text-3xl font-extrabold text-ink text-center">Hot Offers &amp; Limited Time Deals</h2>
-    <p class="text-muted text-center mt-2 mb-8 lg:mb-10">Exclusive discounts on our most popular international packages</p>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden">
-        <div class="relative h-40"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=500&q=80" alt="Dubai offer" class="w-full h-full object-cover"/><span class="absolute top-3 left-3 bg-cta text-white text-xs font-bold px-2.5 py-1 rounded-full">15% OFF</span></div>
-        <div class="p-4">
-          <h3 class="font-bold">Dubai Family Special</h3>
-          <p class="text-xs text-muted mt-1">4N / 5D</p>
-          <div class="flex items-baseline gap-2 mt-2"><span class="text-sm text-muted line-through">₹85,999</span><span class="text-xl font-extrabold text-brand">₹72,999</span></div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full bg-cta text-white text-sm font-semibold hover:bg-cta-dark transition">Grab Offer</a>
-        </div>
-      </article>
-
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden">
-        <div class="relative h-40"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80" alt="Bali offer" class="w-full h-full object-cover"/><span class="absolute top-3 left-3 bg-cta text-white text-xs font-bold px-2.5 py-1 rounded-full">20% OFF</span></div>
-        <div class="p-4">
-          <h3 class="font-bold">Bali Honeymoon Deal</h3>
-          <p class="text-xs text-muted mt-1">5N / 6D</p>
-          <div class="flex items-baseline gap-2 mt-2"><span class="text-sm text-muted line-through">₹73,999</span><span class="text-xl font-extrabold text-brand">₹58,999</span></div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full bg-cta text-white text-sm font-semibold hover:bg-cta-dark transition">Grab Offer</a>
-        </div>
-      </article>
-
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden">
-        <div class="relative h-40"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=500&q=80" alt="Thailand offer" class="w-full h-full object-cover"/><span class="absolute top-3 left-3 bg-cta text-white text-xs font-bold px-2.5 py-1 rounded-full">10% OFF</span></div>
-        <div class="p-4">
-          <h3 class="font-bold">Thailand Budget Offer</h3>
-          <p class="text-xs text-muted mt-1">4N / 5D</p>
-          <div class="flex items-baseline gap-2 mt-2"><span class="text-sm text-muted line-through">₹44,999</span><span class="text-xl font-extrabold text-brand">₹39,999</span></div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full bg-cta text-white text-sm font-semibold hover:bg-cta-dark transition">Grab Offer</a>
-        </div>
-      </article>
-
-      <article class="bg-white rounded-2xl border border-line shadow-card overflow-hidden">
-        <div class="relative h-40"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Baku offer" class="w-full h-full object-cover"/><span class="absolute top-3 left-3 bg-brand text-white text-xs font-bold px-2.5 py-1 rounded-full">BEST VALUE</span></div>
-        <div class="p-4">
-          <h3 class="font-bold">Baku Holiday Deal</h3>
-          <p class="text-xs text-muted mt-1">4N / 5D</p>
-          <div class="flex items-baseline gap-2 mt-2"><span class="text-sm text-muted line-through">₹55,999</span><span class="text-xl font-extrabold text-brand">₹48,999</span></div>
-          <a href="#enquiry" class="mt-4 block w-full text-center py-2.5 rounded-full bg-cta text-white text-sm font-semibold hover:bg-cta-dark transition">Grab Offer</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
+<!-- Visa & Insurance Section -->
+<section class="py-section-padding bg-white" id="visa">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 <!-- Visa Assistance -->
-<section id="visa" class="py-14 lg:py-20">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-2xl lg:text-3xl font-extrabold text-ink">Visa Assistance Made Easy</h2>
-      <p class="text-muted mt-3">Complete visa support for Indian travellers planning international holidays</p>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
-      <div class="bg-surface rounded-2xl p-5 border border-line text-center hover:border-brand transition">
-        <span class="material-symbols-outlined text-brand text-3xl mb-3">menu_book</span>
-        <h3 class="font-bold text-sm">Tourist Visa Guidance</h3>
-        <p class="text-xs text-muted mt-2">Step-by-step visa process for popular destinations</p>
-      </div>
-      <div class="bg-surface rounded-2xl p-5 border border-line text-center hover:border-brand transition">
-        <span class="material-symbols-outlined text-brand text-3xl mb-3">checklist</span>
-        <h3 class="font-bold text-sm">Document Checklist</h3>
-        <p class="text-xs text-muted mt-2">Passport, photos, bank statements &amp; more</p>
-      </div>
-      <div class="bg-surface rounded-2xl p-5 border border-line text-center hover:border-brand transition">
-        <span class="material-symbols-outlined text-brand text-3xl mb-3">edit_document</span>
-        <h3 class="font-bold text-sm">Application Support</h3>
-        <p class="text-xs text-muted mt-2">Form filling &amp; appointment booking help</p>
-      </div>
-      <div class="bg-surface rounded-2xl p-5 border border-line text-center hover:border-brand transition">
-        <span class="material-symbols-outlined text-brand text-3xl mb-3">health_and_safety</span>
-        <h3 class="font-bold text-sm">Travel Insurance Help</h3>
-        <p class="text-xs text-muted mt-2">Coverage guidance for visa &amp; trip safety</p>
-      </div>
-      <div class="bg-surface rounded-2xl p-5 border border-line text-center hover:border-brand transition sm:col-span-2 lg:col-span-1">
-        <span class="material-symbols-outlined text-brand text-3xl mb-3">public</span>
-        <h3 class="font-bold text-sm">Country-wise Visa Info</h3>
-        <p class="text-xs text-muted mt-2">Dubai, Thailand, Schengen &amp; more</p>
-      </div>
-    </div>
-    <div class="text-center mt-8">
-      <a href="#enquiry" class="inline-flex px-8 py-3 rounded-full bg-brand text-white font-semibold text-sm hover:bg-brand-dark transition">Get Visa Help</a>
-    </div>
-  </div>
+<div>
+<h2 class="font-headline-md text-headline-md mb-8">Visa Assistance Made Easy</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">how_to_reg</span>
+<h4 class="font-bold mb-2">Tourist Visa Guidance</h4>
+<p class="text-body-sm text-on-surface-variant">Expert help for tourist visas across 50+ countries.</p>
+</div>
+<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">checklist</span>
+<h4 class="font-bold mb-2">Document Checklist</h4>
+<p class="text-body-sm text-on-surface-variant">Step-by-step personalized document support.</p>
+</div>
+<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">support_agent</span>
+<h4 class="font-bold mb-2">Application Support</h4>
+<p class="text-body-sm text-on-surface-variant">End-to-end processing and interview prep.</p>
+</div>
+<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">info</span>
+<h4 class="font-bold mb-2">Country Information</h4>
+<p class="text-body-sm text-on-surface-variant">Up-to-date entry requirements and policies.</p>
+</div>
+</div>
+<a href="#build" class="mt-8 inline-flex bg-primary text-white px-8 py-3 rounded-xl font-label-bold shadow-lg hover:bg-primary-container transition-all active:scale-95">Get Visa Help</a>
+</div>
+<!-- Travel Insurance -->
+<div class="bg-surface-cream p-6 md:p-8 rounded-3xl border border-outline-variant/30" id="insurance">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-4xl">health_and_safety</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md">Travel Insurance Support</h2>
+<p class="text-on-surface-variant">Secure your trip against the unexpected.</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-success-green shrink-0">check_circle</span>
+<div>
+<h5 class="font-bold">Medical Emergency Cover</h5>
+<p class="text-body-sm text-on-surface-variant">Comprehensive coverage for overseas hospitalization and medical treatments.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-success-green shrink-0">check_circle</span>
+<div>
+<h5 class="font-bold">Trip Cancellation &amp; Delay</h5>
+<p class="text-body-sm text-on-surface-variant">Compensation for flight delays, baggage loss, or emergency cancellations.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-success-green shrink-0">check_circle</span>
+<div>
+<h5 class="font-bold">Visa Required Insurance</h5>
+<p class="text-body-sm text-on-surface-variant">Compliant insurance plans for Schengen and other visa requirements.</p>
+</div>
+</div>
+</div>
+<div class="mt-10 p-6 bg-white rounded-xl border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div>
+<p class="text-sm font-bold text-primary">Insurance starting at</p>
+<span class="font-price-display">₹499 <span class="text-xs font-normal text-on-surface-variant">/ day</span></span>
+</div>
+<a href="#build" class="bg-primary-container text-white px-6 py-2 rounded-lg font-label-bold text-sm shadow-sm hover:bg-primary transition-all whitespace-nowrap">Buy Now</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
+<!-- Build Your Package Section -->
+<section class="py-section-padding bg-surface-container" id="build">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+<div class="lg:w-2/5 relative min-h-[280px] lg:min-h-0">
+<img class="w-full h-full object-cover absolute inset-0" alt="Custom travel planning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTO4TSkmt-vf-sEzpgELZ5eGd3KsJuXW5p1w5s5X_Gz9Vbq4J0OQQzJJD9cwC3gB1Y-gn4oEKZqcEv8BemoOr5cGxuoqV9LIsrFbgNshcGHFsDfBuniTwVubtorZc6k4WGKrr6A-2O5OK8mJYj-SoVADLnZro3xSmMCU-vk0RFlJ1oc91WNYXkF7aaKu2QDN4pH8HZgeL137TDVmcI5a9hQDYeQzX4sTaKK6fQakjYfYwrLAKFgonV0BQ2rwyI7_sDCL06ErmOkiY"/>
+<div class="absolute inset-0 bg-primary/40 flex items-end p-8 md:p-12">
+<div class="text-white">
+<h2 class="font-display-lg text-2xl md:text-4xl mb-4">Can't find what you're looking for?</h2>
+<p class="text-base md:text-lg opacity-90">Share your requirements and our travel experts will create a custom itinerary just for you.</p>
+</div>
+</div>
+</div>
+<div class="lg:w-3/5 p-6 md:p-12">
+<h3 class="font-headline-md text-headline-md mb-8">Build Your Dream Package</h3>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Destination</label>
+<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Where do you want to go?" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Departure City</label>
+<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="City" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Travel Date</label>
+<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" type="date"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Adults</label>
+<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" type="number" value="2"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Children</label>
+<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" type="number" value="0"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Hotel Category</label>
+<select class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary">
+<option>3 Star</option>
+<option>4 Star</option>
+<option>5 Star</option>
+<option>Luxury Boutique</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Approx Budget (Total)</label>
+<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="₹" type="text"/>
+</div>
+<div class="md:col-span-2 flex flex-wrap gap-6 py-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium">Need Flights</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium">Need Visa</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium">Need Insurance</span>
+</label>
+</div>
+<div class="md:col-span-2 space-y-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase">Special Requirements</label>
+<textarea class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Tell us more about your trip..." rows="3"></textarea>
+</div>
+<div class="md:col-span-2">
+<button type="submit" class="w-full bg-secondary-container text-white py-4 rounded-xl font-label-bold text-lg hover:bg-secondary transition-all shadow-lg active:scale-95">Create My Package</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Travels Mantra -->
+<section class="py-section-padding bg-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md mb-4">Why Choose Travels Mantra?</h2>
+<p class="text-on-surface-variant">We provide more than just a booking; we provide memories.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h4 class="font-bold mb-2">Best Price Guarantee</h4>
+<p class="text-xs text-on-surface-variant">Unbeatable value for every budget.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">touch_app</span>
+</div>
+<h4 class="font-bold mb-2">Easy Booking</h4>
+<p class="text-xs text-on-surface-variant">Simplified planning with one-click support.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<h4 class="font-bold mb-2">Expert Advisors</h4>
+<p class="text-xs text-on-surface-variant">Dedicated travel specialists at your service.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h4 class="font-bold mb-2">Visa Assistance</h4>
+<p class="text-xs text-on-surface-variant">Smooth and stress-free visa processing.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">visibility_off</span>
+</div>
+<h4 class="font-bold mb-2">No Hidden Charges</h4>
+<p class="text-xs text-on-surface-variant">Transparent pricing from start to finish.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">headset_mic</span>
+</div>
+<h4 class="font-bold mb-2">24/7 Support</h4>
+<p class="text-xs text-on-surface-variant">We're with you throughout your journey.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<h4 class="font-bold mb-2">Secure Booking</h4>
+<p class="text-xs text-on-surface-variant">Your data and payments are 100% safe.</p>
+</div>
+<div class="text-center group">
+<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">map</span>
+</div>
+<h4 class="font-bold mb-2">Custom Itineraries</h4>
+<p class="text-xs text-on-surface-variant">Tailor-made trips to fit your dreams.</p>
+</div>
+</div>
+</div>
+</section>
 <!-- How It Works -->
-<section class="py-14 lg:py-20 bg-surface border-y border-line">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl lg:text-3xl font-extrabold text-ink text-center mb-10 lg:mb-12">How It Works</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-      <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-brand text-white font-extrabold text-xl flex items-center justify-center mx-auto mb-4">1</div>
-        <h3 class="font-bold text-sm">Choose destination</h3>
-        <p class="text-xs text-muted mt-2">Pick from our popular international packages</p>
-      </div>
-      <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-brand text-white font-extrabold text-xl flex items-center justify-center mx-auto mb-4">2</div>
-        <h3 class="font-bold text-sm">Share travel details</h3>
-        <p class="text-xs text-muted mt-2">Tell us dates, travellers &amp; budget</p>
-      </div>
-      <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-brand text-white font-extrabold text-xl flex items-center justify-center mx-auto mb-4">3</div>
-        <h3 class="font-bold text-sm">Get custom package</h3>
-        <p class="text-xs text-muted mt-2">Receive a personalised INR quote</p>
-      </div>
-      <div class="text-center">
-        <div class="w-14 h-14 rounded-2xl bg-brand text-white font-extrabold text-xl flex items-center justify-center mx-auto mb-4">4</div>
-        <h3 class="font-bold text-sm">Confirm booking</h3>
-        <p class="text-xs text-muted mt-2">Secure your flights, hotels &amp; visa</p>
-      </div>
-      <div class="text-center sm:col-span-2 lg:col-span-1">
-        <div class="w-14 h-14 rounded-2xl bg-cta text-white font-extrabold text-xl flex items-center justify-center mx-auto mb-4">5</div>
-        <h3 class="font-bold text-sm">Travel stress-free</h3>
-        <p class="text-xs text-muted mt-2">24/7 support before &amp; during your trip</p>
-      </div>
-    </div>
-  </div>
+<section class="py-section-padding bg-surface-cream overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md text-center mb-16">How It Works</h2>
+<div class="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
+<div class="hidden md:block absolute top-12 left-0 right-0 h-0.5 -z-0" style="background-image: linear-gradient(to right, #bcc8d1 50%, transparent 50%); background-size: 10px 1px;"></div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">1</div>
+<h5 class="font-bold mb-2">Choose destination</h5>
+<p class="text-xs text-on-surface-variant">Pick where you want to go from our vast list of locations.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">2</div>
+<h5 class="font-bold mb-2">Share travel details</h5>
+<p class="text-xs text-on-surface-variant">Send us your preferences, budget, and dates.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">3</div>
+<h5 class="font-bold mb-2">Get custom package</h5>
+<p class="text-xs text-on-surface-variant">Receive a tailored itinerary within 24 hours.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">4</div>
+<h5 class="font-bold mb-2">Confirm booking</h5>
+<p class="text-xs text-on-surface-variant">Secure your spot with a simple booking process.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
+<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">5</div>
+<h5 class="font-bold mb-2">Travel stress-free</h5>
+<p class="text-xs text-on-surface-variant">Pack your bags and enjoy while we handle everything.</p>
+</div>
+</div>
+</div>
 </section>
-
-<!-- Enquiry Form -->
-<section id="enquiry" class="py-14 lg:py-20">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-      <div>
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-ink">Tell Us Your Travel Plan</h2>
-        <p class="text-muted mt-4 leading-relaxed">Share your requirements and our travel experts will prepare a complete package with flights, hotels, visa, sightseeing, and transfers — tailored to your budget.</p>
-        <div class="mt-8 space-y-4">
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-brand">call</span><div><p class="font-semibold text-sm">1800 2121 225</p><p class="text-xs text-muted">Toll-free travel helpline</p></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-brand">mail</span><div><p class="font-semibold text-sm">info@travelsmantra.com</p><p class="text-xs text-muted">Email us anytime</p></div></div>
-          <div class="flex items-start gap-3"><span class="material-symbols-outlined text-brand">location_on</span><div><p class="font-semibold text-sm">Connaught Place, New Delhi</p><p class="text-xs text-muted">911, IndraPrakash Building, Barakhamba Road</p></div></div>
-        </div>
-      </div>
-      <form class="bg-white rounded-2xl border border-line shadow-card p-6 lg:p-8 space-y-4" action="#" method="post">
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label class="text-xs font-semibold text-muted mb-1.5 block">Full Name</label>
-            <input type="text" name="name" required placeholder="Your full name" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand"/>
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-muted mb-1.5 block">Phone Number</label>
-            <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand"/>
-          </div>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted mb-1.5 block">Email</label>
-          <input type="email" name="email" required placeholder="you@email.com" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand"/>
-        </div>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label class="text-xs font-semibold text-muted mb-1.5 block">Destination</label>
-            <select name="destination" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-              <option value="">Select destination</option>
-              <option>Dubai</option><option>Bali</option><option>Thailand</option><option>Vietnam</option>
-              <option>Baku</option><option>Malaysia</option><option>Singapore</option><option>Maldives</option><option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-muted mb-1.5 block">Departure From</label>
-            <select name="departure" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-              <option>Delhi</option><option>Mumbai</option><option>Bengaluru</option><option>Hyderabad</option>
-              <option>Chennai</option><option>Kolkata</option><option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="grid sm:grid-cols-3 gap-4">
-          <div>
-            <label class="text-xs font-semibold text-muted mb-1.5 block">Travel Date</label>
-            <input type="date" name="travel_date" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand"/>
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-muted mb-1.5 block">Adults</label>
-            <select name="adults" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-              <option>2</option><option>1</option><option>3</option><option>4</option><option>5+</option>
-            </select>
-          </div>
-          <div>
-            <label class="text-xs font-semibold text-muted mb-1.5 block">Children</label>
-            <select name="children" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-              <option>0</option><option>1</option><option>2</option><option>3</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted mb-1.5 block">Budget</label>
-          <select name="budget" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand">
-            <option>Under ₹50,000</option><option>₹50,000 – ₹1,00,000</option>
-            <option>₹1,00,000 – ₹2,00,000</option><option>Above ₹2,00,000</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-muted mb-1.5 block">Message</label>
-          <textarea name="message" rows="3" placeholder="Honeymoon, family trip, visa help, special requests…" class="w-full rounded-xl border-line text-sm py-3 focus:border-brand focus:ring-brand"></textarea>
-        </div>
-        <button type="submit" class="w-full py-3.5 rounded-full bg-cta text-white font-semibold text-sm hover:bg-cta-dark transition shadow-sm">Get Custom Quote</button>
-      </form>
-    </div>
-  </div>
+<!-- FAQ Section -->
+<section class="py-section-padding bg-white" id="faq">
+<div class="max-w-3xl mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md text-center mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<span>How do I book a holiday package?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Simply select your destination, fill out the enquiry form or call our experts. We'll guide you through the selection and payment process to confirm your booking.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<span>Can I customize the existing packages?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Yes, absolutely! Every package can be tailored to your flight preferences, hotel choices, and specific sightseeing interests.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<span>Is visa assistance included in all packages?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Most of our international packages include visa assistance. For domestic packages or specific countries, we provide guidance or full processing as per your requirement.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<span>What payment methods do you accept?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">We accept all major credit/debit cards, Net Banking, UPI, and bank transfers through our secure payment gateway.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<span>What if my flight gets cancelled?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Our support team is available 24/7 to help with rebookings or refunds as per the airline's policy and your travel insurance coverage.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<span>Do you provide honeymoon inclusions?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Yes! Our honeymoon packages include special perks like room decoration, candle-lit dinners, and cake to make your first trip special.</p>
+</details>
+<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<span>Is Travel Insurance mandatory?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">While it may not be mandatory for all destinations, we strongly recommend it for financial protection against unforeseen travel emergencies.</p>
+</details>
+</div>
+</div>
 </section>
-
-<!-- Testimonials -->
-<section class="py-14 lg:py-20 bg-brand-light/40 border-t border-line">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl lg:text-3xl font-extrabold text-ink text-center mb-8 lg:mb-10">What Our Travellers Say</h2>
-    <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
-      <blockquote class="bg-white rounded-2xl p-6 border border-line shadow-card">
-        <div class="text-amber-400 text-sm mb-3">★★★★★</div>
-        <p class="text-sm text-muted leading-relaxed">"We booked a Dubai family package through Travels Mantra. Flights, hotel, visa guidance, and sightseeing were all handled in one plan. Very professional service for first-time international travellers."</p>
-        <footer class="mt-5 pt-4 border-t border-line flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-brand-light text-brand font-bold text-sm flex items-center justify-center">PS</div>
-          <div><p class="font-semibold text-sm">Priya Sharma</p><p class="text-xs text-muted">Mumbai · Dubai Family Trip</p></div>
-        </footer>
-      </blockquote>
-      <blockquote class="bg-white rounded-2xl p-6 border border-line shadow-card">
-        <div class="text-amber-400 text-sm mb-3">★★★★★</div>
-        <p class="text-sm text-muted leading-relaxed">"Our Bali honeymoon was perfectly planned — romantic villa stay, candlelight dinner, and smooth airport transfers. The team delivered a premium experience within our budget."</p>
-        <footer class="mt-5 pt-4 border-t border-line flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-brand-light text-brand font-bold text-sm flex items-center justify-center">RA</div>
-          <div><p class="font-semibold text-sm">Rahul &amp; Ananya</p><p class="text-xs text-muted">Delhi · Bali Honeymoon</p></div>
-        </footer>
-      </blockquote>
-      <blockquote class="bg-white rounded-2xl p-6 border border-line shadow-card">
-        <div class="text-amber-400 text-sm mb-3">★★★★★</div>
-        <p class="text-sm text-muted leading-relaxed">"Booked a Vietnam group tour for our office team. Custom itinerary, transparent INR pricing, and responsive support throughout. Will definitely book our next trip with Travels Mantra."</p>
-        <footer class="mt-5 pt-4 border-t border-line flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-brand-light text-brand font-bold text-sm flex items-center justify-center">VM</div>
-          <div><p class="font-semibold text-sm">Vikram Mehta</p><p class="text-xs text-muted">Pune · Vietnam Group Tour</p></div>
-        </footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="py-14 lg:py-20">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-5 gap-10 items-start">
-      <div class="lg:col-span-2">
-        <h2 class="text-2xl lg:text-3xl font-extrabold text-ink">Frequently Asked Questions</h2>
-        <p class="text-muted mt-3 text-sm leading-relaxed">Everything you need to know before booking your international holiday with Travels Mantra.</p>
-      </div>
-      <div class="lg:col-span-3 space-y-3">
-        <details class="group bg-surface rounded-xl border border-line p-5 open:border-brand/40">
-          <summary class="flex justify-between items-center gap-4 font-semibold text-sm">Do you provide customized packages?<span class="material-symbols-outlined text-brand group-open:rotate-180 transition-transform shrink-0">expand_more</span></summary>
-          <p class="mt-3 text-sm text-muted leading-relaxed">Yes. We create fully customised itineraries based on your destination, travel dates, budget, and trip type — honeymoon, family, friends, or group tours.</p>
-        </details>
-        <details class="group bg-surface rounded-xl border border-line p-5 open:border-brand/40">
-          <summary class="flex justify-between items-center gap-4 font-semibold text-sm">Do you help with tourist visas?<span class="material-symbols-outlined text-brand group-open:rotate-180 transition-transform shrink-0">expand_more</span></summary>
-          <p class="mt-3 text-sm text-muted leading-relaxed">Absolutely. We provide tourist visa guidance, document checklists, application support, and travel insurance assistance for popular international destinations.</p>
-        </details>
-        <details class="group bg-surface rounded-xl border border-line p-5 open:border-brand/40">
-          <summary class="flex justify-between items-center gap-4 font-semibold text-sm">Can I book flights and hotels together?<span class="material-symbols-outlined text-brand group-open:rotate-180 transition-transform shrink-0">expand_more</span></summary>
-          <p class="mt-3 text-sm text-muted leading-relaxed">Yes. Our complete packages include flights, hotels, airport transfers, sightseeing, visa support, and travel insurance — all in one plan.</p>
-        </details>
-        <details class="group bg-surface rounded-xl border border-line p-5 open:border-brand/40">
-          <summary class="flex justify-between items-center gap-4 font-semibold text-sm">What is included in the package?<span class="material-symbols-outlined text-brand group-open:rotate-180 transition-transform shrink-0">expand_more</span></summary>
-          <p class="mt-3 text-sm text-muted leading-relaxed">Packages typically include flights, hotel stay, airport transfers, sightseeing tours, visa assistance, and meals (where mentioned). Exact inclusions vary by destination and package type.</p>
-        </details>
-        <details class="group bg-surface rounded-xl border border-line p-5 open:border-brand/40">
-          <summary class="flex justify-between items-center gap-4 font-semibold text-sm">What is the cancellation policy?<span class="material-symbols-outlined text-brand group-open:rotate-180 transition-transform shrink-0">expand_more</span></summary>
-          <p class="mt-3 text-sm text-muted leading-relaxed">Cancellation terms depend on the airline, hotel, and package booked. Our team shares the full cancellation and refund policy before you confirm your booking.</p>
-        </details>
-        <details class="group bg-surface rounded-xl border border-line p-5 open:border-brand/40">
-          <summary class="flex justify-between items-center gap-4 font-semibold text-sm">How do I get the best quote?<span class="material-symbols-outlined text-brand group-open:rotate-180 transition-transform shrink-0">expand_more</span></summary>
-          <p class="mt-3 text-sm text-muted leading-relaxed">Fill in the enquiry form with your travel dates, destination, and budget. Call us at 1800 2121 225 or email info@travelsmantra.com for a personalised INR quote within hours.</p>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Footer -->
-<footer class="bg-ink text-white pt-14 pb-8">
-  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-      <div class="sm:col-span-2 lg:col-span-1">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-9 h-9 rounded-xl bg-brand flex items-center justify-center font-extrabold text-sm">TM</span>
-          <span class="font-extrabold">Travels Mantra</span>
-        </div>
-        <p class="text-sm text-slate-400 leading-relaxed mb-4">Travels Mantra Holidays (P) Ltd.</p>
-        <div class="space-y-2 text-sm text-slate-400">
-          <p class="flex items-center gap-2"><span class="material-symbols-outlined text-base text-brand">call</span> 1800 2121 225</p>
-          <p class="flex items-center gap-2"><span class="material-symbols-outlined text-base text-brand">mail</span> info@travelsmantra.com</p>
-          <p class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-brand shrink-0 mt-0.5">location_on</span> 911, IndraPrakash Building, Barakhamba Road, Connaught Place, New Delhi, Delhi 110001</p>
-        </div>
-      </div>
-      <div>
-        <p class="font-semibold text-sm mb-4">Explore</p>
-        <ul class="space-y-2.5 text-sm text-slate-400">
-          <li><a href="#packages" class="hover:text-white transition">Tours</a></li>
-          <li><a href="#offers" class="hover:text-white transition">Hot Offers</a></li>
-          <li><a href="#visa" class="hover:text-white transition">Visa</a></li>
-          <li><a href="#" class="hover:text-white transition">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold text-sm mb-4">Services</p>
-        <ul class="space-y-2.5 text-sm text-slate-400">
-          <li><a href="#services" class="hover:text-white transition">Flights</a></li>
-          <li><a href="#services" class="hover:text-white transition">Hotels</a></li>
-          <li><a href="#services" class="hover:text-white transition">Travel Insurance</a></li>
-          <li><a href="#enquiry" class="hover:text-white transition">Build Your Package</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold text-sm mb-4">Company</p>
-        <ul class="space-y-2.5 text-sm text-slate-400">
-          <li><a href="#" class="hover:text-white transition">About Us</a></li>
-          <li><a href="#enquiry" class="hover:text-white transition">Contact Us</a></li>
-          <li><a href="#faq" class="hover:text-white transition">Testimonials</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold text-sm mb-4">Support</p>
-        <ul class="space-y-2.5 text-sm text-slate-400">
-          <li><a href="#faq" class="hover:text-white transition">Booking FAQ</a></li>
-          <li><a href="#" class="hover:text-white transition">Cancellation Policy</a></li>
-          <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-white transition">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="pt-8 border-t border-slate-700 text-center text-sm text-slate-500">
-      <p>© 2026 Travels Mantra Holidays (P) Ltd. All rights reserved.</p>
-    </div>
-  </div>
+<footer class="bg-surface-container-highest border-t border-outline-variant/30">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter px-margin-mobile md:px-gutter py-section-padding max-w-container-max mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface mb-6">Travels Mantra</div>
+<p class="text-body-sm text-on-surface-variant mb-6 pr-4">Creating unforgettable travel experiences with passion and expertise since 2012.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-all" href="tel:18002121225"><span class="material-symbols-outlined">call</span></a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-all" href="mailto:info@travelsmantra.com"><span class="material-symbols-outlined">mail</span></a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-primary">Explore</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#packages">Holiday Packages</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#offers">Hot Deals</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#faq">Destination Guides</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#">Travel Blog</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-primary">Services</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#visa">Visa Assistance</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#insurance">Travel Insurance</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#search">Hotel Booking</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#search">Flight Tickets</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-primary">Support</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#build">Contact Us</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant font-body-sm hover:underline decoration-secondary transition-all" href="#">Refund Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 py-8 text-center px-gutter">
+<p class="text-body-sm text-on-surface-variant">© 2024 Travels Mantra Holidays (P) Ltd. All Rights Reserved.</p>
+</div>
 </footer>
-
 <script>
-const menuToggle = document.getElementById('menu-toggle');
-const mobileNav = document.getElementById('mobile-nav');
-menuToggle?.addEventListener('click', () => {
-  const open = mobileNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', open);
-  menuToggle.querySelector('.material-symbols-outlined').textContent = open ? 'close' : 'menu';
-});
-mobileNav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mobileNav.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
-  });
-});
-document.querySelectorAll('.tab-btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach((b) => {
-      b.classList.remove('active');
-      b.classList.add('text-muted');
-    });
-    btn.classList.add('active');
-    btn.classList.remove('text-muted');
-    const target = btn.dataset.tab;
-    if (target === 'visa') document.getElementById('visa')?.scrollIntoView({ behavior: 'smooth' });
-    else if (target === 'build') document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
-    else if (target === 'packages') document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-</script>
-</body>
-</html>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        menuToggle?.addEventListener('click', () => {
+            const open = mobileNav.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', open);
+            menuToggle.querySelector('.material-symbols-outlined').textContent = open ? 'close' : 'menu';
+        });
+        mobileNav?.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>
