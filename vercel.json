@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "travel-mantra-lp",
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false
+}

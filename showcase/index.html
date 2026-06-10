@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travels Mantra | All Landing Pages Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --surface: #121826;
+      --border: rgba(255,255,255,0.08);
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --orange: #FF8C00;
+      --emerald: #10b981;
+      --terracotta: #c45c3e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+    }
+    .topbar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    .brand span { color: var(--orange); font-style: italic; }
+    .topbar p { color: var(--muted); font-size: 0.85rem; }
+
+    .view-toggle {
+      display: flex;
+      gap: 8px;
+      background: var(--surface);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .view-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .view-btn.active {
+      background: var(--orange);
+      color: #000;
+    }
+
+    main { max-width: 1400px; margin: 0 auto; padding: 32px 24px 64px; }
+
+    /* Grid view — all 3 side by side */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .lp-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .lp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .lp-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lp-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+    .lp1 .lp-badge { background: rgba(255,140,0,0.15); color: var(--orange); }
+    .lp2 .lp-badge { background: rgba(16,185,129,0.15); color: var(--emerald); }
+    .lp3 .lp-badge { background: rgba(196,92,62,0.15); color: var(--terracotta); }
+    .lp-title { font-weight: 600; font-size: 0.95rem; }
+    .lp-desc { color: var(--muted); font-size: 0.78rem; margin-top: 2px; }
+    .open-link {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,140,0,0.3);
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+    .open-link:hover { background: rgba(255,140,0,0.1); }
+
+    .phone-frame {
+      background: #1a1f2e;
+      border-radius: 36px;
+      padding: 12px;
+      border: 2px solid var(--border);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+      position: relative;
+    }
+    .phone-notch {
+      width: 80px;
+      height: 22px;
+      background: #0a0e17;
+      border-radius: 0 0 14px 14px;
+      margin: 0 auto 8px;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 640px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      border: none;
+    }
+    .phone-screen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform-origin: top left;
+    }
+
+    /* Single view — one LP fullscreen */
+    .showcase-single { display: none; }
+    .showcase-single.active { display: block; }
+    .showcase-grid.hidden { display: none; }
+
+    .single-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .single-tab {
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .single-tab.active { border-color: var(--orange); color: var(--orange); background: rgba(255,140,0,0.08); }
+    .single-tab[data-lp="lp2"].active { border-color: var(--emerald); color: var(--emerald); background: rgba(16,185,129,0.08); }
+    .single-tab[data-lp="lp3"].active { border-color: var(--terracotta); color: var(--terracotta); background: rgba(196,92,62,0.08); }
+
+    .desktop-frame {
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    }
+    .desktop-chrome {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: #1a1f2e;
+      border-bottom: 1px solid var(--border);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.red { background: #ff5f57; }
+    .dot.yellow { background: #febc2e; }
+    .dot.green { background: #28c840; }
+    .url-bar {
+      flex: 1;
+      margin-left: 12px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .desktop-screen {
+      width: 100%;
+      height: 80vh;
+      min-height: 500px;
+      border: none;
+    }
+    .desktop-screen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .single-panel { display: none; }
+    .single-panel.active { display: block; }
+
+    @media (max-width: 1100px) {
+      .showcase-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+    @media (max-width: 600px) {
+      .phone-screen { height: 520px; }
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="brand">Travels Mantra <span>Showcase</span></div>
+        <p>All 3 landing page designs in one place</p>
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" data-view="grid">All Together</button>
+        <button class="view-btn" data-view="single">Full Preview</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Grid: all 3 LPs shown side by side -->
+    <div class="showcase-grid" id="showcase-grid">
+      <article class="lp-panel lp1">
+        <div class="lp-header">
+          <div class="lp-label">
+            <span class="lp-badge">LP1</span>
+            <div>
+              <div class="lp-title">Mobile-First Classic</div>
+              <div class="lp-desc">Navy &amp; orange</div>
+            </div>
+          </div>
+          <a href="../LP1/index.html" target="_blank" class="open-link">Open &nearr;</a>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <iframe src="../LP1/index.html" title="LP1 Preview" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <article class="lp-panel lp2">
+        <div class="lp-header">
+          <div class="lp-label">
+            <span class="lp-badge">LP2</span>
+            <div>
+              <div class="lp-title">Luxury Dark &amp; Gold</div>
+              <div class="lp-desc">Cinematic &amp; curated</div>
+            </div>
+          </div>
+          <a href="../LP2/index.html" target="_blank" class="open-link">Open &nearr;</a>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <iframe src="../LP2/index.html" title="LP2 Preview" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <article class="lp-panel lp3">
+        <div class="lp-header">
+          <div class="lp-label">
+            <span class="lp-badge">LP3</span>
+            <div>
+              <div class="lp-title">Modern Booking Platform</div>
+              <div class="lp-desc">Sky blue &amp; clean UI</div>
+            </div>
+          </div>
+          <a href="../LP3/index.html" target="_blank" class="open-link">Open &nearr;</a>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <iframe src="../LP3/index.html" title="LP3 Preview" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Single: one LP at full width -->
+    <div class="showcase-single" id="showcase-single">
+      <div class="single-tabs">
+        <button class="single-tab active" data-lp="lp1">LP1 — Mobile Classic</button>
+        <button class="single-tab" data-lp="lp2">LP2 — Luxury Gold</button>
+        <button class="single-tab" data-lp="lp3">LP3 — Modern Booking</button>
+      </div>
+
+      <div class="single-panel active" data-panel="lp1">
+        <div class="desktop-frame">
+          <div class="desktop-chrome">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="url-bar">travelsmantra.com / LP1</span>
+            <a href="../LP1/index.html" target="_blank" class="open-link">Open full page</a>
+          </div>
+          <div class="desktop-screen">
+            <iframe src="../LP1/index.html" title="LP1 Full Preview"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="single-panel" data-panel="lp2">
+        <div class="desktop-frame">
+          <div class="desktop-chrome">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="url-bar">travelsmantra.com / LP2</span>
+            <a href="../LP2/index.html" target="_blank" class="open-link">Open full page</a>
+          </div>
+          <div class="desktop-screen">
+            <iframe src="../LP2/index.html" title="LP2 Full Preview"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="single-panel" data-panel="lp3">
+        <div class="desktop-frame">
+          <div class="desktop-chrome">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="url-bar">travelsmantra.com / LP3</span>
+            <a href="../LP3/index.html" target="_blank" class="open-link">Open full page</a>
+          </div>
+          <div class="desktop-screen">
+            <iframe src="../LP3/index.html" title="LP3 Full Preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const gridView = document.getElementById('showcase-grid');
+    const singleView = document.getElementById('showcase-single');
+    const viewBtns = document.querySelectorAll('.view-btn');
+    const singleTabs = document.querySelectorAll('.single-tab');
+    const singlePanels = document.querySelectorAll('.single-panel');
+
+    viewBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        viewBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const isGrid = btn.dataset.view === 'grid';
+        gridView.classList.toggle('hidden', !isGrid);
+        singleView.classList.toggle('active', !isGrid);
+      });
+    });
+
+    singleTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const lp = tab.dataset.lp;
+        singleTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        singlePanels.forEach(p => p.classList.toggle('active', p.dataset.panel === lp));
+      });
+    });
+  </script>
+</body>
+</html>

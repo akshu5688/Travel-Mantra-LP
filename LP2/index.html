@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Mantra | Where the Earth Breathes</title>
+  <meta name="description" content="Curated luxury travel experiences by Travel Mantra. Discover extraordinary destinations crafted for the discerning explorer."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-globe"></i></span>
+        <span class="logo-text">Travel Mantra</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="#" class="sign-in">Sign In</a>
+        <a href="#destinations" class="btn-gold">Book Now</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="container hero-content">
+      <p class="hero-label" id="hero-label">Desert Hills</p>
+      <h1 id="hero-title">Where the Earth<br/>Breathes</h1>
+      <p class="hero-location" id="hero-location">Neom, Saudi Arabia</p>
+      <div class="hero-actions">
+        <a href="#destinations" class="btn-gold">Explore Now</a>
+        <button class="btn-ghost" id="watch-film">
+          <span class="play-circle"><i class="fa-solid fa-play"></i></span>
+          Watch Film
+        </button>
+      </div>
+    </div>
+    <div class="container hero-ui">
+      <div></div>
+      <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
+      <div class="hero-dots" id="hero-dots">
+        <span class="active" data-slide="0"></span>
+        <span data-slide="1"></span>
+        <span data-slide="2"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Destinations -->
+  <section class="curated" id="destinations">
+    <div class="container">
+      <div class="curated-head">
+        <div class="curated-left">
+          <div class="section-label">Curated Places</div>
+          <h2>Where Will You Go <em>Next?</em></h2>
+        </div>
+        <div class="filters" id="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="beach">Beach</button>
+          <button class="filter-btn" data-filter="mountain">Mountain</button>
+          <button class="filter-btn" data-filter="city">City</button>
+          <button class="filter-btn" data-filter="desert">Desert</button>
+        </div>
+      </div>
+
+      <div class="dest-grid" id="dest-grid">
+        <article class="dest-card" data-category="city">
+          <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&q=80" alt="Santorini Greece"/>
+          <span class="dest-tag">Most Popular</span>
+          <div class="dest-info">
+            <div class="dest-name">
+              <h3>Santorini</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Greece</p>
+            </div>
+            <div class="dest-price">
+              <strong>From $1,280</strong>
+              <span>7 nights</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card" data-category="beach">
+          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80" alt="Maldives"/>
+          <span class="dest-tag">Luxury Pick</span>
+          <div class="dest-info">
+            <div class="dest-name">
+              <h3>Maldives</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Indian Ocean</p>
+            </div>
+            <div class="dest-price">
+              <strong>From $2,450</strong>
+              <span>5 nights</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card" data-category="mountain">
+          <img src="assets/swiss_alps.png" alt="Swiss Alps"/>
+          <span class="dest-tag">Adventure</span>
+          <div class="dest-info">
+            <div class="dest-name">
+              <h3>Swiss Alps</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Switzerland</p>
+            </div>
+            <div class="dest-price">
+              <strong>From $1,890</strong>
+              <span>6 nights</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card" data-category="desert">
+          <img src="assets/hero_bg.png" alt="Wadi Rum Jordan"/>
+          <span class="dest-tag">Exclusive</span>
+          <div class="dest-info">
+            <div class="dest-name">
+              <h3>Wadi Rum</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Jordan</p>
+            </div>
+            <div class="dest-price">
+              <strong>From $1,150</strong>
+              <span>4 nights</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card" data-category="beach">
+          <img src="assets/bali.png" alt="Bali Indonesia"/>
+          <span class="dest-tag">Editor's Choice</span>
+          <div class="dest-info">
+            <div class="dest-name">
+              <h3>Bali</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Indonesia</p>
+            </div>
+            <div class="dest-price">
+              <strong>From $1,320</strong>
+              <span>8 nights</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card" data-category="city">
+          <img src="assets/kyoto.png" alt="Kyoto Japan"/>
+          <span class="dest-tag">Cultural</span>
+          <div class="dest-info">
+            <div class="dest-name">
+              <h3>Kyoto</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Japan</p>
+            </div>
+            <div class="dest-price">
+              <strong>From $1,640</strong>
+              <span>7 nights</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="footer-cta" id="experiences">
+    <div class="container">
+      <h2>Begin Your Journey</h2>
+      <p>Every expedition is handcrafted by our curators. Tell us where your soul wants to wander.</p>
+      <div class="hero-actions">
+        <a href="#destinations" class="btn-gold">Book Now</a>
+        <a href="#" class="sign-in" style="letter-spacing:0.15em">Speak to a Curator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="about">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Travel Mantra. All rights reserved.</p>
+      <ul class="footer-links" id="stories">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Video modal -->
+  <div class="video-modal" id="video-modal">
+    <div class="video-modal-inner">
+      <button class="video-close" id="video-close" aria-label="Close">&times;</button>
+      <p><i class="fa-solid fa-film"></i>&nbsp; Travel Mantra — Brand Film</p>
+    </div>
+  </div>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    const slides = [
+      { label: 'Desert Hills', title: 'Where the Earth<br/>Breathes', location: 'Neom, Saudi Arabia', bg: "url('assets/hero_bg.png')" },
+      { label: 'Alpine Peaks', title: 'Above the<br/>Cloud Line', location: 'Swiss Alps, Switzerland', bg: "url('assets/swiss_alps.png')" },
+      { label: 'Ancient Temples', title: 'Paths of<br/>Serenity', location: 'Kyoto, Japan', bg: "url('assets/kyoto.png')" },
+    ];
+    let currentSlide = 0;
+    const heroBg = document.getElementById('hero-bg');
+    const heroLabel = document.getElementById('hero-label');
+    const heroTitle = document.getElementById('hero-title');
+    const heroLocation = document.getElementById('hero-location');
+    const dots = document.querySelectorAll('.hero-dots span');
+
+    function goToSlide(n) {
+      currentSlide = n;
+      const s = slides[n];
+      heroBg.style.backgroundImage =
+        `linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,0.85) 100%), linear-gradient(90deg, rgba(10,10,10,0.5) 0%, transparent 60%), ${s.bg} center / cover no-repeat`;
+      heroLabel.textContent = s.label;
+      heroTitle.innerHTML = s.title;
+      heroLocation.textContent = s.location;
+      dots.forEach((d, i) => d.classList.toggle('active', i === n));
+    }
+
+    dots.forEach(d => d.addEventListener('click', () => goToSlide(+d.dataset.slide)));
+    setInterval(() => goToSlide((currentSlide + 1) % slides.length), 8000);
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.filter;
+        document.querySelectorAll('.dest-card').forEach(card => {
+          card.style.display = cat === 'all' || card.dataset.category === cat ? '' : 'none';
+        });
+      });
+    });
+
+    const modal = document.getElementById('video-modal');
+    document.getElementById('watch-film').addEventListener('click', () => modal.classList.add('open'));
+    document.getElementById('video-close').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+  </script>
+</body>
+</html>

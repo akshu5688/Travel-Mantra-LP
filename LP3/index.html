@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Mantra | Travel Smarter, Not Harder</title>
+  <meta name="description" content="Plan, compare, and book your dream trip in minutes with Travel Mantra. Curated packages, real reviews, and exclusive deals."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-compass"></i></span>
+        Travel Mantra
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#deals">Deals</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="fa-regular fa-bell"></i>
+          <span class="dot"></span>
+        </button>
+        <a href="#" class="sign-in">Sign In</a>
+        <a href="#deals" class="btn btn-primary">Start Planning <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="how-it-works">
+    <div class="container hero-grid">
+      <div>
+        <h1>Travel Smarter, <span class="gradient-text">Not Harder</span></h1>
+        <p class="hero-sub">Plan, compare, and book your dream trip in minutes. We show you exactly what to do, where to stay, and how to save.</p>
+
+        <div class="search-card">
+          <div class="search-tabs">
+            <button class="search-tab active" data-tab="packages">Packages</button>
+            <button class="search-tab" data-tab="flights">Flights</button>
+            <button class="search-tab" data-tab="hotels">Hotels</button>
+          </div>
+          <div class="search-fields">
+            <div class="search-field">
+              <label><i class="fa-solid fa-location-dot"></i> Where</label>
+              <input type="text" placeholder="City or country"/>
+            </div>
+            <div class="search-field">
+              <label><i class="fa-regular fa-calendar"></i> When</label>
+              <input type="text" placeholder="Add dates" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'"/>
+            </div>
+            <div class="search-field">
+              <label><i class="fa-solid fa-user-group"></i> Guests</label>
+              <select>
+                <option>2 Adults</option>
+                <option>1 Adult</option>
+                <option>2 Adults, 1 Child</option>
+                <option>Family (4)</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block" id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i> Search Packages
+          </button>
+        </div>
+
+        <div class="trending">
+          <span>Trending:</span>
+          <button class="trend-tag"><span class="flag">JP</span> Tokyo</button>
+          <button class="trend-tag"><span class="flag">MV</span> Maldives</button>
+          <button class="trend-tag"><span class="flag">IT</span> Amalfi</button>
+          <button class="trend-tag"><span class="flag">PE</span> Machu Picchu</button>
+          <button class="trend-tag"><span class="flag">IS</span> Iceland</button>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="collage">
+          <div class="collage-item tall-left">
+            <img src="assets/hero_bg.png" alt="Rainforest bridge adventure"/>
+            <span class="collage-label">Rainforest Crossing, Costa Rica · $890</span>
+          </div>
+          <div class="collage-right-col">
+            <div class="collage-item small-top">
+              <img src="assets/swiss_alps.png" alt="Machu Picchu mountains"/>
+              <span class="collage-label overlay">Machu Picchu</span>
+            </div>
+            <div class="collage-item small-bottom">
+              <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Tokyo city nights"/>
+              <span class="collage-label overlay">Tokyo Nights</span>
+            </div>
+            <div class="collage-item tall-right">
+              <img src="assets/bali.png" alt="Couple overlooking lake"/>
+            </div>
+          </div>
+        </div>
+        <div class="stat-cards">
+          <div class="stat-card"><strong>190+</strong><span>Destinations</span></div>
+          <div class="stat-card"><strong>2.4M</strong><span>Happy Travelers</span></div>
+          <div class="stat-card"><strong>34%</strong><span>Avg. Savings</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section class="destinations" id="destinations">
+    <div class="container">
+      <div class="dest-head">
+        <h2>Where do you want to <span class="gradient-text">explore?</span></h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="asia">Asia</button>
+          <button class="filter-btn" data-filter="europe">Europe</button>
+          <button class="filter-btn" data-filter="americas">Americas</button>
+          <button class="filter-btn" data-filter="oceania">Oceania</button>
+          <button class="filter-btn" data-filter="africa">Africa</button>
+        </div>
+      </div>
+
+      <div class="dest-grid" id="dest-grid">
+        <article class="dest-card" data-region="asia">
+          <div class="dest-img">
+            <img src="assets/kyoto.png" alt="Kyoto Japan"/>
+            <span class="badge badge-purple">Editor's Pick</span>
+            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
+            <div class="img-tags">
+              <span class="img-tag">Cultural</span>
+              <span class="img-tag">Temples</span>
+              <span class="img-tag">Food</span>
+            </div>
+          </div>
+          <div class="dest-body">
+            <div class="dest-top">
+              <div><h3>Kyoto</h3><p class="loc">Japan</p></div>
+              <div class="dest-price"><strong>$1,490</strong><small>per person</small></div>
+            </div>
+            <div class="dest-meta">
+              <span class="stars"><i class="fa-solid fa-star"></i> 4.9 (2,841)</span>
+              <span><i class="fa-regular fa-clock"></i> 7 days</span>
+            </div>
+            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Cherry blossom season: April</div>
+            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="dest-card" data-region="oceania">
+          <div class="dest-img">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" alt="Maldives"/>
+            <span class="badge badge-green">Best Value</span>
+            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
+            <div class="img-tags">
+              <span class="img-tag">Beach</span>
+              <span class="img-tag">Luxury</span>
+              <span class="img-tag">Snorkel</span>
+            </div>
+          </div>
+          <div class="dest-body">
+            <div class="dest-top">
+              <div><h3>Maldives</h3><p class="loc">Indian Ocean</p></div>
+              <div class="dest-price"><strong>$2,150</strong><small>per person</small></div>
+            </div>
+            <div class="dest-meta">
+              <span class="stars"><i class="fa-solid fa-star"></i> 4.8 (1,920)</span>
+              <span><i class="fa-regular fa-clock"></i> 5 days</span>
+            </div>
+            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Best Nov – Apr</div>
+            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="dest-card" data-region="americas">
+          <div class="dest-img">
+            <img src="assets/swiss_alps.png" alt="Machu Picchu Peru"/>
+            <span class="badge badge-orange">Trending</span>
+            <button class="wishlist active" aria-label="Save"><i class="fa-solid fa-heart"></i></button>
+            <div class="img-tags">
+              <span class="img-tag">Hiking</span>
+              <span class="img-tag">History</span>
+              <span class="img-tag">UNESCO</span>
+            </div>
+          </div>
+          <div class="dest-body">
+            <div class="dest-top">
+              <div><h3>Machu Picchu</h3><p class="loc">Peru</p></div>
+              <div class="dest-price"><strong>$1,780</strong><small>per person</small></div>
+            </div>
+            <div class="dest-meta">
+              <span class="stars"><i class="fa-solid fa-star"></i> 4.9 (3,102)</span>
+              <span><i class="fa-regular fa-clock"></i> 6 days</span>
+            </div>
+            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Limited permits — book early</div>
+            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="dest-card" data-region="asia">
+          <div class="dest-img">
+            <img src="assets/bali.png" alt="Bali Indonesia"/>
+            <span class="badge badge-blue">Most Booked</span>
+            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
+            <div class="img-tags">
+              <span class="img-tag">Wellness</span>
+              <span class="img-tag">Nature</span>
+            </div>
+          </div>
+          <div class="dest-body">
+            <div class="dest-top">
+              <div><h3>Bali</h3><p class="loc">Indonesia</p></div>
+              <div class="dest-price"><strong>$1,299</strong><small>per person</small></div>
+            </div>
+            <div class="dest-meta">
+              <span class="stars"><i class="fa-solid fa-star"></i> 4.9 (4,210)</span>
+              <span><i class="fa-regular fa-clock"></i> 8 days</span>
+            </div>
+            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Dry season: May – September</div>
+            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="dest-card" data-region="europe">
+          <div class="dest-img">
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="Amalfi Coast Italy"/>
+            <span class="badge badge-pink">Budget Friendly</span>
+            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
+            <div class="img-tags">
+              <span class="img-tag">Coastal</span>
+              <span class="img-tag">Food</span>
+            </div>
+          </div>
+          <div class="dest-body">
+            <div class="dest-top">
+              <div><h3>Amalfi Coast</h3><p class="loc">Italy</p></div>
+              <div class="dest-price"><strong>$1,650</strong><small>per person</small></div>
+            </div>
+            <div class="dest-meta">
+              <span class="stars"><i class="fa-solid fa-star"></i> 4.8 (1,540)</span>
+              <span><i class="fa-regular fa-clock"></i> 6 days</span>
+            </div>
+            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Peak season: June – August</div>
+            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="dest-card" data-region="africa">
+          <div class="dest-img">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Serengeti Tanzania"/>
+            <span class="badge badge-orange">Off the Beaten Path</span>
+            <button class="wishlist" aria-label="Save"><i class="fa-regular fa-heart"></i></button>
+            <div class="img-tags">
+              <span class="img-tag">Safari</span>
+              <span class="img-tag">Wildlife</span>
+            </div>
+          </div>
+          <div class="dest-body">
+            <div class="dest-top">
+              <div><h3>Serengeti</h3><p class="loc">Tanzania</p></div>
+              <div class="dest-price"><strong>$3,200</strong><small>per person</small></div>
+            </div>
+            <div class="dest-meta">
+              <span class="stars"><i class="fa-solid fa-star"></i> 5.0 (890)</span>
+              <span><i class="fa-regular fa-clock"></i> 9 days</span>
+            </div>
+            <div class="info-tip"><i class="fa-solid fa-circle-info"></i> Great Migration: Jul – Oct</div>
+            <button class="btn btn-primary btn-block">View Package <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="experiences">
+    <div class="container">
+      <div class="test-head">
+        <h2>Real Trips, Real <span class="gradient-text-warm">Stories</span></h2>
+        <p>Over 2.4 million travelers have trusted Travel Mantra to plan their journeys.</p>
+      </div>
+
+      <div class="test-grid">
+        <article class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-user">
+            <div class="avatar avatar-blue">SC</div>
+            <div>
+              <h4>Sarah Chen</h4>
+              <p>Solo Traveler · 32 trips booked</p>
+            </div>
+          </div>
+          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-loc"><i class="fa-solid fa-location-dot"></i> Bali &amp; Japan</p>
+          <p class="test-body">"Travel Mantra found me a package that saved $620 compared to booking everything separately. The itinerary was perfect — every restaurant, every temple visit was spot on."</p>
+          <span class="test-tag tag-green"><i class="fa-solid fa-check"></i> Saved $620</span>
+        </article>
+
+        <article class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-user">
+            <div class="avatar avatar-orange">MR</div>
+            <div>
+              <h4>Marcus Rivera</h4>
+              <p>Family of 4 · First International Trip</p>
+            </div>
+          </div>
+          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-loc"><i class="fa-solid fa-location-dot"></i> Maldives</p>
+          <p class="test-body">"We were nervous about traveling abroad with two kids. Travel Mantra handled visas, flights, kid-friendly hotels — we just showed up and had the time of our lives."</p>
+          <span class="test-tag tag-orange"><i class="fa-solid fa-check"></i> Stress-free family trip</span>
+        </article>
+
+        <article class="test-card">
+          <span class="quote-mark">"</span>
+          <div class="test-user">
+            <div class="avatar avatar-pink">PN</div>
+            <div>
+              <h4>Priya Nair</h4>
+              <p>Honeymoon Planner</p>
+            </div>
+          </div>
+          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-loc"><i class="fa-solid fa-location-dot"></i> Kyoto, Japan</p>
+          <p class="test-body">"They upgraded our hotel room for free and arranged a private tea ceremony. It felt like they genuinely cared about making our honeymoon magical."</p>
+          <span class="test-tag tag-purple"><i class="fa-solid fa-check"></i> Upgraded for free</span>
+        </article>
+      </div>
+
+      <div class="trust-bar">
+        <div class="avatar-stack">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p>Join 2.4M+ travelers who planned with Travel Mantra</p>
+        <div class="trust-rating">
+          <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          <strong>4.9</strong>
+          <span>(98,400 reviews)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="deals">
+    <div class="container">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('You\'re subscribed! Welcome to Travel Mantra deals.');">
+        <input type="email" placeholder="your@email.com" required/>
+        <button type="submit" class="btn btn-primary">Get Deals <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+      <p class="newsletter-note">No spam. No ads. Just deals. 680,000 subscribers.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="blog">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <i class="fa-solid fa-globe globe"></i>
+          <h3>TRAVEL MANTRA</h3>
+          <p>Crafting extraordinary journeys for those who seek depth over itinerary. Travel as it was meant to be — immersive, intentional, unforgettable.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>EXPLORE</h4>
+          <ul>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Travel Guides</a></li>
+            <li><a href="#">Photo Journal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Booking FAQ</a></li>
+            <li><a href="#">Travel Insurance</a></li>
+            <li><a href="#">Cancellations</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Travel Mantra. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="help-fab" aria-label="Help">?</button>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+
+    document.querySelectorAll('.search-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const labels = { packages: 'Search Packages', flights: 'Search Flights', hotels: 'Search Hotels' };
+        document.getElementById('search-btn').innerHTML =
+          `<i class="fa-solid fa-magnifying-glass"></i> ${labels[tab.dataset.tab]}`;
+      });
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const region = btn.dataset.filter;
+        document.querySelectorAll('.dest-card').forEach(card => {
+          card.style.display = region === 'all' || card.dataset.region === region ? '' : 'none';
+        });
+      });
+    });
+
+    document.querySelectorAll('.wishlist').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const icon = btn.querySelector('i');
+        icon.className = btn.classList.contains('active') ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
+      });
+    });
+  </script>
+</body>
+</html>
