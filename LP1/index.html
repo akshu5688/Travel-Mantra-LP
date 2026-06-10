@@ -16,13 +16,129 @@
             vertical-align: middle;
         }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.97) 0%, rgba(248, 250, 252, 0.92) 100%);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 24px 64px rgba(10, 45, 74, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
         }
         .hero-gradient {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1506929113670-b43135c883ad?q=80&w=2000');
+            background: linear-gradient(160deg, rgba(10, 45, 74, 0.82) 0%, rgba(6, 40, 64, 0.55) 45%, rgba(14, 58, 92, 0.7) 100%), url('https://images.unsplash.com/photo-1506929113670-b43135c883ad?q=80&w=2000');
             background-size: cover;
             background-position: center;
+        }
+        .blob-deco {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* Dimensional buttons — no flat fills */
+        .btn-primary {
+            background: linear-gradient(180deg, #0F4C75 0%, #0A3D62 55%, #062840 100%);
+            color: #fff;
+            border-radius: 9999px;
+            box-shadow: 0 4px 0 #041E32, 0 8px 24px rgba(10, 61, 98, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #041E32, 0 12px 32px rgba(10, 61, 98, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        }
+        .btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 #041E32, 0 4px 12px rgba(10, 61, 98, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12); }
+        .btn-accent {
+            background: linear-gradient(180deg, #F0925A 0%, #E07A3A 50%, #C45E28 100%);
+            color: #fff;
+            border-radius: 9999px;
+            box-shadow: 0 4px 0 #9E4A1F, 0 8px 28px rgba(224, 122, 58, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #9E4A1F, 0 14px 36px rgba(224, 122, 58, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        .btn-accent:active { transform: translateY(2px); box-shadow: 0 2px 0 #9E4A1F, 0 4px 14px rgba(224, 122, 58, 0.35); }
+        .btn-ghost {
+            background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%);
+            color: #fff;
+            border-radius: 9999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-ghost:hover {
+            background: linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.14) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+        }
+        .btn-soft {
+            background: linear-gradient(180deg, #ffffff 0%, #F0F4F8 100%);
+            color: #0A3D62;
+            border-radius: 9999px;
+            border: 1.5px solid rgba(10, 61, 98, 0.12);
+            box-shadow: 0 3px 0 #D8E2EA, 0 6px 16px rgba(10, 45, 74, 0.1), inset 0 1px 0 #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-soft:hover { transform: translateY(-1px); box-shadow: 0 4px 0 #D8E2EA, 0 10px 24px rgba(10, 45, 74, 0.14), inset 0 1px 0 #fff; }
+        .btn-pill-sm {
+            background: linear-gradient(180deg, #0F4C75 0%, #0A3D62 100%);
+            color: #fff;
+            border-radius: 9999px;
+            box-shadow: 0 3px 0 #041E32, 0 4px 12px rgba(10, 61, 98, 0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+            transition: transform 0.15s ease;
+        }
+        .btn-pill-sm:hover { transform: translateY(-1px); }
+        .btn-icon-round {
+            background: linear-gradient(180deg, #fff 0%, #F0F4F8 100%);
+            border-radius: 9999px;
+            border: 1.5px solid rgba(10, 61, 98, 0.15);
+            box-shadow: 0 3px 0 #D8E2EA, 0 4px 10px rgba(10, 45, 74, 0.08);
+            color: #0A3D62;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .btn-icon-round:hover { transform: translateY(-1px); box-shadow: 0 4px 0 #D8E2EA, 0 8px 16px rgba(10, 45, 74, 0.12); color: #E07A3A; }
+        .card-elevated {
+            border-radius: 1.5rem;
+            background: #fff;
+            border: 1px solid rgba(10, 61, 98, 0.08);
+            box-shadow: 0 4px 0 #E8EDF2, 0 12px 40px rgba(10, 45, 74, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-elevated:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 0 #E8EDF2, 0 20px 56px rgba(10, 45, 74, 0.12);
+        }
+        .field-round {
+            border-radius: 1rem;
+            background: linear-gradient(180deg, #fff 0%, #FAFBFC 100%);
+            border: 1.5px solid rgba(10, 61, 98, 0.1);
+            box-shadow: 0 2px 0 #E8EDF2, inset 0 1px 2px rgba(10, 45, 74, 0.04);
+        }
+        .svc-icon {
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 9999px;
+            background: linear-gradient(180deg, #F0F6FB 0%, #E2ECF4 100%);
+            border: 1.5px solid rgba(10, 61, 98, 0.08);
+            box-shadow: 0 3px 0 #D4DEE8, inset 0 1px 0 #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .svc-icon-active, .group:hover .svc-icon {
+            background: linear-gradient(180deg, #1A5F8A 0%, #0A3D62 100%);
+            color: #fff;
+            border-color: #062840;
+            box-shadow: 0 4px 0 #041E32, 0 8px 20px rgba(10, 61, 98, 0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+        }
+        .section-blob::before {
+            content: '';
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(224, 122, 58, 0.08) 0%, transparent 70%);
+            top: -80px;
+            right: -80px;
+            pointer-events: none;
         }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
@@ -30,9 +146,16 @@
         #mobile-nav.open { max-height: 24rem; }
         details summary { list-style: none; cursor: pointer; }
         details summary::-webkit-details-marker { display: none; }
+        .page-pad { padding-left: 1rem; padding-right: 1rem; }
+        @media (min-width: 768px) { .page-pad { padding-left: 1.5rem; padding-right: 1.5rem; } }
+        .section-pad { padding-top: 3rem; padding-bottom: 3rem; }
+        @media (min-width: 768px) { .section-pad { padding-top: 5rem; padding-bottom: 5rem; } }
+        input, select, textarea { font-size: 16px; }
+        @media (min-width: 768px) { input, select, textarea { font-size: inherit; } }
         @media (max-width: 767px) {
-            .hero-title { font-size: 2rem !important; line-height: 1.2 !important; }
-            .packages-offset { padding-top: 28rem; }
+            .hero-title { font-size: 1.75rem !important; line-height: 1.2 !important; }
+            .hero-sub { font-size: 0.95rem !important; line-height: 1.5 !important; }
+            .mobile-cta { width: 100%; max-width: 20rem; justify-content: center; }
         }
     </style>
 <script id="tailwind-config">
@@ -41,62 +164,73 @@
             theme: {
                 extend: {
                     "colors": {
-                        "inverse-primary": "#77d1ff",
-                        "on-secondary": "#ffffff",
-                        "tertiary": "#5e5c6f",
-                        "surface-tint": "#006688",
-                        "primary-container": "#01b7f2",
-                        "surface-container-low": "#f0f3ff",
-                        "price-gold": "#B45309",
-                        "surface-variant": "#dce2f3",
-                        "on-tertiary-fixed": "#1b1a2a",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container": "#e7eefe",
-                        "outline": "#6d7980",
-                        "on-primary-fixed": "#001e2c",
-                        "on-error": "#ffffff",
-                        "tertiary-container": "#aba8bd",
-                        "primary-fixed-dim": "#77d1ff",
-                        "secondary-container": "#fd6e59",
-                        "inverse-on-surface": "#ebf1ff",
-                        "on-surface": "#151c27",
-                        "surface-cream": "#FAF5EE",
-                        "on-primary-fixed-variant": "#004d68",
-                        "error": "#ba1a1a",
-                        "surface-container-highest": "#dce2f3",
-                        "on-secondary-fixed-variant": "#8a1b0f",
-                        "surface-bright": "#f9f9ff",
-                        "on-error-container": "#93000a",
-                        "on-primary-container": "#00445d",
-                        "background": "#f9f9ff",
-                        "primary": "#006688",
-                        "surface-container-high": "#e2e8f8",
-                        "secondary": "#ac3324",
-                        "success-green": "#10B981",
-                        "secondary-fixed": "#ffdad4",
-                        "on-tertiary": "#ffffff",
+                        "primary": "#0A3D62",
+                        "primary-dark": "#062840",
+                        "primary-light": "#E8F1F8",
+                        "primary-container": "#1A5F8A",
+                        "accent": "#E07A3A",
+                        "accent-dark": "#C45E28",
+                        "accent-light": "#FFF4ED",
+                        "price-gold": "#B8860B",
                         "on-primary": "#ffffff",
-                        "tertiary-fixed": "#e4e0f6",
-                        "tertiary-fixed-dim": "#c7c4da",
-                        "secondary-fixed-dim": "#ffb4a7",
-                        "on-secondary-container": "#6d0300",
-                        "surface": "#f9f9ff",
-                        "outline-variant": "#bcc8d1",
-                        "surface-dim": "#d3daea",
-                        "primary-fixed": "#c2e8ff",
-                        "on-tertiary-fixed-variant": "#464557",
-                        "on-tertiary-container": "#3e3d4f",
-                        "on-secondary-fixed": "#400100",
-                        "on-surface-variant": "#3d484f",
-                        "inverse-surface": "#2a313d",
-                        "error-container": "#ffdad6",
-                        "on-background": "#151c27"
+                        "on-surface": "#1A2332",
+                        "on-surface-variant": "#5C6B7A",
+                        "on-background": "#1A2332",
+                        "surface": "#FAFAF8",
+                        "surface-cream": "#F5F1EB",
+                        "surface-container": "#F0F4F8",
+                        "surface-container-low": "#F7F9FB",
+                        "surface-container-high": "#E8EDF2",
+                        "surface-container-highest": "#DDE4EB",
+                        "surface-bright": "#FFFFFF",
+                        "surface-dim": "#E2E8EF",
+                        "surface-variant": "#E8EDF2",
+                        "outline": "#8A9BAA",
+                        "outline-variant": "#C5D0DB",
+                        "background": "#FAFAF8",
+                        "secondary": "#C45E28",
+                        "secondary-container": "#E07A3A",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#5C2E14",
+                        "tertiary": "#4A5568",
+                        "tertiary-container": "#718096",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#2D3748",
+                        "success-green": "#2D8A5E",
+                        "inverse-primary": "#A8C8E0",
+                        "inverse-surface": "#1A2332",
+                        "inverse-on-surface": "#F0F4F8",
+                        "surface-tint": "#0A3D62",
+                        "error": "#C53030",
+                        "error-container": "#FED7D7",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#742A2A",
+                        "primary-fixed": "#D4E8F5",
+                        "primary-fixed-dim": "#A8C8E0",
+                        "on-primary-fixed": "#041E32",
+                        "on-primary-fixed-variant": "#0A3D62",
+                        "on-primary-container": "#D4E8F5",
+                        "secondary-fixed": "#FFE8DC",
+                        "secondary-fixed-dim": "#FFD0B8",
+                        "on-secondary-fixed": "#3D1A08",
+                        "on-secondary-fixed-variant": "#6B3018",
+                        "tertiary-fixed": "#E8EDF2",
+                        "tertiary-fixed-dim": "#C5D0DB",
+                        "on-tertiary-fixed": "#1A2332",
+                        "on-tertiary-fixed-variant": "#4A5568"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "2xl": "1.25rem",
+                        "3xl": "1.5rem",
+                        "4xl": "2rem",
                         "full": "9999px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 4px 0 #E8EDF2, 0 12px 40px rgba(10, 45, 74, 0.08)",
+                        "lift": "0 6px 0 #E8EDF2, 0 20px 56px rgba(10, 45, 74, 0.12)"
                     },
                     "spacing": {
                         "margin-mobile": "16px",
@@ -136,122 +270,128 @@
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
 <!-- TopNavBar -->
-<header class="bg-surface/90 backdrop-blur-md shadow-sm docked full-width top-0 sticky z-50 h-20" id="main-header">
+<header class="bg-white/85 backdrop-blur-xl border-b border-outline-variant/40 full-width top-0 sticky z-50 h-16 md:h-[4.5rem]" id="main-header">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
-<div class="text-headline-md font-headline-md font-extrabold text-primary">Travels Mantra</div>
-<nav class="hidden lg:flex items-center gap-6">
-<a class="text-primary border-b-2 border-primary pb-1 font-bold font-body-md" href="#packages">Holiday Packages</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#search">Flights</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#search">Hotels</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#visa">Visa</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#visa">Travel Insurance</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#offers">Hot Offers</a>
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-gradient-to-b from-primary-container to-primary flex items-center justify-center shadow-[0_3px_0_#041E32] shrink-0">
+<span class="material-symbols-outlined text-white text-lg">flight_takeoff</span>
+</div>
+<div class="text-lg sm:text-headline-md font-headline-md font-extrabold text-primary truncate">Travels Mantra</div>
+</div>
+<nav class="hidden lg:flex items-center gap-1">
+<a class="text-primary font-bold font-body-md px-4 py-2 rounded-full bg-primary-light" href="#packages">Holiday Packages</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-primary-light/60 transition-all font-body-md px-4 py-2 rounded-full" href="#search">Flights</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-primary-light/60 transition-all font-body-md px-4 py-2 rounded-full" href="#search">Hotels</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-primary-light/60 transition-all font-body-md px-4 py-2 rounded-full" href="#visa">Visa</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-primary-light/60 transition-all font-body-md px-4 py-2 rounded-full" href="#visa">Insurance</a>
+<a class="text-on-surface-variant hover:text-primary hover:bg-primary-light/60 transition-all font-body-md px-4 py-2 rounded-full" href="#offers">Hot Offers</a>
 </nav>
-<div class="flex items-center gap-2 md:gap-4">
-<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all hidden sm:block">favorite</button>
-<button class="hidden md:block text-on-surface-variant font-label-bold px-4 py-2 hover:text-primary transition-all">My Trip</button>
-<a href="#build" class="hidden sm:inline-flex bg-primary text-on-primary font-label-bold px-4 md:px-6 py-2.5 rounded-full active:scale-95 duration-150 transition-all shadow-md">Get Free Trip Plan</a>
-<button type="button" id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg" aria-label="Menu" aria-expanded="false">
-<span class="material-symbols-outlined">menu</span>
+<div class="flex items-center gap-2 md:gap-3">
+<a href="#build" class="hidden sm:inline-flex btn-primary font-label-bold px-5 md:px-7 py-2.5 text-sm">Get Free Trip Plan</a>
+<button type="button" id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center btn-soft rounded-full" aria-label="Menu" aria-expanded="false">
+<span class="material-symbols-outlined text-lg">menu</span>
 </button>
 </div>
 </div>
-<div id="mobile-nav" class="lg:hidden border-t border-outline-variant/30 bg-surface">
-<nav class="max-w-container-max mx-auto px-margin-mobile py-4 flex flex-col gap-3 text-sm font-medium">
-<a class="text-primary font-bold py-1" href="#packages">Holiday Packages</a>
-<a class="text-on-surface-variant py-1" href="#search">Flights &amp; Hotels</a>
-<a class="text-on-surface-variant py-1" href="#visa">Visa &amp; Insurance</a>
-<a class="text-on-surface-variant py-1" href="#offers">Hot Offers</a>
-<a class="text-on-surface-variant py-1" href="#build">Build Your Package</a>
-<a href="#build" class="mt-2 py-3 rounded-full bg-primary text-on-primary text-center font-label-bold sm:hidden">Get Free Trip Plan</a>
+<div id="mobile-nav" class="lg:hidden border-t border-outline-variant/30 bg-white/95 backdrop-blur-md">
+<nav class="max-w-container-max mx-auto px-margin-mobile py-4 flex flex-col gap-2 text-sm font-medium">
+<a class="text-primary font-bold py-2.5 px-4 rounded-full bg-primary-light" href="#packages">Holiday Packages</a>
+<a class="text-on-surface-variant py-2.5 px-4 rounded-full hover:bg-surface-container" href="#search">Flights &amp; Hotels</a>
+<a class="text-on-surface-variant py-2.5 px-4 rounded-full hover:bg-surface-container" href="#visa">Visa &amp; Insurance</a>
+<a class="text-on-surface-variant py-2.5 px-4 rounded-full hover:bg-surface-container" href="#offers">Hot Offers</a>
+<a class="text-on-surface-variant py-2.5 px-4 rounded-full hover:bg-surface-container" href="#build">Build Your Package</a>
+<a href="#build" class="mt-2 btn-accent text-center font-label-bold py-3.5 sm:hidden">Get Free Trip Plan</a>
 </nav>
 </div>
 </header>
 <!-- Hero Section -->
-<section class="relative min-h-[600px] md:min-h-[800px] flex items-center justify-center pt-20" id="search">
+<section class="relative min-h-0 md:min-h-[800px] flex items-center justify-center pt-16 md:pt-20 pb-8 md:pb-0 overflow-hidden" id="search">
 <div class="absolute inset-0 z-0">
 <div class="hero-gradient absolute inset-0"></div>
+<div class="blob-deco w-72 h-72 bg-accent/20 top-20 -left-24"></div>
+<div class="blob-deco w-96 h-96 bg-primary-container/25 bottom-10 -right-32"></div>
 </div>
-<div class="relative z-10 max-w-container-max mx-auto px-gutter text-center w-full">
-<div class="max-w-4xl mx-auto mb-8 md:mb-12">
-<h1 class="font-display-lg hero-title text-display-lg md:text-display-lg text-white mb-6">Plan Your Perfect Holiday with <span class="text-primary-container">Travels Mantra</span></h1>
-<p class="font-body-lg text-body-lg text-white/90 mb-8 md:mb-10 px-2">Book complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, insurance, and expert travel support.</p>
-<div class="flex flex-wrap justify-center gap-4">
-<a href="#packages" class="bg-secondary-container text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-label-bold text-base md:text-lg hover:bg-secondary transition-all shadow-lg active:scale-95">Explore Packages</a>
-<a href="#build" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-label-bold text-base md:text-lg hover:bg-white/20 transition-all active:scale-95">Send Enquiry</a>
+<div class="relative z-10 max-w-container-max mx-auto page-pad md:px-gutter text-center w-full">
+<div class="max-w-4xl mx-auto mb-6 md:mb-12 pt-6 md:pt-0">
+<span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">Trusted by 50,000+ Travellers</span>
+<h1 class="font-display-lg hero-title text-display-lg md:text-display-lg text-white mb-4 md:mb-6">Plan Your Perfect Holiday with <span class="text-[#F5C882]">Travels Mantra</span></h1>
+<p class="font-body-lg hero-sub text-body-lg text-white/90 mb-6 md:mb-10 px-1 max-w-2xl mx-auto">Book complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, insurance, and expert travel support.</p>
+<div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-2">
+<a href="#packages" class="mobile-cta inline-flex btn-accent px-8 md:px-10 py-3.5 md:py-4 font-label-bold text-base md:text-lg min-h-[52px] items-center">Explore Packages</a>
+<a href="#build" class="mobile-cta inline-flex btn-ghost px-8 md:px-10 py-3.5 md:py-4 font-label-bold text-base md:text-lg min-h-[52px] items-center">Send Enquiry</a>
 </div>
 </div>
 <!-- Integrated Search Box -->
-<div class="glass-panel rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 max-w-5xl mx-auto md:-mb-40 border border-white/40 mx-2 sm:mx-auto">
+<div class="glass-panel rounded-3xl md:rounded-4xl p-4 sm:p-6 md:p-8 max-w-5xl mx-auto md:-mb-40">
 <!-- Service Icon Tabs -->
 <div class="flex overflow-x-auto pb-6 mb-6 md:mb-8 gap-6 md:gap-8 border-b border-outline-variant/30 scrollbar-hide">
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<div class="svc-icon flex items-center justify-center text-primary group-hover:text-white">
 <span class="material-symbols-outlined">flight</span>
 </div>
 <span class="font-label-bold text-on-surface-variant group-hover:text-primary">Flights</span>
 </button>
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<div class="svc-icon flex items-center justify-center text-primary group-hover:text-white">
 <span class="material-symbols-outlined">hotel</span>
 </div>
 <span class="font-label-bold text-on-surface-variant group-hover:text-primary">Hotels</span>
 </button>
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center transition-all">
+<div class="svc-icon svc-icon-active flex items-center justify-center text-white">
 <span class="material-symbols-outlined">holiday_village</span>
 </div>
 <span class="font-label-bold text-primary">Holiday Packages</span>
 </button>
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<div class="svc-icon flex items-center justify-center text-primary group-hover:text-white">
 <span class="material-symbols-outlined">description</span>
 </div>
 <span class="font-label-bold text-on-surface-variant group-hover:text-primary">Visa</span>
 </button>
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<div class="svc-icon flex items-center justify-center text-primary group-hover:text-white">
 <span class="material-symbols-outlined">health_and_safety</span>
 </div>
 <span class="font-label-bold text-on-surface-variant group-hover:text-primary">Insurance</span>
 </button>
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<div class="svc-icon flex items-center justify-center text-primary group-hover:text-white">
 <span class="material-symbols-outlined">tour</span>
 </div>
 <span class="font-label-bold text-on-surface-variant group-hover:text-primary">Sightseeing</span>
 </button>
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+<div class="svc-icon flex items-center justify-center text-primary group-hover:text-white">
 <span class="material-symbols-outlined">airport_shuttle</span>
 </div>
 <span class="font-label-bold text-on-surface-variant group-hover:text-primary">Transfers</span>
 </button>
 <button type="button" class="flex flex-col items-center gap-2 group whitespace-nowrap shrink-0">
-<div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+<div class="svc-icon flex items-center justify-center text-accent group-hover:text-white">
 <span class="material-symbols-outlined">edit_calendar</span>
 </div>
-<span class="font-label-bold text-on-surface-variant group-hover:text-secondary">Build Your Package</span>
+<span class="font-label-bold text-on-surface-variant group-hover:text-accent">Build Your Package</span>
 </button>
 </div>
 <form class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
 <div class="relative">
 <label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Destination</label>
-<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<div class="flex items-center gap-2 field-round p-3.5">
 <span class="material-symbols-outlined text-primary">location_on</span>
 <input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="Where to go?" type="text"/>
 </div>
 </div>
 <div class="relative">
 <label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Departure From</label>
-<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<div class="flex items-center gap-2 field-round p-3.5">
 <span class="material-symbols-outlined text-primary">flight_takeoff</span>
 <input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="City" type="text"/>
 </div>
 </div>
 <div class="relative">
 <label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Travel Month</label>
-<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<div class="flex items-center gap-2 field-round p-3.5">
 <span class="material-symbols-outlined text-primary">calendar_month</span>
 <select class="border-none focus:ring-0 p-0 text-sm w-full font-medium bg-transparent">
 <option>Select Month</option>
@@ -261,14 +401,14 @@
 </div>
 <div class="relative">
 <label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Travellers</label>
-<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<div class="flex items-center gap-2 field-round p-3.5">
 <span class="material-symbols-outlined text-primary">person</span>
 <input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="2 Adults" type="text"/>
 </div>
 </div>
 <div class="relative">
 <label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Trip Type</label>
-<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<div class="flex items-center gap-2 field-round p-3.5">
 <span class="material-symbols-outlined text-primary">groups</span>
 <select class="border-none focus:ring-0 p-0 text-sm w-full font-medium bg-transparent">
 <option>Honeymoon</option>
@@ -278,19 +418,19 @@
 </div>
 <div class="relative">
 <label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Budget (₹)</label>
-<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<div class="flex items-center gap-2 field-round p-3.5">
 <span class="material-symbols-outlined text-primary">payments</span>
 <input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="Budget per person" type="text"/>
 </div>
 </div>
 <div class="relative">
 <label class="absolute -top-2 left-3 bg-white px-1 text-[10px] font-bold text-primary uppercase">Phone Number</label>
-<div class="flex items-center gap-2 border border-outline-variant rounded-xl p-3 bg-white">
+<div class="flex items-center gap-2 field-round p-3.5">
 <span class="material-symbols-outlined text-primary">phone_iphone</span>
 <input class="border-none focus:ring-0 p-0 text-sm w-full font-medium" placeholder="Your WhatsApp No." type="tel"/>
 </div>
 </div>
-<button type="submit" class="sm:col-span-2 md:col-span-1 bg-secondary-container text-white font-label-bold rounded-xl py-3 shadow-lg hover:shadow-xl transition-all active:scale-95 flex items-center justify-center gap-2 min-h-[52px]">
+<button type="submit" class="sm:col-span-2 md:col-span-1 btn-accent font-label-bold py-3.5 flex items-center justify-center gap-2 min-h-[52px] w-full">
 <span>Get Free Trip Plan</span>
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
@@ -299,24 +439,24 @@
 </div>
 </section>
 <!-- Popular Holiday Packages -->
-<section class="bg-white pt-16 md:pt-60 pb-section-padding packages-offset md:packages-offset-0" id="packages">
-<div class="max-w-container-max mx-auto px-gutter">
+<section class="bg-white pt-10 md:pt-60 section-pad md:pb-section-padding relative section-blob" id="packages">
+<div class="max-w-container-max mx-auto page-pad md:px-gutter relative z-10">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
 <div>
-<span class="text-primary font-label-bold uppercase tracking-widest mb-2 block">Top Recommendations</span>
+<span class="inline-block text-accent font-label-bold uppercase tracking-widest mb-3 px-4 py-1.5 rounded-full bg-accent-light border border-accent/15">Top Recommendations</span>
 <h2 class="font-headline-md text-headline-md text-on-surface">Popular Holiday Packages</h2>
 </div>
-<button class="text-primary font-label-bold flex items-center gap-2 hover:underline">
-                    View All Packages <span class="material-symbols-outlined">trending_flat</span>
-</button>
+<a href="#build" class="btn-soft inline-flex items-center gap-2 font-label-bold text-sm md:text-base self-start md:self-auto px-5 py-2.5">
+                    View All Packages <span class="material-symbols-outlined text-lg">trending_flat</span>
+</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
 <!-- Package Card -->
-<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="group card-elevated overflow-hidden flex flex-col h-full">
 <div class="relative h-56 overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Dubai skyline at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq_BVtjze_H37efxt1UhpGCoLIeKF5Tm2d92fTkiSnag9Zs6vsWOWT8YEswQlQ5tsn0hHn6Ie6aulrSO-WBquWgxX1fvspeLSR5q2PatsSRkB0js_djdkfQBAI9_7sRG6ZVfspnEhac1Thtk8a0LnDzzS_qC7rwr0Xo1jd3P46k6DqcLNu66RN_Wf1DK1yB5f_S88oUk5dlYEfLJ3qh-rlfpa3nTnmGE-M6NvTsdgDC7OE8dG4ixSA0qPTnH1E98Ks-VGL8dUBq7c"/>
-<div class="absolute top-4 left-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Best for Family</div>
-<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<div class="absolute top-4 left-4 bg-gradient-to-b from-primary-container to-primary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-[0_2px_0_#041E32]">Best for Family</div>
+<div class="absolute top-4 right-4 bg-white/95 px-3 py-1.5 rounded-full flex items-center gap-1 shadow-[0_2px_0_#E8EDF2] backdrop-blur-md">
 <span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="text-xs font-bold">4.8</span>
 </div>
@@ -327,11 +467,11 @@
 <span class="text-on-surface-variant text-sm whitespace-nowrap">5N/6D</span>
 </div>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Flight"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Hotel"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Visa"><span class="material-symbols-outlined text-primary text-sm">description</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Sightseeing"><span class="material-symbols-outlined text-primary text-sm">photo_camera</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20" title="Transfers"><span class="material-symbols-outlined text-primary text-sm">directions_car</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]" title="Flight"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]" title="Hotel"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]" title="Visa"><span class="material-symbols-outlined text-primary text-sm">description</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]" title="Sightseeing"><span class="material-symbols-outlined text-primary text-sm">photo_camera</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]" title="Transfers"><span class="material-symbols-outlined text-primary text-sm">directions_car</span></span>
 </div>
 <div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
 <div>
@@ -339,18 +479,18 @@
 <span class="font-price-display text-price-gold">₹45,000</span>
 </div>
 <div class="flex gap-2">
-<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
-<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md hover:bg-primary/90 transition-all">View</a>
+<a href="#build" class="btn-icon-round p-2.5 flex items-center justify-center"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="btn-pill-sm px-5 py-2.5 font-label-bold text-sm inline-flex items-center">View</a>
 </div>
 </div>
 </div>
 </div>
 <!-- Card 2: Bali -->
-<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="group card-elevated overflow-hidden flex flex-col h-full">
 <div class="relative h-56 overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Bali honeymoon infinity pool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD40zx9nK_ixpegi219S5xqXSLbnoeIHEvz5eo_8GssuZF4soW8vnW_43TsGbBJjs6uyN2mFJn_ot8lZtEmZpfWFZTwQyUcauHueo_XrsfWoDAAWzWkObCQYCyAwsT_Zlax0ybl2mMm0xdthXLj4-yIdOkk9YDaEt4i93_jL7Keicrmpue4bZaTOL8C8-Tk1ybeFBG5JraejIOsFEwMCUEeOayV_hAcVw8AFqpnf1jZ1xvu0cApx0Via1NyU-7SKW6pG-hQeNlcWt4"/>
-<div class="absolute top-4 left-4 bg-secondary/90 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Best for Honeymoon</div>
-<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<div class="absolute top-4 left-4 bg-gradient-to-b from-accent to-accent-dark text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-[0_2px_0_#9E4A1F]">Best for Honeymoon</div>
+<div class="absolute top-4 right-4 bg-white/95 px-3 py-1.5 rounded-full flex items-center gap-1 shadow-[0_2px_0_#E8EDF2] backdrop-blur-md">
 <span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="text-xs font-bold">4.9</span>
 </div>
@@ -361,10 +501,10 @@
 <span class="text-on-surface-variant text-sm whitespace-nowrap">6N/7D</span>
 </div>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">favorite</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">restaurant</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">favorite</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">restaurant</span></span>
 </div>
 <div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
 <div>
@@ -372,18 +512,18 @@
 <span class="font-price-display text-price-gold">₹38,500</span>
 </div>
 <div class="flex gap-2">
-<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
-<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md transition-all">View</a>
+<a href="#build" class="btn-icon-round p-2.5 flex items-center justify-center"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="btn-pill-sm px-5 py-2.5 font-label-bold text-sm inline-flex items-center">View</a>
 </div>
 </div>
 </div>
 </div>
 <!-- Card 3: Vietnam -->
-<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="group card-elevated overflow-hidden flex flex-col h-full">
 <div class="relative h-56 overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Ha Long Bay Vietnam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnMsHdjhL7zUBcSVrAvfZ4CwOF5BIvdRtu9p3lssGmCyWc_8DnXmn6PiMfOap13bvUVay6n9l3YdhH7cKZwPRfUaRFJrEaccKklG1rannotTOE9jk4Y58L4DqKCm8sr7YXV2VBQ3M_ON1Zmf-B1QLpWaMwgX4zOGpAGPAcRNm_fFnLQ0S0pYwgmxeyUhLdX-8QjrQbWtqTQVY0S6mcx089l4D5DFeixCCgiHFEBNTEyx2_FZQsXDqAcb0b57rlz8NDbt_zaPn7v4s"/>
-<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Best for Group</div>
-<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<div class="absolute top-4 left-4 bg-gradient-to-b from-primary-container to-primary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-[0_2px_0_#041E32]">Best for Group</div>
+<div class="absolute top-4 right-4 bg-white/95 px-3 py-1.5 rounded-full flex items-center gap-1 shadow-[0_2px_0_#E8EDF2] backdrop-blur-md">
 <span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="text-xs font-bold">4.7</span>
 </div>
@@ -394,10 +534,10 @@
 <span class="text-on-surface-variant text-sm whitespace-nowrap">7N/8D</span>
 </div>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">description</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">groups</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">hotel</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">description</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">groups</span></span>
 </div>
 <div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
 <div>
@@ -405,18 +545,18 @@
 <span class="font-price-display text-price-gold">₹52,000</span>
 </div>
 <div class="flex gap-2">
-<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
-<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md transition-all">View</a>
+<a href="#build" class="btn-icon-round p-2.5 flex items-center justify-center"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="btn-pill-sm px-5 py-2.5 font-label-bold text-sm inline-flex items-center">View</a>
 </div>
 </div>
 </div>
 </div>
 <!-- Card 4: Maldives -->
-<div class="group bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="group card-elevated overflow-hidden flex flex-col h-full">
 <div class="relative h-56 overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Maldives overwater villas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeWN-ZPc8DaPpzsW7NNESBr0nLVaA_-nztfNjRKZQrth3YKYRs2vOhhIJBpyU83MJLDaHSG_5jYkpNDiAyFovSgzyY5NM4D6zBDsL5qHxpBWX7ncldQZqJh-7hrdJR6MLOOhzL3o3jTyNDlv8EUNFQwsrsbGLCV6_ztjc6m6wIa_kJdBDGWDWNN4XKHyKo9Bt0oE-Vw29Zw8rY3qW_ljBlBXo46P9kffg91lRZ0JZhvoI1sT5WoaMX49mTs3gU_Ns05vn6Gl8PlMY"/>
-<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md">Luxury Escape</div>
-<div class="absolute top-4 right-4 bg-white/90 px-2 py-1 rounded-lg flex items-center gap-1 shadow-sm backdrop-blur-md">
+<div class="absolute top-4 left-4 bg-gradient-to-b from-[#B8860B] to-[#8B6914] text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-[0_2px_0_#5C4510]">Luxury Escape</div>
+<div class="absolute top-4 right-4 bg-white/95 px-3 py-1.5 rounded-full flex items-center gap-1 shadow-[0_2px_0_#E8EDF2] backdrop-blur-md">
 <span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="text-xs font-bold">5.0</span>
 </div>
@@ -427,9 +567,9 @@
 <span class="text-on-surface-variant text-sm whitespace-nowrap">4N/5D</span>
 </div>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">pool</span></span>
-<span class="bg-surface-container-low p-1.5 rounded-lg border border-outline-variant/20"><span class="material-symbols-outlined text-primary text-sm">spa</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">flight</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">pool</span></span>
+<span class="bg-surface-container-low p-2 rounded-full border border-outline-variant/20 shadow-[inset_0_1px_0_#fff]"><span class="material-symbols-outlined text-primary text-sm">spa</span></span>
 </div>
 <div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-2">
 <div>
@@ -437,8 +577,8 @@
 <span class="font-price-display text-price-gold">₹85,000</span>
 </div>
 <div class="flex gap-2">
-<a href="#build" class="p-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined text-sm">mail</span></a>
-<a href="#build" class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-bold text-sm shadow-md transition-all">View</a>
+<a href="#build" class="btn-icon-round p-2.5 flex items-center justify-center"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a href="#build" class="btn-pill-sm px-5 py-2.5 font-label-bold text-sm inline-flex items-center">View</a>
 </div>
 </div>
 </div>
@@ -447,113 +587,114 @@
 </div>
 </section>
 <!-- Hot Offers Section -->
-<section class="bg-surface-cream py-section-padding" id="offers">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-16">
-<h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-secondary mb-4 flex items-center justify-center gap-3 flex-wrap">
-<span class="material-symbols-outlined text-4xl">local_fire_department</span> Hot Deals &amp; Exclusive Offers
+<section class="bg-surface-cream section-pad md:py-section-padding relative overflow-hidden" id="offers">
+<div class="blob-deco w-80 h-80 bg-primary/10 -bottom-20 -left-20"></div>
+<div class="max-w-container-max mx-auto page-pad md:px-gutter relative z-10">
+<div class="text-center mb-10 md:mb-16">
+<h2 class="font-headline-md text-display-lg-mobile md:text-headline-md text-primary mb-4 flex items-center justify-center gap-3 flex-wrap">
+<span class="w-12 h-12 rounded-full bg-gradient-to-b from-accent to-accent-dark flex items-center justify-center shadow-[0_3px_0_#9E4A1F]"><span class="material-symbols-outlined text-white text-2xl">local_fire_department</span></span> Hot Deals &amp; Exclusive Offers
                 </h2>
 <p class="text-on-surface-variant max-w-2xl mx-auto">Limited-time discounted holiday packages for your dream destination. Grab them before they're gone!</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 <!-- Offer Card -->
-<div class="relative bg-white p-2 rounded-2xl border-2 border-secondary/20 hover:border-secondary transition-all group overflow-hidden">
-<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full shadow-lg">SAVE 25%</div>
-<div class="h-40 rounded-xl overflow-hidden mb-4">
+<div class="relative card-elevated p-3 group overflow-hidden border-2 border-accent/20">
+<div class="bg-gradient-to-b from-accent to-accent-dark text-white text-[10px] font-bold px-4 py-1.5 absolute top-5 right-5 z-10 rounded-full shadow-[0_2px_0_#9E4A1F]">SAVE 25%</div>
+<div class="h-40 rounded-2xl overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Mountain landscape deal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsl_cX0kyxW2tLdsUHr9qrqzQwKaXDHxX4seDNA-IhCqW9zz6zPqzQ4ksf-Zj0r2a-2YLWUQ9T68TuUCH0UId8FFm4OIYBDu2ZbgIBeB0elUV8aHgmnOD32U9hbJZtYUXkmcV0oh8dVsNlxKdnYf2g0uzFOFaCu_xK1NUYUiE2VR6HzL40BcncHChtVO1Zhskh7VIKxejeAlQGNIguoUHfq0Cqmk8ONbJmuSsIb4cw7rYz-ZR53zHlQcrb_LWtaa2xn1IAktDcgBo"/>
 </div>
 <div class="px-4 pb-4">
 <h4 class="font-bold text-lg mb-1">Dubai Special</h4>
 <div class="flex items-baseline gap-2 mb-4">
-<span class="text-secondary font-price-display">₹33,750</span>
+<span class="text-accent font-price-display">₹33,750</span>
 <span class="text-on-surface-variant line-through text-xs">₹45,000</span>
 </div>
-<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+<a href="#build" class="block w-full py-3 btn-accent font-label-bold text-sm text-center">Claim Offer</a>
 </div>
 </div>
 <!-- Card 2 -->
-<div class="relative bg-white p-2 rounded-2xl border border-outline-variant hover:border-secondary transition-all group overflow-hidden">
-<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full">SAVE 15%</div>
-<div class="h-40 rounded-xl overflow-hidden mb-4">
+<div class="relative card-elevated p-3 group overflow-hidden">
+<div class="bg-gradient-to-b from-accent to-accent-dark text-white text-[10px] font-bold px-4 py-1.5 absolute top-5 right-5 z-10 rounded-full shadow-[0_2px_0_#9E4A1F]">SAVE 15%</div>
+<div class="h-40 rounded-2xl overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Bali budget deal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWkFJAyHKjF6wN938XRvfjQ8AjEIbxQdPn5TuD1TR9Gwc7Tt-PFOjya70IMq7z0zaw318MtXSdTTohPa9Fp4E7OyKywbT4dekWyblfVIRX33d_E1YfQGKtjsjB3MyO9TTO2Q-1sWLS2rnZljK131I2A5C6v1qtLUYHBWcav55Ar_6NiFlQBfyK-YOGXOA-NO5ImdR3FFnmH1WHNQLF7I4ruVb8BqaIkgRYTMM3LGBdUmilMVBFi2Io-3zsum7JPJI6l48W9-jMTpE"/>
 </div>
 <div class="px-4 pb-4">
 <h4 class="font-bold text-lg mb-1">Bali Budget Deal</h4>
 <div class="flex items-baseline gap-2 mb-4">
-<span class="text-secondary font-price-display">₹29,999</span>
+<span class="text-accent font-price-display">₹29,999</span>
 <span class="text-on-surface-variant line-through text-xs">₹35,000</span>
 </div>
-<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+<a href="#build" class="block w-full py-3 btn-accent font-label-bold text-sm text-center">Claim Offer</a>
 </div>
 </div>
 <!-- Card 3 -->
-<div class="relative bg-white p-2 rounded-2xl border border-outline-variant hover:border-secondary transition-all group overflow-hidden">
-<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full">SAVE 10%</div>
-<div class="h-40 rounded-xl overflow-hidden mb-4">
+<div class="relative card-elevated p-3 group overflow-hidden">
+<div class="bg-gradient-to-b from-accent to-accent-dark text-white text-[10px] font-bold px-4 py-1.5 absolute top-5 right-5 z-10 rounded-full shadow-[0_2px_0_#9E4A1F]">SAVE 10%</div>
+<div class="h-40 rounded-2xl overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Thailand offer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYWIVL-ESGa7l11YnF4UU4QsS8Ldw8M_h84pOJsErmhM1E4-APgQy7IYVW-fhneYadYJTZNKoCSu9x9OdzOz2Dxo8GLBgtEpZKwoT5XASmg4gFjd765YtV8Yzgib9C6F8WWBScJ89d6uolViFglsx3HKdkSGCYQ4SowTbrNhoV9NkQ1zfFGR7UkJjxJmoMuqVXObGYBsCv0A6M1eiZaYsaQ5cEsmYUH6PbiETst6XGaQcJSsnW9_Tgy2D9pFGDLKRsv7zU1TJaeME"/>
 </div>
 <div class="px-4 pb-4">
 <h4 class="font-bold text-lg mb-1">Thailand Offer</h4>
 <div class="flex items-baseline gap-2 mb-4">
-<span class="text-secondary font-price-display">₹22,500</span>
+<span class="text-accent font-price-display">₹22,500</span>
 <span class="text-on-surface-variant line-through text-xs">₹25,000</span>
 </div>
-<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+<a href="#build" class="block w-full py-3 btn-accent font-label-bold text-sm text-center">Claim Offer</a>
 </div>
 </div>
 <!-- Card 4 -->
-<div class="relative bg-white p-2 rounded-2xl border border-outline-variant hover:border-secondary transition-all group overflow-hidden">
-<div class="bg-secondary text-white text-[10px] font-bold px-4 py-1 absolute top-4 right-4 z-10 rounded-full">SAVE 20%</div>
-<div class="h-40 rounded-xl overflow-hidden mb-4">
+<div class="relative card-elevated p-3 group overflow-hidden">
+<div class="bg-gradient-to-b from-accent to-accent-dark text-white text-[10px] font-bold px-4 py-1.5 absolute top-5 right-5 z-10 rounded-full shadow-[0_2px_0_#9E4A1F]">SAVE 20%</div>
+<div class="h-40 rounded-2xl overflow-hidden mb-4">
 <img class="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Baku special offer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiXWIrbkKrMpiBjdjXwvaejplM75ALCXy44xBm4XOqCRtG4aszwYI9mUP4SpK3C9i3W-Q0mhxbgHsrYwWuHOgG8jiGgbTxirMvuesD7wx91AA2K9BnnLIQYsSm30CajViiVMagPgerrQYun0NzrtHq-YgNRmExUCi5f4bwYDhZeFKE7q1Vn_aqrLopr6WrIjSZkIlDtjotZO4Xcgm0qpYzuU_S_xe2214Xv2irERA1lLy066-3xMXPnNRssJxO1426mZMl73eYykE"/>
 </div>
 <div class="px-4 pb-4">
 <h4 class="font-bold text-lg mb-1">Baku Special</h4>
 <div class="flex items-baseline gap-2 mb-4">
-<span class="text-secondary font-price-display">₹41,600</span>
+<span class="text-accent font-price-display">₹41,600</span>
 <span class="text-on-surface-variant line-through text-xs">₹52,000</span>
 </div>
-<a href="#build" class="block w-full py-2 bg-secondary text-white rounded-lg font-label-bold text-sm hover:bg-secondary-container transition-all text-center">Claim Offer</a>
+<a href="#build" class="block w-full py-3 btn-accent font-label-bold text-sm text-center">Claim Offer</a>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Visa & Insurance Section -->
-<section class="py-section-padding bg-white" id="visa">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<section class="section-pad md:py-section-padding bg-white" id="visa">
+<div class="max-w-container-max mx-auto page-pad md:px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
 <!-- Visa Assistance -->
 <div>
 <h2 class="font-headline-md text-headline-md mb-8">Visa Assistance Made Easy</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<div class="p-6 bg-surface-container rounded-3xl border border-outline-variant/30 shadow-soft hover:shadow-lift transition-all">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">how_to_reg</span>
 <h4 class="font-bold mb-2">Tourist Visa Guidance</h4>
 <p class="text-body-sm text-on-surface-variant">Expert help for tourist visas across 50+ countries.</p>
 </div>
-<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<div class="p-6 bg-surface-container rounded-3xl border border-outline-variant/30 shadow-soft hover:shadow-lift transition-all">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">checklist</span>
 <h4 class="font-bold mb-2">Document Checklist</h4>
 <p class="text-body-sm text-on-surface-variant">Step-by-step personalized document support.</p>
 </div>
-<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<div class="p-6 bg-surface-container rounded-3xl border border-outline-variant/30 shadow-soft hover:shadow-lift transition-all">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">support_agent</span>
 <h4 class="font-bold mb-2">Application Support</h4>
 <p class="text-body-sm text-on-surface-variant">End-to-end processing and interview prep.</p>
 </div>
-<div class="p-6 bg-surface-container rounded-2xl hover:shadow-md transition-all">
+<div class="p-6 bg-surface-container rounded-3xl border border-outline-variant/30 shadow-soft hover:shadow-lift transition-all">
 <span class="material-symbols-outlined text-primary text-3xl mb-4">info</span>
 <h4 class="font-bold mb-2">Country Information</h4>
 <p class="text-body-sm text-on-surface-variant">Up-to-date entry requirements and policies.</p>
 </div>
 </div>
-<a href="#build" class="mt-8 inline-flex bg-primary text-white px-8 py-3 rounded-xl font-label-bold shadow-lg hover:bg-primary-container transition-all active:scale-95">Get Visa Help</a>
+<a href="#build" class="mt-8 inline-flex btn-primary px-8 py-3.5 font-label-bold">Get Visa Help</a>
 </div>
 <!-- Travel Insurance -->
-<div class="bg-surface-cream p-6 md:p-8 rounded-3xl border border-outline-variant/30" id="insurance">
+<div class="bg-surface-cream p-6 md:p-8 rounded-4xl border border-outline-variant/30 shadow-soft" id="insurance">
 <div class="flex items-center gap-4 mb-8">
-<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center text-white shrink-0">
+<div class="w-16 h-16 rounded-full bg-gradient-to-b from-primary-container to-primary flex items-center justify-center text-white shrink-0 shadow-[0_4px_0_#041E32]">
 <span class="material-symbols-outlined text-4xl">health_and_safety</span>
 </div>
 <div>
@@ -584,21 +725,21 @@
 </div>
 </div>
 </div>
-<div class="mt-10 p-6 bg-white rounded-xl border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="mt-10 p-6 bg-white rounded-3xl border border-primary/15 shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4">
 <div>
 <p class="text-sm font-bold text-primary">Insurance starting at</p>
-<span class="font-price-display">₹499 <span class="text-xs font-normal text-on-surface-variant">/ day</span></span>
+<span class="font-price-display text-price-gold">₹499 <span class="text-xs font-normal text-on-surface-variant">/ day</span></span>
 </div>
-<a href="#build" class="bg-primary-container text-white px-6 py-2 rounded-lg font-label-bold text-sm shadow-sm hover:bg-primary transition-all whitespace-nowrap">Buy Now</a>
+<a href="#build" class="btn-accent px-7 py-2.5 font-label-bold text-sm whitespace-nowrap">Buy Now</a>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Build Your Package Section -->
-<section class="py-section-padding bg-surface-container" id="build">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+<section class="section-pad md:py-section-padding bg-surface-container" id="build">
+<div class="max-w-container-max mx-auto page-pad md:px-gutter">
+<div class="bg-white rounded-3xl md:rounded-4xl shadow-lift overflow-hidden flex flex-col lg:flex-row border border-outline-variant/20">
 <div class="lg:w-2/5 relative min-h-[280px] lg:min-h-0">
 <img class="w-full h-full object-cover absolute inset-0" alt="Custom travel planning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTO4TSkmt-vf-sEzpgELZ5eGd3KsJuXW5p1w5s5X_Gz9Vbq4J0OQQzJJD9cwC3gB1Y-gn4oEKZqcEv8BemoOr5cGxuoqV9LIsrFbgNshcGHFsDfBuniTwVubtorZc6k4WGKrr6A-2O5OK8mJYj-SoVADLnZro3xSmMCU-vk0RFlJ1oc91WNYXkF7aaKu2QDN4pH8HZgeL137TDVmcI5a9hQDYeQzX4sTaKK6fQakjYfYwrLAKFgonV0BQ2rwyI7_sDCL06ErmOkiY"/>
 <div class="absolute inset-0 bg-primary/40 flex items-end p-8 md:p-12">
@@ -613,29 +754,29 @@
 <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Destination</label>
-<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Where do you want to go?" type="text"/>
+<input class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Where do you want to go?" type="text"/>
 </div>
 <div class="space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Departure City</label>
-<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="City" type="text"/>
+<input class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="City" type="text"/>
 </div>
 <div class="space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Travel Date</label>
-<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" type="date"/>
+<input class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20" type="date"/>
 </div>
 <div class="grid grid-cols-2 gap-4">
 <div class="space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Adults</label>
-<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" type="number" value="2"/>
+<input class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20" type="number" value="2"/>
 </div>
 <div class="space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Children</label>
-<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" type="number" value="0"/>
+<input class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20" type="number" value="0"/>
 </div>
 </div>
 <div class="space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Hotel Category</label>
-<select class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary">
+<select class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20">
 <option>3 Star</option>
 <option>4 Star</option>
 <option>5 Star</option>
@@ -644,7 +785,7 @@
 </div>
 <div class="space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Approx Budget (Total)</label>
-<input class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="₹" type="text"/>
+<input class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="₹" type="text"/>
 </div>
 <div class="md:col-span-2 flex flex-wrap gap-6 py-2">
 <label class="flex items-center gap-2 cursor-pointer">
@@ -662,10 +803,10 @@
 </div>
 <div class="md:col-span-2 space-y-1">
 <label class="text-xs font-bold text-on-surface-variant uppercase">Special Requirements</label>
-<textarea class="w-full border-outline-variant rounded-xl focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Tell us more about your trip..." rows="3"></textarea>
+<textarea class="w-full field-round px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Tell us more about your trip..." rows="3"></textarea>
 </div>
 <div class="md:col-span-2">
-<button type="submit" class="w-full bg-secondary-container text-white py-4 rounded-xl font-label-bold text-lg hover:bg-secondary transition-all shadow-lg active:scale-95">Create My Package</button>
+<button type="submit" class="w-full btn-accent py-4 font-label-bold text-lg">Create My Package</button>
 </div>
 </form>
 </div>
@@ -673,64 +814,64 @@
 </div>
 </section>
 <!-- Why Choose Travels Mantra -->
-<section class="py-section-padding bg-white">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-16">
+<section class="section-pad md:py-section-padding bg-white">
+<div class="max-w-container-max mx-auto page-pad md:px-gutter">
+<div class="text-center mb-10 md:mb-16">
 <h2 class="font-headline-md text-headline-md mb-4">Why Choose Travels Mantra?</h2>
-<p class="text-on-surface-variant">We provide more than just a booking; we provide memories.</p>
+<p class="text-on-surface-variant text-sm md:text-base px-2">We provide more than just a booking; we provide memories.</p>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined text-3xl">verified_user</span>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-2xl md:text-3xl">verified_user</span>
 </div>
-<h4 class="font-bold mb-2">Best Price Guarantee</h4>
+<h4 class="font-bold mb-1 md:mb-2 text-sm md:text-base">Best Price Guarantee</h4>
 <p class="text-xs text-on-surface-variant">Unbeatable value for every budget.</p>
 </div>
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-4 group-hover:text-white transition-all">
 <span class="material-symbols-outlined text-3xl">touch_app</span>
 </div>
 <h4 class="font-bold mb-2">Easy Booking</h4>
 <p class="text-xs text-on-surface-variant">Simplified planning with one-click support.</p>
 </div>
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-4 group-hover:text-white transition-all">
 <span class="material-symbols-outlined text-3xl">support_agent</span>
 </div>
 <h4 class="font-bold mb-2">Expert Advisors</h4>
 <p class="text-xs text-on-surface-variant">Dedicated travel specialists at your service.</p>
 </div>
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-4 group-hover:text-white transition-all">
 <span class="material-symbols-outlined text-3xl">description</span>
 </div>
 <h4 class="font-bold mb-2">Visa Assistance</h4>
 <p class="text-xs text-on-surface-variant">Smooth and stress-free visa processing.</p>
 </div>
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-4 group-hover:text-white transition-all">
 <span class="material-symbols-outlined text-3xl">visibility_off</span>
 </div>
 <h4 class="font-bold mb-2">No Hidden Charges</h4>
 <p class="text-xs text-on-surface-variant">Transparent pricing from start to finish.</p>
 </div>
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-4 group-hover:text-white transition-all">
 <span class="material-symbols-outlined text-3xl">headset_mic</span>
 </div>
 <h4 class="font-bold mb-2">24/7 Support</h4>
 <p class="text-xs text-on-surface-variant">We're with you throughout your journey.</p>
 </div>
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-4 group-hover:text-white transition-all">
 <span class="material-symbols-outlined text-3xl">lock</span>
 </div>
 <h4 class="font-bold mb-2">Secure Booking</h4>
 <p class="text-xs text-on-surface-variant">Your data and payments are 100% safe.</p>
 </div>
-<div class="text-center group">
-<div class="w-16 h-16 bg-primary-container/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-center group p-2 md:p-0">
+<div class="w-14 h-14 md:w-16 md:h-16 svc-icon text-primary flex items-center justify-center mx-auto mb-4 group-hover:text-white transition-all">
 <span class="material-symbols-outlined text-3xl">map</span>
 </div>
 <h4 class="font-bold mb-2">Custom Itineraries</h4>
@@ -740,33 +881,33 @@
 </div>
 </section>
 <!-- How It Works -->
-<section class="py-section-padding bg-surface-cream overflow-hidden">
-<div class="max-w-container-max mx-auto px-gutter">
-<h2 class="font-headline-md text-headline-md text-center mb-16">How It Works</h2>
-<div class="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
+<section class="section-pad md:py-section-padding bg-surface-cream overflow-hidden">
+<div class="max-w-container-max mx-auto page-pad md:px-gutter">
+<h2 class="font-headline-md text-headline-md text-center mb-10 md:mb-16">How It Works</h2>
+<div class="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-12">
 <div class="hidden md:block absolute top-12 left-0 right-0 h-0.5 -z-0" style="background-image: linear-gradient(to right, #bcc8d1 50%, transparent 50%); background-size: 10px 1px;"></div>
 <div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
-<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">1</div>
+<div class="w-20 h-20 rounded-full bg-gradient-to-b from-white to-primary-light border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-[0_4px_0_#D4DEE8,0_8px_24px_rgba(10,61,98,0.12)]">1</div>
 <h5 class="font-bold mb-2">Choose destination</h5>
 <p class="text-xs text-on-surface-variant">Pick where you want to go from our vast list of locations.</p>
 </div>
 <div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
-<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">2</div>
+<div class="w-20 h-20 rounded-full bg-gradient-to-b from-white to-primary-light border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-[0_4px_0_#D4DEE8,0_8px_24px_rgba(10,61,98,0.12)]">2</div>
 <h5 class="font-bold mb-2">Share travel details</h5>
 <p class="text-xs text-on-surface-variant">Send us your preferences, budget, and dates.</p>
 </div>
 <div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
-<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">3</div>
+<div class="w-20 h-20 rounded-full bg-gradient-to-b from-white to-primary-light border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-[0_4px_0_#D4DEE8,0_8px_24px_rgba(10,61,98,0.12)]">3</div>
 <h5 class="font-bold mb-2">Get custom package</h5>
 <p class="text-xs text-on-surface-variant">Receive a tailored itinerary within 24 hours.</p>
 </div>
 <div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
-<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">4</div>
+<div class="w-20 h-20 rounded-full bg-gradient-to-b from-white to-primary-light border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-[0_4px_0_#D4DEE8,0_8px_24px_rgba(10,61,98,0.12)]">4</div>
 <h5 class="font-bold mb-2">Confirm booking</h5>
 <p class="text-xs text-on-surface-variant">Secure your spot with a simple booking process.</p>
 </div>
 <div class="relative z-10 flex flex-col items-center text-center max-w-[200px]">
-<div class="w-20 h-20 rounded-full bg-white border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-md">5</div>
+<div class="w-20 h-20 rounded-full bg-gradient-to-b from-white to-primary-light border-4 border-primary text-primary flex items-center justify-center font-bold text-xl mb-6 shadow-[0_4px_0_#D4DEE8,0_8px_24px_rgba(10,61,98,0.12)]">5</div>
 <h5 class="font-bold mb-2">Travel stress-free</h5>
 <p class="text-xs text-on-surface-variant">Pack your bags and enjoy while we handle everything.</p>
 </div>
@@ -774,53 +915,53 @@
 </div>
 </section>
 <!-- FAQ Section -->
-<section class="py-section-padding bg-white" id="faq">
-<div class="max-w-3xl mx-auto px-gutter">
-<h2 class="font-headline-md text-headline-md text-center mb-12">Frequently Asked Questions</h2>
-<div class="space-y-4">
-<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
-<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<section class="section-pad md:py-section-padding bg-white" id="faq">
+<div class="max-w-3xl mx-auto page-pad md:px-gutter">
+<h2 class="font-headline-md text-headline-md text-center mb-8 md:mb-12">Frequently Asked Questions</h2>
+<div class="space-y-3 md:space-y-4">
+<details class="group bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 border border-outline-variant/30 open:border-primary shadow-soft open:shadow-lift transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4 text-sm md:text-base">
 <span>How do I book a holiday package?</span>
 <span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
 </summary>
 <p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Simply select your destination, fill out the enquiry form or call our experts. We'll guide you through the selection and payment process to confirm your booking.</p>
 </details>
-<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
-<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
+<details class="group bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 border border-outline-variant/30 open:border-primary shadow-soft open:shadow-lift transition-all">
+<summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4 text-sm md:text-base">
 <span>Can I customize the existing packages?</span>
 <span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
 </summary>
 <p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Yes, absolutely! Every package can be tailored to your flight preferences, hotel choices, and specific sightseeing interests.</p>
 </details>
-<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<details class="group bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 border border-outline-variant/30 open:border-primary shadow-soft open:shadow-lift transition-all">
 <summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
 <span>Is visa assistance included in all packages?</span>
 <span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
 </summary>
 <p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Most of our international packages include visa assistance. For domestic packages or specific countries, we provide guidance or full processing as per your requirement.</p>
 </details>
-<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<details class="group bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 border border-outline-variant/30 open:border-primary shadow-soft open:shadow-lift transition-all">
 <summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
 <span>What payment methods do you accept?</span>
 <span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
 </summary>
 <p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">We accept all major credit/debit cards, Net Banking, UPI, and bank transfers through our secure payment gateway.</p>
 </details>
-<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<details class="group bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 border border-outline-variant/30 open:border-primary shadow-soft open:shadow-lift transition-all">
 <summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
 <span>What if my flight gets cancelled?</span>
 <span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
 </summary>
 <p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Our support team is available 24/7 to help with rebookings or refunds as per the airline's policy and your travel insurance coverage.</p>
 </details>
-<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<details class="group bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 border border-outline-variant/30 open:border-primary shadow-soft open:shadow-lift transition-all">
 <summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
 <span>Do you provide honeymoon inclusions?</span>
 <span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
 </summary>
 <p class="mt-4 text-on-surface-variant text-body-sm leading-relaxed">Yes! Our honeymoon packages include special perks like room decoration, candle-lit dinners, and cake to make your first trip special.</p>
 </details>
-<details class="group bg-surface rounded-xl p-6 border border-outline-variant/30 open:border-primary transition-all">
+<details class="group bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 border border-outline-variant/30 open:border-primary shadow-soft open:shadow-lift transition-all">
 <summary class="flex justify-between items-center font-bold cursor-pointer list-none gap-4">
 <span>Is Travel Insurance mandatory?</span>
 <span class="material-symbols-outlined group-open:rotate-180 transition-transform shrink-0">expand_more</span>
@@ -832,14 +973,14 @@
 </section>
 <!-- Footer -->
 <footer class="bg-surface-container-highest border-t border-outline-variant/30">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter px-margin-mobile md:px-gutter py-section-padding max-w-container-max mx-auto">
-<div class="col-span-2 md:col-span-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-gutter px-margin-mobile md:px-gutter py-12 md:py-section-padding max-w-container-max mx-auto">
+<div class="sm:col-span-2 md:col-span-1">
 <div class="text-headline-sm font-headline-sm font-bold text-on-surface mb-6">Travels Mantra</div>
 <p class="text-body-sm text-on-surface-variant mb-6 pr-4">Creating unforgettable travel experiences with passion and expertise since 2012.</p>
 <div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-all" href="tel:18002121225"><span class="material-symbols-outlined">call</span></a>
-<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-all" href="mailto:info@travelsmantra.com"><span class="material-symbols-outlined">mail</span></a>
-<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-11 h-11 btn-icon-round flex items-center justify-center" href="tel:18002121225"><span class="material-symbols-outlined">call</span></a>
+<a class="w-11 h-11 btn-icon-round flex items-center justify-center" href="mailto:info@travelsmantra.com"><span class="material-symbols-outlined">mail</span></a>
+<a class="w-11 h-11 btn-icon-round flex items-center justify-center" href="#"><span class="material-symbols-outlined">public</span></a>
 </div>
 </div>
 <div>
@@ -871,7 +1012,7 @@
 </div>
 </div>
 <div class="border-t border-outline-variant/20 py-8 text-center px-gutter">
-<p class="text-body-sm text-on-surface-variant">© 2024 Travels Mantra Holidays (P) Ltd. All Rights Reserved.</p>
+<p class="text-body-sm text-on-surface-variant">© 2026 Travels Mantra Holidays (P) Ltd. All Rights Reserved.</p>
 </div>
 </footer>
 <script>
