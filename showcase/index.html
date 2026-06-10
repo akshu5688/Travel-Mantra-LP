@@ -229,6 +229,23 @@
     .single-panel { display: none; }
     .single-panel.active { display: block; }
 
+    @media (min-width: 1101px) and (max-width: 1280px) {
+      main { padding: 28px 32px 56px; }
+      .showcase-grid { gap: 20px; }
+      .phone-screen { height: 560px; }
+      .lp-title { font-size: 0.88rem; }
+    }
+    @media (min-width: 1281px) and (max-width: 1535px) {
+      main { padding: 32px 40px 64px; }
+      .showcase-grid { gap: 24px; }
+      .phone-screen { height: 620px; }
+    }
+    @media (min-width: 1536px) {
+      main { max-width: 1600px; padding: 40px 48px 72px; }
+      .topbar-inner { max-width: 1600px; }
+      .showcase-grid { gap: 32px; }
+      .phone-screen { height: 680px; }
+    }
     @media (max-width: 1100px) {
       .showcase-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
     }
@@ -261,8 +278,8 @@
           <div class="lp-label">
             <span class="lp-badge">LP1</span>
             <div>
-              <div class="lp-title">Mobile-First Classic</div>
-              <div class="lp-desc">Navy &amp; orange</div>
+              <div class="lp-title">Fuel Your Wanderlust</div>
+              <div class="lp-desc">Sky blue adventure</div>
             </div>
           </div>
           <a href="../LP1/index.html" target="_blank" class="open-link">Open &nearr;</a>
@@ -280,8 +297,8 @@
           <div class="lp-label">
             <span class="lp-badge">LP2</span>
             <div>
-              <div class="lp-title">Modern Premium Agency</div>
-              <div class="lp-desc">Blue gradient UI</div>
+              <div class="lp-title">Modern Booking Platform</div>
+              <div class="lp-desc">White clean UI</div>
             </div>
           </div>
           <a href="../LP2/index.html" target="_blank" class="open-link">Open &nearr;</a>
@@ -317,8 +334,8 @@
     <!-- Single: one LP at full width -->
     <div class="showcase-single" id="showcase-single">
       <div class="single-tabs">
-        <button class="single-tab active" data-lp="lp1">LP1 — Mobile Classic</button>
-        <button class="single-tab" data-lp="lp2">LP2 — Premium Agency</button>
+        <button class="single-tab active" data-lp="lp1">LP1 — Wanderlust</button>
+        <button class="single-tab" data-lp="lp2">LP2 — Booking Platform</button>
         <button class="single-tab" data-lp="lp3">LP3 — Luxury Escapes</button>
       </div>
 

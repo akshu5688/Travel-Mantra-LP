@@ -99,11 +99,14 @@
     }
   </script>
 <style>
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
       background-color: #0A0A0A;
       color: #e3e3de;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
+    img { max-width: 100%; }
     .gold-thread {
       height: 1px;
       background: linear-gradient(90deg, transparent, #e9c176, transparent);
@@ -111,22 +114,60 @@
     }
     .editorial-grid {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: 1fr;
       gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .editorial-grid { grid-template-columns: repeat(12, 1fr); }
     }
     .blur-overlay {
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
+    .page-x { padding-left: 1.25rem; padding-right: 1.25rem; }
+    @media (min-width: 768px) { .page-x { padding-left: 2.5rem; padding-right: 2.5rem; } }
+    @media (min-width: 1024px) { .page-x { padding-left: 4rem; padding-right: 4rem; } }
+    @media (min-width: 1280px) { .page-x { padding-left: 5rem; padding-right: 5rem; } }
+    @media (min-width: 1536px) { .page-x { padding-left: 6rem; padding-right: 6rem; } }
+    .section-y { padding-top: 3rem; padding-bottom: 3rem; }
+    @media (min-width: 768px) { .section-y { padding-top: 5rem; padding-bottom: 5rem; } }
+    @media (min-width: 1024px) { .section-y { padding-top: 7rem; padding-bottom: 7rem; } }
+    @media (min-width: 1280px) { .section-y { padding-top: 7.5rem; padding-bottom: 7.5rem; } }
+    @media (min-width: 1536px) { .section-y { padding-top: 8rem; padding-bottom: 8rem; } }
+    .hero-title {
+      font-size: clamp(2.25rem, 4vw + 1rem, 5.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .section-title {
+      font-size: clamp(1.875rem, 3vw + 0.5rem, 3rem);
+      line-height: 1.15;
+    }
+    .display-section-title {
+      font-size: clamp(2rem, 4vw + 0.5rem, 3.75rem);
+      line-height: 1.1;
+    }
+    @media (min-width: 1024px) {
+      .editorial-grid { gap: 32px; }
+    }
+    @media (min-width: 1280px) {
+      .editorial-grid { gap: 40px; }
+    }
+    .bento-tile { min-height: 220px; }
+    @media (min-width: 1024px) { .bento-tile { min-height: 280px; } }
+    @media (min-width: 1280px) { .bento-tile { min-height: 320px; } }
+    #mobile-nav { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #mobile-nav.open { max-height: 24rem; }
   </style>
 </head>
 <body class="font-body-md overflow-x-hidden">
 <!-- Section 1: Header -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto bg-transparent backdrop-blur-md transition-colors duration-500">
-<div class="font-display-lg text-headline-md text-primary tracking-tighter">
+<nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md transition-colors duration-500" id="main-nav">
+<div class="max-w-container-max mx-auto page-x py-4 md:py-6 flex justify-between items-center">
+<div class="font-display-lg text-xl md:text-headline-md text-primary tracking-tighter">
       Travels Mantra
     </div>
-<div class="hidden md:flex space-x-8 items-center">
+<div class="hidden lg:flex space-x-6 xl:space-x-8 items-center">
 <a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#">Destinations</a>
 <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Experiences</a>
 <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Stories</a>
@@ -134,29 +175,44 @@
 <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">About Us</a>
 <a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-colors duration-300" href="#">Contact</a>
 </div>
-<div class="flex items-center space-x-6">
-<button class="font-button text-button px-8 py-3 bg-secondary text-on-secondary hover:opacity-90 transition-opacity uppercase">
+<div class="flex items-center gap-3 md:gap-6">
+<button class="hidden sm:inline-flex font-button text-button px-5 md:px-8 py-2.5 md:py-3 bg-secondary text-on-secondary hover:opacity-90 transition-opacity uppercase text-xs md:text-sm">
         Book Now
       </button>
+<button type="button" class="lg:hidden w-10 h-10 flex items-center justify-center border border-outline-variant rounded-lg" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div id="mobile-nav" class="lg:hidden border-t border-outline-variant/40 bg-background/95 backdrop-blur-md">
+<div class="page-x py-4 flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-secondary" href="#">Destinations</a>
+<a class="font-label-caps text-label-caps text-on-surface" href="#">Experiences</a>
+<a class="font-label-caps text-label-caps text-on-surface" href="#">Stories</a>
+<a class="font-label-caps text-label-caps text-on-surface" href="#">Visa</a>
+<a class="font-label-caps text-label-caps text-on-surface" href="#">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface" href="#">Contact</a>
+<button class="font-button text-button w-full py-3 bg-secondary text-on-secondary uppercase sm:hidden">Book Now</button>
+</div>
 </div>
 </nav>
 <!-- Section 2: Hero -->
-<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<section class="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden pt-20 pb-12 md:pt-0 md:pb-0 md:h-screen">
 <div class="absolute inset-0 z-0">
 <img alt="Luxury yacht at sunset" class="w-full h-full object-cover brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDekl6deeC-xr4ybCYrRzrPG8ETspUSPp7GYGWrbrz3-CgeWR_cvogcgZeLp4IuEdHbAeksrkMp1T_WkCRgO11mFxBq2Aiwk42M0esvQ1DnfUfTAuatYzA5vG4SQMqGfONQ03wLC_LD8ajSt7Fh5S6OsmSxgbyKXxA4eM7goWhKJXk07N89dU3k8Plt-HILAINLFsnFPCUthaf6no9f5ibGCsBxOw2lSW4MKP_iIoy31TsHUap9xpoONJgwfxJB1wPzjjE3eC8B3h4"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
 </div>
-<div class="relative z-10 text-center px-4 max-w-4xl">
+<div class="relative z-10 text-center px-4 max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
 <span class="font-label-caps text-label-caps text-secondary mb-6 block tracking-[0.3em] uppercase">Curated International Escapes</span>
-<h1 class="font-display-lg text-display-lg mb-8 leading-none">Where Your Journey Begins</h1>
+<h1 class="font-display-lg hero-title mb-6 md:mb-8">Where Your Journey Begins</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
         Curated luxury holidays, handpicked destinations, and unforgettable travel experiences crafted by Travels Mantra.
       </p>
 <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-<button class="font-button text-button bg-secondary text-on-secondary px-12 py-4 uppercase hover:scale-105 transition-transform duration-300">
+<button class="font-button text-button bg-secondary text-on-secondary w-full sm:w-auto px-8 md:px-12 py-4 uppercase hover:scale-105 transition-transform duration-300">
           Explore Now
         </button>
-<button class="font-button text-button border border-secondary text-secondary px-12 py-4 uppercase hover:bg-secondary/10 transition-colors duration-300 flex items-center gap-2">
+<button class="font-button text-button border border-secondary text-secondary w-full sm:w-auto px-8 md:px-12 py-4 uppercase hover:bg-secondary/10 transition-colors duration-300 flex items-center justify-center gap-2">
 <span class="material-symbols-outlined text-[18px]">play_circle</span>
           Watch Story
         </button>
@@ -164,16 +220,16 @@
 </div>
 </section>
 <!-- Section 3: Curated Places (Bento Grid Style) -->
-<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<section class="section-y page-x max-w-container-max mx-auto">
 <div class="flex flex-col items-center mb-16">
-<h2 class="font-headline-lg text-headline-lg mb-4">Curated Places</h2>
+<h2 class="font-headline-lg section-title mb-4">Curated Places</h2>
 <div class="gold-thread max-w-xs mb-8"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <!-- Bali -->
-<div class="md:col-span-8 group relative overflow-hidden h-[500px]">
+<div class="md:col-span-8 group relative overflow-hidden bento-tile md:h-[420px] lg:h-[480px] xl:h-[500px]">
 <img alt="Bali Tropical Paradise" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhgHBuZGIw7_lX5vRriOCREKnonBQgY-SI3KuzWdjf8H2T1N4_oPeBtk483eGiqhaZRGXOFCeh66QClbcNHLNzQijsUT1B3t4h-Ka52v0Coov2Nq3BzVO7g_UkDVoP_IZL1-DAIbK-1Witbu-7LbQinkm8mXVagtPlirLRxGzvyMOiHcWYCeGEcuIS05ywaRyU7ZATJ1_W_92ioGfufxMsxQZbmAMzxD1QR_TzT56Dd6yQ3eRvLvO6vwKAOG_BtNqjZ-ZO8ThvgAY"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-5 sm:p-8 flex flex-col justify-end">
 <span class="font-label-caps text-label-caps text-secondary">7 DAYS</span>
 <h3 class="font-display-lg text-headline-lg text-white mb-2">Bali</h3>
 <p class="font-body-md text-on-surface-variant mb-4">Tropical Paradise • From $1200</p>
@@ -181,9 +237,9 @@
 </div>
 </div>
 <!-- Dubai -->
-<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<div class="md:col-span-4 group relative overflow-hidden bento-tile md:h-[420px] lg:h-[480px] xl:h-[500px]">
 <img alt="Dubai Futuristic Luxury" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCheRSgNegd-mirwsgvryKCeborunFCDvbYJ9KrS7JC6nf44Fpf5WkBXMsmu-XLLvRlIGPeMzIRLLBn8GLFjxwFGR6P5AOh5pPBKizUetjW8KlRbQernL98-iUQ__I8ZdIxSRiyco4CH7J36e8vFfgSwOQVjoiZjK_5J55mPBPbCc24ENixQ6u2xqlSOUJm070FhIAHzyRWIIbE4yLUg_Z5_7PLYjOY0Os2I0BgtZLkCc9cj9rd7hi27gEfeN1D0840tno1F0sTvjU"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-5 sm:p-8 flex flex-col justify-end">
 <span class="font-label-caps text-label-caps text-secondary">5 DAYS</span>
 <h3 class="font-display-lg text-headline-lg text-white mb-2">Dubai</h3>
 <p class="font-body-md text-on-surface-variant mb-4">Futuristic Luxury • From $1500</p>
@@ -191,9 +247,9 @@
 </div>
 </div>
 <!-- Thailand -->
-<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<div class="md:col-span-4 group relative overflow-hidden bento-tile md:h-[420px] lg:h-[480px] xl:h-[500px]">
 <img alt="Thailand Island Serenity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArxLmUnKJJ4ffzmF9VXhwCN10fs2-5RnVlitVwApaa4RZSZcXiqLVfjR85LsF_Oo5AFPFUHWQXltEvwyK3x4INC81ESYaX5u4NoD1ngA1aL1XUfFkC5ChlqizpBXFUlspKDB1lQbdWI2Y_aMFfNIWnyVKixXeEbmBaOeH6QKiQpQE8HHU2jmEYm05Npr0au87TFA9ph0juid6xfV9Qcd2-0RgIapACTm5L9-cV2SwjJxzNmoegMF742HJpcXceiLBKEi5oyoJJ5_0"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-5 sm:p-8 flex flex-col justify-end">
 <span class="font-label-caps text-label-caps text-secondary">6 DAYS</span>
 <h3 class="font-display-lg text-headline-lg text-white mb-2">Thailand</h3>
 <p class="font-body-md text-on-surface-variant mb-4">Island Serenity • From $1100</p>
@@ -201,9 +257,9 @@
 </div>
 </div>
 <!-- Vietnam -->
-<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<div class="md:col-span-4 group relative overflow-hidden bento-tile md:h-[420px] lg:h-[480px] xl:h-[500px]">
 <img alt="Vietnam Ethereal Waters" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNu0L9dACaqpFn1Afl81br9jZfqIXfINTgsNlhAulVs9K4A0DTbtbGIfXVtnNZIxg_r8i1H3Y_ILj56ZKdWYiz-rs2JNsvJm2i4dg-a6eDH8nueK_FOxmkYWzLd3vbstHywTxqx5j4NjduBFtySgN0cvSOMrcMV29mgqVyl3xsKK3ie2RQbMqNm5X7zTHggFk6Z1xHqhANw5Aww-EvFYqUmWrrEIBDq1GGDKwZFdr_A06CyuWsIFKgalGl-GobhAa3pJ15jAvyE8c"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-5 sm:p-8 flex flex-col justify-end">
 <span class="font-label-caps text-label-caps text-secondary">8 DAYS</span>
 <h3 class="font-display-lg text-headline-lg text-white mb-2">Vietnam</h3>
 <p class="font-body-md text-on-surface-variant mb-4">Ethereal Waters • From $900</p>
@@ -211,9 +267,9 @@
 </div>
 </div>
 <!-- Baku -->
-<div class="md:col-span-4 group relative overflow-hidden h-[500px]">
+<div class="md:col-span-4 group relative overflow-hidden bento-tile md:h-[420px] lg:h-[480px] xl:h-[500px]">
 <img alt="Baku Flame City" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMR8N3lgRjeCHAMG7umW2gn_7LyK-hUoQm7samsAifl9zAQMrJrf9SpsVGqJl98SplNEXsq4OJJECWLayU5GfSzLtGtqKnVTMAaYWe1CSyAeb-SyOke6iIBGK5QS3NB4OjP0b2-egLHS4REeRiA1W_SC5qB9nOclRWIbTpjav0V4xUa8_grf6kGHUIcpvCA1DyJvbUxaY9uZak6te-YCeffHFuxVFSUFod51GXjeR2j0xPcyA2MwSZu816lN5tOecyFDJE5Z_iawE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-5 sm:p-8 flex flex-col justify-end">
 <span class="font-label-caps text-label-caps text-secondary">4 DAYS</span>
 <h3 class="font-display-lg text-headline-lg text-white mb-2">Baku</h3>
 <p class="font-body-md text-on-surface-variant mb-4">Flame City Twilight • From $850</p>
@@ -221,9 +277,9 @@
 </div>
 </div>
 <!-- Kazakhstan -->
-<div class="md:col-span-12 group relative overflow-hidden h-[400px]">
+<div class="md:col-span-12 group relative overflow-hidden h-64 sm:h-80 md:h-[360px] lg:h-[400px] xl:h-[420px]">
 <img alt="Kazakhstan Alpine Elegance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfpe0AY6iO0-L1zVR1TzmExlwWn6ZWKz-OsLkASLrPtdovalF1MJ4azKeDkIkHdm2QAcJ-_i2QDLWpysvVqQuZu52kCTspdhUkyH_oX-CLQhCmNqB1ssrEYfgT5hR53798yjC9G32F5AqQKiSs7V-5Oq9O0n5OIr_YFo9uP01x5IkrDMaFOjkmG6HfXcgb7GhAYMyw3qvk94r7tuYAibmfozf2bXOWjVYMZCOpz9wcHF4pIxrtAhhSZBVz6xiyCxIYKEYr-1G6r6s"/>
-<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent p-12 flex flex-col justify-center max-w-xl">
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent p-6 sm:p-12 flex flex-col justify-center max-w-xl">
 <span class="font-label-caps text-label-caps text-secondary">6 DAYS</span>
 <h3 class="font-display-lg text-headline-lg text-white mb-2">Kazakhstan</h3>
 <p class="font-body-lg text-on-surface-variant mb-6">Alpine Elegance. Discover the untamed beauty of the mountains and modern luxury in perfect harmony. • From $1300</p>
@@ -233,10 +289,10 @@
 </div>
 </section>
 <!-- Section 4: Why Choose -->
-<section class="py-section-gap bg-surface-container">
-<div class="px-margin-desktop max-w-container-max mx-auto text-center">
-<h2 class="font-headline-lg text-headline-lg mb-16">The Travels Mantra Difference</h2>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<section class="section-y bg-surface-container">
+<div class="page-x max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg section-title mb-10 md:mb-16">The Travels Mantra Difference</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter lg:gap-8 xl:gap-10">
 <div class="p-8 border border-outline-variant hover:border-secondary transition-colors duration-300 flex flex-col items-center">
 <span class="material-symbols-outlined text-[48px] text-secondary mb-6" data-weight="fill">map</span>
 <h4 class="font-headline-md text-[20px] mb-4">Curated Itineraries</h4>
@@ -261,11 +317,11 @@
 </div>
 </section>
 <!-- Section 5: Signature Experiences -->
-<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<section class="section-y page-x max-w-container-max mx-auto overflow-hidden">
 <div class="editorial-grid items-center">
 <div class="col-span-12 md:col-span-5 mb-12 md:mb-0">
 <span class="font-label-caps text-label-caps text-secondary mb-4 block">BEYOND THE ORDINARY</span>
-<h2 class="font-display-lg text-display-lg mb-8">Signature Experiences</h2>
+<h2 class="font-display-lg display-section-title mb-6 md:mb-8">Signature Experiences</h2>
 <div class="space-y-12">
 <div class="group cursor-pointer">
 <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-secondary transition-colors">Luxury Honeymoons</h3>
@@ -293,11 +349,11 @@
 </div>
 </section>
 <!-- Section 6: Testimonials -->
-<section class="py-section-gap px-margin-desktop bg-surface-container-lowest">
+<section class="section-y page-x bg-surface-container-lowest">
 <div class="max-w-container-max mx-auto">
-<h2 class="font-headline-lg text-headline-lg text-center mb-16 italic">Words from Our Travelers</h2>
+<h2 class="font-headline-lg section-title text-center mb-10 md:mb-16 italic">Words from Our Travelers</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="p-10 bg-surface-container flex flex-col justify-between h-full">
+<div class="p-6 sm:p-10 bg-surface-container flex flex-col justify-between h-full">
 <div>
 <div class="flex text-secondary mb-6">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -310,7 +366,7 @@
 </div>
 <div class="font-label-caps text-label-caps tracking-widest text-secondary">— ELEANOR VANCE</div>
 </div>
-<div class="p-10 bg-surface-container flex flex-col justify-between h-full">
+<div class="p-6 sm:p-10 bg-surface-container flex flex-col justify-between h-full">
 <div>
 <div class="flex text-secondary mb-6">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -323,7 +379,7 @@
 </div>
 <div class="font-label-caps text-label-caps tracking-widest text-secondary">— JULIAN MARX</div>
 </div>
-<div class="p-10 bg-surface-container flex flex-col justify-between h-full">
+<div class="p-6 sm:p-10 bg-surface-container flex flex-col justify-between h-full">
 <div>
 <div class="flex text-secondary mb-6">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -340,8 +396,8 @@
 </div>
 </section>
 <!-- Section 7: Enquiry Section -->
-<section class="py-section-gap px-margin-desktop bg-background">
-<div class="max-w-4xl mx-auto border border-outline-variant p-8 md:p-16 relative overflow-hidden">
+<section class="section-y page-x bg-background">
+<div class="max-w-4xl mx-auto border border-outline-variant p-5 sm:p-8 md:p-16 relative overflow-hidden">
 <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
 <div class="text-center mb-12">
 <h2 class="font-headline-lg text-headline-lg mb-4">Plan Your Next Escape</h2>
@@ -378,7 +434,7 @@
 <textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary font-label-caps text-label-caps transition-all placeholder:text-outline resize-none" placeholder="TELL US ABOUT YOUR DREAM JOURNEY" rows="4"></textarea>
 </div>
 <div class="md:col-span-2 flex justify-center pt-8">
-<button class="font-button text-button bg-secondary text-on-secondary px-20 py-4 uppercase hover:scale-105 transition-transform" type="submit">
+<button class="font-button text-button bg-secondary text-on-secondary w-full sm:w-auto px-10 md:px-20 py-4 uppercase hover:scale-105 transition-transform" type="submit">
             Send Enquiry
           </button>
 </div>
@@ -386,7 +442,7 @@
 </div>
 </section>
 <!-- Section 8: Footer -->
-<footer class="w-full px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto border-t border-outline-variant bg-surface-container-lowest">
+<footer class="w-full page-x section-y grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto border-t border-outline-variant bg-surface-container-lowest">
 <div class="col-span-1 md:col-span-1">
 <div class="font-display-lg text-headline-lg text-primary mb-6">Travels Mantra</div>
 <p class="font-body-md text-on-surface-variant mb-8 pr-4">Crafting world-class travel stories through bespoke itineraries and unparalleled service since 2012.</p>
@@ -426,14 +482,31 @@
 </div>
 </footer>
 <script>
+    const nav = document.getElementById('main-nav');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    menuToggle?.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open);
+      menuToggle.querySelector('.material-symbols-outlined').textContent = open ? 'close' : 'menu';
+    });
+
+    mobileNav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+      });
+    });
+
     window.addEventListener('scroll', function() {
-      const nav = document.querySelector('nav');
       if (window.scrollY > 50) {
-        nav.classList.add('bg-background/95', 'py-4', 'shadow-xl');
-        nav.classList.remove('py-6', 'bg-transparent');
+        nav.classList.add('bg-background/95', 'shadow-xl');
+        nav.classList.remove('bg-transparent');
       } else {
-        nav.classList.remove('bg-background/95', 'py-4', 'shadow-xl');
-        nav.classList.add('py-6', 'bg-transparent');
+        nav.classList.remove('bg-background/95', 'shadow-xl');
+        nav.classList.add('bg-transparent');
       }
     });
   </script>
