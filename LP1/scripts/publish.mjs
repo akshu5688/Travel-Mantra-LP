@@ -6,7 +6,13 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const assetsOut = join(root, 'assets');
 
-cpSync(join(dist, 'index.html'), join(root, 'index.html'));
+const builtHtml = [join(dist, 'index.source.html'), join(dist, 'index.html')].find(existsSync);
+if (!builtHtml) {
+  console.error('Build output HTML not found in dist/');
+  process.exit(1);
+}
+
+cpSync(builtHtml, join(root, 'index.html'));
 
 if (existsSync(assetsOut)) {
   rmSync(assetsOut, { recursive: true, force: true });

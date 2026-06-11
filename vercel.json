@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "cd LP1 && npm install && npm run build",
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false

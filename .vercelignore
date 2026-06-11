@@ -1,0 +1,12 @@
+LP1/node_modules
+LP1/dist
+LP1/src
+LP1/index.source.html
+LP1/package.json
+LP1/package-lock.json
+LP1/vite.config.ts
+LP1/tsconfig.json
+LP1/tsconfig.node.json
+LP1/tailwind.config.js
+LP1/postcss.config.js
+LP1/scripts
