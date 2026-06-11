@@ -3,12 +3,17 @@ import { useEffect, useRef, useState } from 'react';
 type Props = {
   src: string;
   className?: string;
+  poster?: string;
 };
 
-export default function BoomerangVideoBg({ src, className }: Props) {
+const FALLBACK_POSTER =
+  'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1920&q=80';
+
+export default function BoomerangVideoBg({ src, className, poster = FALLBACK_POSTER }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const displayCanvasRef = useRef<HTMLCanvasElement>(null);
   const [framesReady, setFramesReady] = useState(false);
+  const [useVideoFallback, setUseVideoFallback] = useState(false);
   const framesRef = useRef<HTMLCanvasElement[]>([]);
 
   useEffect(() => {
@@ -63,14 +68,21 @@ export default function BoomerangVideoBg({ src, className }: Props) {
 
     const onEnded = () => {
       capturing = false;
-      if (frames.length > 0) {
+      if (frames.length > 1) {
         framesRef.current = frames;
         setFramesReady(true);
+      } else {
+        setUseVideoFallback(true);
       }
     };
 
+    const onError = () => {
+      capturing = false;
+      setUseVideoFallback(true);
+    };
+
     const onLoaded = () => {
-      video.play().catch(() => {});
+      video.play().catch(() => setUseVideoFallback(true));
       if (hasVFC) {
         vfcVideo.requestVideoFrameCallback!(vfcLoop);
       } else {
@@ -80,6 +92,7 @@ export default function BoomerangVideoBg({ src, className }: Props) {
 
     video.addEventListener('loadedmetadata', onLoaded);
     video.addEventListener('ended', onEnded);
+    video.addEventListener('error', onError);
     if (video.readyState >= 1) onLoaded();
 
     return () => {
@@ -87,6 +100,7 @@ export default function BoomerangVideoBg({ src, className }: Props) {
       cancelAnimationFrame(rafId);
       video.removeEventListener('loadedmetadata', onLoaded);
       video.removeEventListener('ended', onEnded);
+      video.removeEventListener('error', onError);
     };
   }, [src]);
 
@@ -128,23 +142,34 @@ export default function BoomerangVideoBg({ src, className }: Props) {
     return () => cancelAnimationFrame(rafId);
   }, [framesReady]);
 
+  const showVideo = !framesReady || useVideoFallback;
+
   return (
     <div className={className ?? 'absolute inset-0 w-full h-full'}>
+      <img
+        src={poster}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <video
         ref={videoRef}
         src={src}
-        className="w-full h-full object-cover"
-        style={{ display: framesReady ? 'none' : 'block' }}
+        poster={poster}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ display: showVideo ? 'block' : 'none' }}
         muted
+        loop={useVideoFallback}
         playsInline
+        autoPlay
         preload="auto"
-        crossOrigin="anonymous"
       />
       <canvas
         ref={displayCanvasRef}
-        className="w-full h-full object-cover"
-        style={{ display: framesReady ? 'block' : 'none' }}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ display: framesReady && !useVideoFallback ? 'block' : 'none' }}
       />
+      <div className="absolute inset-0 bg-[#1f2a1d]/10 pointer-events-none" />
     </div>
   );
 }

@@ -156,8 +156,8 @@ function App() {
       </div>
 
       {/* Hero */}
-      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden">
-        <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 w-full h-full" />
+      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden bg-[#E8EDE5]">
+        <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 z-0 w-full h-full" />
 
         <div className="relative z-10 flex flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 px-4 sm:px-6">
           <h1
