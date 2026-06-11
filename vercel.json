@@ -5,6 +5,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/LP1/assets/:path*", "destination": "/LP1/dist/assets/:path*" },
     { "source": "/LP1", "destination": "/LP1/dist/index.html" },
     { "source": "/LP1/", "destination": "/LP1/dist/index.html" }
   ]
