@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, rmSync, existsSync } from 'fs';
+import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -12,7 +12,11 @@ if (!builtHtml) {
   process.exit(1);
 }
 
-cpSync(builtHtml, join(root, 'index.html'));
+let html = readFileSync(builtHtml, 'utf8');
+html = html.replace(/\s+crossorigin/g, '');
+
+const outHtml = join(root, 'index.html');
+writeFileSync(outHtml, html);
 
 if (existsSync(assetsOut)) {
   rmSync(assetsOut, { recursive: true, force: true });

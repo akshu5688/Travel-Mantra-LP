@@ -156,12 +156,13 @@ function App() {
       </div>
 
       {/* Hero */}
-      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden bg-[#E8EDE5]">
+      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden bg-[#1f2a1d]">
         <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 z-0 w-full h-full" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/30 via-transparent to-[#1f2a1d]/50 pointer-events-none" />
 
         <div className="relative z-10 flex flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 px-4 sm:px-6">
           <h1
-            className="font-normal leading-[0.95] text-[#336443] text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.75rem] xl:text-[5.25rem] max-w-5xl"
+            className="font-normal leading-[0.95] text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.75rem] xl:text-[5.25rem] max-w-5xl drop-shadow-sm"
             style={{
               fontFamily:
                 '"Neue Haas Grotesk Display Pro 55 Roman", "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif',
@@ -174,14 +175,14 @@ function App() {
               <br className="hidden sm:block" /> dreams and destinations
             </span>
           </h1>
-          <p className="mt-6 sm:mt-8 text-[#4b5b47] text-sm sm:text-base md:text-lg leading-relaxed max-w-md px-2">
+          <p className="mt-6 sm:mt-8 text-white/85 text-sm sm:text-base md:text-lg leading-relaxed max-w-md px-2">
             Curated international holidays, luxury escapes, visa support, and personalised travel experiences.
           </p>
           <div className="mt-8 sm:mt-10 flex overflow-x-auto gap-2 sm:flex-wrap sm:justify-center sm:overflow-visible pb-1 max-w-2xl scrollbar-hide">
             {['Curated Packages', 'Visa Assistance', 'Handpicked Hotels', '24/7 Travel Support'].map((tag) => (
               <span
                 key={tag}
-                className="shrink-0 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#4b5b47] border border-[#1f2a1d]/15 bg-white/60 backdrop-blur-sm px-3 py-2 rounded-full"
+                className="shrink-0 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-white/90 border border-white/25 bg-white/15 backdrop-blur-sm px-3 py-2 rounded-full"
               >
                 {tag}
               </span>

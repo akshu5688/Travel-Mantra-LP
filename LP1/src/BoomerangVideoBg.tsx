@@ -22,7 +22,7 @@ export default function BoomerangVideoBg({ src, className, poster = FALLBACK_POS
         playsInline
         preload="metadata"
       />
-      <div className="absolute inset-0 bg-[#1f2a1d]/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#1f2a1d]/25 pointer-events-none" />
     </div>
   );
 }
