@@ -170,7 +170,7 @@ function App() {
             }}
           >
             Close the gap{' '}
-            <span className="text-[#85AB8B]">
+            <span className="text-[#1f2a1d]">
               linking
               <br className="hidden sm:block" /> dreams and destinations
             </span>
