@@ -24,4 +24,4 @@ if (existsSync(assetsOut)) {
 mkdirSync(assetsOut, { recursive: true });
 cpSync(join(dist, 'assets'), assetsOut, { recursive: true });
 
-console.log('Published LP1 build to index.html + assets/');
+console.log('Published design1 build to index.html + assets/');

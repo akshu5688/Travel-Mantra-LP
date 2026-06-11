@@ -111,9 +111,9 @@
       padding: 5px 10px;
       border-radius: 999px;
     }
-    .lp1 .lp-badge { background: rgba(255,140,0,0.15); color: var(--orange); }
-    .lp2 .lp-badge { background: rgba(16,185,129,0.15); color: var(--emerald); }
-    .lp3 .lp-badge { background: rgba(196,92,62,0.15); color: var(--terracotta); }
+    .design1 .lp-badge { background: rgba(255,140,0,0.15); color: var(--orange); }
+    .design2 .lp-badge { background: rgba(16,185,129,0.15); color: var(--emerald); }
+    .design3 .lp-badge { background: rgba(196,92,62,0.15); color: var(--terracotta); }
     .lp-title { font-weight: 600; font-size: 0.95rem; }
     .lp-desc { color: var(--muted); font-size: 0.78rem; margin-top: 2px; }
     .open-link {
@@ -183,8 +183,8 @@
       transition: all 0.2s;
     }
     .single-tab.active { border-color: var(--orange); color: var(--orange); background: rgba(255,140,0,0.08); }
-    .single-tab[data-lp="lp2"].active { border-color: var(--emerald); color: var(--emerald); background: rgba(16,185,129,0.08); }
-    .single-tab[data-lp="lp3"].active { border-color: var(--terracotta); color: var(--terracotta); background: rgba(196,92,62,0.08); }
+    .single-tab[data-lp="design2"].active { border-color: var(--emerald); color: var(--emerald); background: rgba(16,185,129,0.08); }
+    .single-tab[data-lp="design3"].active { border-color: var(--terracotta); color: var(--terracotta); background: rgba(196,92,62,0.08); }
 
     .desktop-frame {
       background: var(--surface);
@@ -273,59 +273,59 @@
   <main>
     <!-- Grid: all 3 LPs shown side by side -->
     <div class="showcase-grid" id="showcase-grid">
-      <article class="lp-panel lp1">
+      <article class="lp-panel design1">
         <div class="lp-header">
           <div class="lp-label">
-            <span class="lp-badge">LP1</span>
+            <span class="lp-badge">Design1</span>
             <div>
               <div class="lp-title">Fuel Your Wanderlust</div>
               <div class="lp-desc">Sky blue adventure</div>
             </div>
           </div>
-          <a href="../LP1/" target="_blank" class="open-link">Open &nearr;</a>
+          <a href="../design1/" target="_blank" class="open-link">Open &nearr;</a>
         </div>
         <div class="phone-frame">
           <div class="phone-notch"></div>
           <div class="phone-screen">
-            <iframe src="../LP1/" title="LP1 Preview" loading="lazy"></iframe>
+            <iframe src="../design1/" title="Design1 Preview" loading="lazy"></iframe>
           </div>
         </div>
       </article>
 
-      <article class="lp-panel lp2">
+      <article class="lp-panel design2">
         <div class="lp-header">
           <div class="lp-label">
-            <span class="lp-badge">LP2</span>
+            <span class="lp-badge">Design2</span>
             <div>
               <div class="lp-title">Modern Booking Platform</div>
               <div class="lp-desc">White clean UI</div>
             </div>
           </div>
-          <a href="../LP2/index.html" target="_blank" class="open-link">Open &nearr;</a>
+          <a href="../design2/index.html" target="_blank" class="open-link">Open &nearr;</a>
         </div>
         <div class="phone-frame">
           <div class="phone-notch"></div>
           <div class="phone-screen">
-            <iframe src="../LP2/index.html" title="LP2 Preview" loading="lazy"></iframe>
+            <iframe src="../design2/index.html" title="Design2 Preview" loading="lazy"></iframe>
           </div>
         </div>
       </article>
 
-      <article class="lp-panel lp3">
+      <article class="lp-panel design3">
         <div class="lp-header">
           <div class="lp-label">
-            <span class="lp-badge">LP3</span>
+            <span class="lp-badge">Design3</span>
             <div>
               <div class="lp-title">Bespoke Luxury Escapes</div>
               <div class="lp-desc">Dark gold editorial</div>
             </div>
           </div>
-          <a href="../LP3/index.html" target="_blank" class="open-link">Open &nearr;</a>
+          <a href="../design3/index.html" target="_blank" class="open-link">Open &nearr;</a>
         </div>
         <div class="phone-frame">
           <div class="phone-notch"></div>
           <div class="phone-screen">
-            <iframe src="../LP3/index.html" title="LP3 Preview" loading="lazy"></iframe>
+            <iframe src="../design3/index.html" title="Design3 Preview" loading="lazy"></iframe>
           </div>
         </div>
       </article>
@@ -334,52 +334,52 @@
     <!-- Single: one LP at full width -->
     <div class="showcase-single" id="showcase-single">
       <div class="single-tabs">
-        <button class="single-tab active" data-lp="lp1">LP1 — Wanderlust</button>
-        <button class="single-tab" data-lp="lp2">LP2 — Booking Platform</button>
-        <button class="single-tab" data-lp="lp3">LP3 — Luxury Escapes</button>
+        <button class="single-tab active" data-lp="design1">Design1 — Wanderlust</button>
+        <button class="single-tab" data-lp="design2">Design2 — Booking Platform</button>
+        <button class="single-tab" data-lp="design3">Design3 — Luxury Escapes</button>
       </div>
 
-      <div class="single-panel active" data-panel="lp1">
+      <div class="single-panel active" data-panel="design1">
         <div class="desktop-frame">
           <div class="desktop-chrome">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
-            <span class="url-bar">travelsmantra.com / LP1</span>
-            <a href="../LP1/" target="_blank" class="open-link">Open full page</a>
+            <span class="url-bar">travelsmantra.com / design1</span>
+            <a href="../design1/" target="_blank" class="open-link">Open full page</a>
           </div>
           <div class="desktop-screen">
-            <iframe src="../LP1/" title="LP1 Full Preview"></iframe>
+            <iframe src="../design1/" title="Design1 Full Preview"></iframe>
           </div>
         </div>
       </div>
 
-      <div class="single-panel" data-panel="lp2">
+      <div class="single-panel" data-panel="design2">
         <div class="desktop-frame">
           <div class="desktop-chrome">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
-            <span class="url-bar">travelsmantra.com / LP2</span>
-            <a href="../LP2/index.html" target="_blank" class="open-link">Open full page</a>
+            <span class="url-bar">travelsmantra.com / design2</span>
+            <a href="../design2/index.html" target="_blank" class="open-link">Open full page</a>
           </div>
           <div class="desktop-screen">
-            <iframe src="../LP2/index.html" title="LP2 Full Preview"></iframe>
+            <iframe src="../design2/index.html" title="Design2 Full Preview"></iframe>
           </div>
         </div>
       </div>
 
-      <div class="single-panel" data-panel="lp3">
+      <div class="single-panel" data-panel="design3">
         <div class="desktop-frame">
           <div class="desktop-chrome">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
-            <span class="url-bar">travelsmantra.com / LP3</span>
-            <a href="../LP3/index.html" target="_blank" class="open-link">Open full page</a>
+            <span class="url-bar">travelsmantra.com / design3</span>
+            <a href="../design3/index.html" target="_blank" class="open-link">Open full page</a>
           </div>
           <div class="desktop-screen">
-            <iframe src="../LP3/index.html" title="LP3 Full Preview"></iframe>
+            <iframe src="../design3/index.html" title="Design3 Full Preview"></iframe>
           </div>
         </div>
       </div>
