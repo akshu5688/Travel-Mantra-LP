@@ -8,7 +8,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Fraunces:ital,opsz,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
   theme: {
@@ -35,27 +35,11 @@ tailwind.config = {
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body { font-family: 'Outfit', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
   .font-serif { font-family: 'Fraunces', Georgia, serif; }
-  /* Design 3 — Modern badge wordmark with TM monogram */
+  /* Design 3 — wordmark */
   .brand-logo--modern {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
     text-decoration: none;
-  }
-  .brand-logo--modern .brand-mark {
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    width: 2.35rem;
-    height: 2.35rem;
-    border-radius: 0.55rem;
-    border: 2px solid #C45C2E;
-    color: #C45C2E;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: -0.04em;
-    flex-shrink: 0;
   }
   .brand-logo--modern .brand-word {
     font-family: 'Outfit', system-ui, sans-serif;
@@ -70,7 +54,6 @@ tailwind.config = {
     color: #C45C2E;
   }
   @media (min-width: 640px) {
-    .brand-logo--modern .brand-mark { width: 2.5rem; height: 2.5rem; font-size: 0.75rem; }
     .brand-logo--modern .brand-word { font-size: 1.125rem; }
   }
   #mobile-nav { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
@@ -166,7 +149,6 @@ tailwind.config = {
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-line transition-shadow" id="site-header">
   <div class="max-w-wrap mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14 sm:h-16 gap-3">
     <a href="#" class="brand-logo--modern shrink-0" aria-label="Travels Mantra Home">
-      <span class="brand-mark" aria-hidden="true">TM</span>
       <span class="brand-word">Travels <strong>Mantra</strong></span>
     </a>
     <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-stone">
@@ -707,8 +689,7 @@ tailwind.config = {
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10 text-sm">
       <div>
         <div class="brand-logo--modern mb-3">
-          <span class="brand-mark" aria-hidden="true">TM</span>
-          <span class="brand-word">Travels <strong>Mantra</strong> Holidays</span>
+          <span class="brand-word">Travels <strong>Mantra</strong></span>
         </div>
         <p class="text-stone text-xs leading-relaxed">We would be more than happy to help you. Our team advisors are 24/7 at your service.</p>
       </div>
