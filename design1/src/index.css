@@ -65,3 +65,35 @@ body,
 .brand-logo--on-dark .brand-travels { color: rgba(255, 255, 255, 0.55); }
 .brand-logo--on-dark .brand-mantra { color: #fff; }
 .brand-logo--on-dark .brand-mantra em { color: #85AB8B; }
+
+/* Hero zoom-out video: keep scenic framing on narrow portrait screens */
+.hero-video-wrap {
+  isolation: isolate;
+}
+
+.hero-video-media {
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 767px) {
+  .hero-video-wrap .hero-video-media {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    inset: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    object-fit: cover;
+    object-position: center 36%;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero-video-wrap .hero-video-media {
+    min-height: 108%;
+    object-position: center 32%;
+  }
+}

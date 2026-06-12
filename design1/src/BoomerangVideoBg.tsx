@@ -10,17 +10,22 @@ const FALLBACK_POSTER =
 /** Lightweight hero background — loops video immediately with a poster fallback. */
 export default function BoomerangVideoBg({ src, className, poster = FALLBACK_POSTER }: Props) {
   return (
-    <div className={className ?? 'absolute inset-0 w-full h-full'}>
-      <img src={poster} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
+    <div className={`hero-video-wrap overflow-hidden ${className ?? 'absolute inset-0 w-full h-full'}`}>
+      <img
+        src={poster}
+        alt=""
+        aria-hidden="true"
+        className="hero-video-media absolute inset-0 w-full h-full object-cover"
+      />
       <video
         src={src}
         poster={poster}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="hero-video-media absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
       />
       <div className="absolute inset-0 bg-[#1f2a1d]/25 pointer-events-none" />
     </div>

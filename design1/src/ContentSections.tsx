@@ -95,7 +95,7 @@ export default function ContentSections() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900&q=85"
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=90"
                 alt="Scenic mountain valley at sunrise — curated luxury travel"
                 className="w-full h-full object-cover"
                 loading="lazy"
