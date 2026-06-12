@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Travel Mantra | Design Presentations</title>
+  <title>Travel Mantra | Design Variations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@0,600;0,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --red: #C41E3A;
       --red-dark: #9B1C2E;
-      --red-soft: #FDF2F4;
       --ink: #1C1917;
-      --stone: #57534E;
-      --muted: #78716C;
       --line: #E7E5E4;
       --white: #FFFFFF;
       --bg: #FAFAF9;
@@ -26,178 +23,92 @@
       background: var(--bg);
       color: var(--ink);
       display: flex;
-      flex-direction: column;
-    }
-    .top-bar {
-      background: var(--red);
-      color: var(--white);
-      text-align: center;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0.65rem 1rem;
-    }
-    .page {
-      flex: 1;
-      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2.5rem 1rem 3rem;
+      padding: 24px 16px;
     }
-    @media (min-width: 640px) { .page { padding: 3rem 1.5rem 4rem; } }
-    @media (min-width: 1024px) { .page { padding: 3.5rem 2.5rem 4.5rem; } }
-    .hub { max-width: 960px; width: 100%; }
-    @media (min-width: 1024px) { .hub { max-width: 1100px; } }
-    @media (min-width: 1280px) { .hub { max-width: 1140px; } }
-
-    .hub-header {
-      text-align: center;
-      margin-bottom: 2.75rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--line);
+    @media (min-width: 640px) { body { padding: 40px 24px; } }
+    @media (min-width: 1024px) { body { padding: 48px 40px; } }
+    .hub { max-width: 960px; width: 100%; text-align: center; }
+    @media (min-width: 1024px) {
+      .hub { max-width: 1100px; }
+      .cards { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+      .card { padding: 36px 32px; }
     }
-    .hub-eyebrow {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.85rem;
+    @media (min-width: 1280px) {
+      .hub { max-width: 1200px; }
+      .cards { gap: 32px; }
     }
-    .hub-brand {
+    .hub h1 {
       font-family: 'Fraunces', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 48px;
       font-weight: 700;
-      color: var(--ink);
       letter-spacing: -0.02em;
-      line-height: 1.15;
+      color: var(--ink);
     }
-    .hub-brand em {
-      font-style: normal;
-      color: var(--red);
-    }
-    .hub-title {
-      display: block;
-      margin-top: 0.5rem;
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-      font-weight: 500;
-      color: var(--stone);
-      letter-spacing: 0.01em;
-    }
-
+    .hub h1 em { font-style: normal; color: var(--red); }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      gap: 24px;
     }
-    @media (min-width: 1024px) {
-      .cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    }
-
     .card {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1.75rem 1.5rem;
+      border-radius: 16px;
+      padding: 32px 28px;
       text-decoration: none;
       color: inherit;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+      transition: all 0.25s ease;
       text-align: left;
-      box-shadow: 0 1px 3px rgba(28, 25, 23, 0.04);
+      box-shadow: 0 1px 3px rgba(28, 25, 23, 0.05);
     }
     .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(196, 30, 58, 0.35);
-      box-shadow: 0 12px 32px rgba(196, 30, 58, 0.1);
+      transform: translateY(-4px);
+      border-color: rgba(196, 30, 58, 0.3);
+      box-shadow: 0 12px 28px rgba(196, 30, 58, 0.1);
     }
-    .card-num {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.25rem;
-      height: 2.25rem;
-      border-radius: 8px;
-      background: var(--red-soft);
-      color: var(--red);
-      font-size: 0.8rem;
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
       font-weight: 700;
-      margin-bottom: 1.1rem;
-    }
-    .card-name {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.35rem;
-    }
-    .card-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.5;
-      margin-bottom: 1.25rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      background: #FDF2F4;
+      color: var(--red);
     }
     .card-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.85rem;
-      font-weight: 600;
       color: var(--red);
-      transition: color 0.2s ease;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
     }
     .card:hover .card-cta { color: var(--red-dark); }
-    .card-hint {
-      display: block;
-      margin-top: 0.75rem;
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-    }
-
-    .hub-footer {
-      text-align: center;
-      margin-top: 2.5rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
   </style>
 </head>
 <body>
-  <div class="top-bar">Travel Mantra · Client presentations</div>
-  <div class="page">
-    <div class="hub">
-      <header class="hub-header">
-        <p class="hub-eyebrow">Landing page options</p>
-        <h1 class="hub-brand">Travel <em>Mantra</em></h1>
-        <span class="hub-title">Select a design to preview in a new tab</span>
-      </header>
-      <div class="cards">
-        <a href="design1/" class="card design1 js-design-link" target="_blank" rel="noopener noreferrer">
-          <span class="card-num">01</span>
-          <p class="card-name">Design 1</p>
-          <p class="card-desc">Video hero with editorial layout and green accent palette.</p>
-          <span class="card-cta">View presentation &rarr;</span>
-          <span class="card-hint">Opens in a new tab</span>
-        </a>
-        <a href="design2/index.html" class="card design2 js-design-link" target="_blank" rel="noopener noreferrer">
-          <span class="card-num">02</span>
-          <p class="card-name">Design 2</p>
-          <p class="card-desc">Dark luxury theme with gold highlights and cinematic imagery.</p>
-          <span class="card-cta">View presentation &rarr;</span>
-          <span class="card-hint">Opens in a new tab</span>
-        </a>
-        <a href="design3/index.html" class="card design3 js-design-link" target="_blank" rel="noopener noreferrer">
-          <span class="card-num">03</span>
-          <p class="card-name">Design 3</p>
-          <p class="card-desc">Professional booking layout with packages and enquiry flow.</p>
-          <span class="card-cta">View presentation &rarr;</span>
-          <span class="card-hint">Opens in a new tab</span>
-        </a>
-      </div>
-      <p class="hub-footer">&copy; Travel Mantra · For client review only</p>
+  <div class="hub">
+    <h1>Travel <em>Mantra</em></h1>
+    <div class="cards">
+      <a href="design1/" class="card design1 js-design-link" target="_blank" rel="noopener noreferrer">
+        <span class="card-tag">Design1</span>
+        <span class="card-cta">View Design1 &rarr;</span>
+      </a>
+      <a href="design2/index.html" class="card design2 js-design-link" target="_blank" rel="noopener noreferrer">
+        <span class="card-tag">Design2</span>
+        <span class="card-cta">View Design2 &rarr;</span>
+      </a>
+      <a href="design3/index.html" class="card design3 js-design-link" target="_blank" rel="noopener noreferrer">
+        <span class="card-tag">Design3</span>
+        <span class="card-cta">View Design3 &rarr;</span>
+      </a>
     </div>
   </div>
   <script>
@@ -217,7 +128,6 @@
           fallback.remove();
         }
       }
-
       document.querySelectorAll('.js-design-link').forEach(function (link) {
         link.addEventListener('click', openDesignInNewTab);
       });
