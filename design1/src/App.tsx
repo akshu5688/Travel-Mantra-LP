@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LogIn, UserPlus, Play, Sparkles, Menu, X, ChevronDown } from 'lucide-react';
+import { LogIn, UserPlus, Play, Menu, X, ChevronDown } from 'lucide-react';
 import BoomerangVideoBg from './BoomerangVideoBg';
 import ContentSections from './ContentSections';
 
@@ -194,11 +194,8 @@ function App() {
         </div>
 
         <div className="absolute left-4 right-4 sm:right-auto sm:left-6 md:left-10 bottom-20 sm:bottom-8 md:bottom-10 z-10 max-w-sm rounded-2xl bg-black/35 backdrop-blur-sm p-4 sm:p-5">
-          <div className="flex items-center gap-2 text-white mb-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
-            <Sparkles className="w-4 h-4 shrink-0" />
-            <span className="text-sm font-semibold">
-              Travels Mantra<sup className="text-[10px]">TM</sup>
-            </span>
+          <div className="text-white mb-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
+            <span className="text-sm font-semibold">Travels Mantra</span>
           </div>
           <p className="text-white/95 text-sm leading-relaxed mb-6 max-w-xs drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
             Travels Mantra unites flights, hotels, visa, and insurance into seamless itineraries — without the hassle of planning every detail yourself.
