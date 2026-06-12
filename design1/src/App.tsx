@@ -165,18 +165,22 @@ function App() {
 
         <div className="relative z-10 flex flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 px-4 sm:px-6">
           <h1
-            className="font-display font-normal leading-[0.95] text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.75rem] xl:text-[5.25rem] max-w-5xl drop-shadow-sm"
-            style={{ letterSpacing: '-0.035em' }}
+            className="font-display font-normal leading-tight text-white max-w-5xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
+            style={{ letterSpacing: '-0.02em' }}
           >
-            Close the gap{' '}
-            <span className="text-[#F5F2EB] drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
-              linking
-              <br className="hidden sm:block" /> dreams and destinations
+            <span className="block text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.5rem] font-semibold">
+              We organize your trip
+            </span>
+            <span className="block mt-3 sm:mt-5 text-xl sm:text-2xl md:text-3xl lg:text-[2.75rem] font-light text-white/90">
+              Discover the most engaging places
             </span>
           </h1>
-          <p className="mt-6 sm:mt-8 text-white/85 text-sm sm:text-base md:text-lg leading-relaxed max-w-md px-2">
-            Curated international holidays, luxury escapes, visa support, and personalised travel experiences.
-          </p>
+          <a
+            href="#enquiry"
+            className="mt-8 sm:mt-10 inline-flex items-center justify-center bg-gradient-to-r from-[#F97316] to-[#FB923C] hover:from-[#EA580C] hover:to-[#F97316] text-white text-sm sm:text-base font-semibold px-8 sm:px-10 py-3.5 sm:py-4 rounded-lg shadow-lg transition-all"
+          >
+            Take a dream trip
+          </a>
           <div className="mt-8 sm:mt-10 flex overflow-x-auto gap-2 sm:flex-wrap sm:justify-center sm:overflow-visible pb-1 max-w-2xl scrollbar-hide">
             {['Curated Packages', 'Visa Assistance', 'Handpicked Hotels', '24/7 Travel Support'].map((tag) => (
               <span
