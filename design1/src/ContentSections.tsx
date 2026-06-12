@@ -35,17 +35,17 @@ const destinations = [
   { name: 'Baku', nights: '4N / 5D', price: '₹48,999', desc: 'Flame Towers, Caspian charm, and old-world grandeur.', img: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80' },
   { name: 'Thailand', nights: '5N / 6D', price: '₹39,999', desc: 'Golden temples, island retreats, and vibrant coastal beauty.', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80' },
   { name: 'Vietnam', nights: '6N / 7D', price: '₹42,999', desc: 'Ha Long Bay mist, lantern-lit streets, and timeless culture.', img: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80' },
-  { name: 'Switzerland', nights: '6N / 7D', price: '₹1,25,999', desc: 'Alpine peaks, scenic railways, and refined European elegance.', img: 'https://images.unsplash.com/photo-1530122037265-a5f1f4293e47?w=600&q=80' },
+  { name: 'Switzerland', nights: '6N / 7D', price: '₹1,25,999', desc: 'Alpine peaks, scenic railways, and refined European elegance.', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80' },
   { name: 'Kazakhstan', nights: '5N / 6D', price: '₹55,999', desc: 'Vast steppes, mountain lakes, and Central Asian wonder.', img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80' },
 ];
 
 const experiences = [
-  { title: 'Luxury Honeymoon', desc: 'Intimate escapes to Bali, Maldives, and beyond — crafted for two.', img: 'https://images.unsplash.com/photo-1529333246-56642f0a6c0a?w=600&q=80' },
+  { title: 'Luxury Honeymoon', desc: 'Intimate escapes to Bali, Maldives, and beyond — crafted for two.', img: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80' },
   { title: 'Family Holidays', desc: 'Memorable getaways to Dubai, Singapore, and Thailand for all ages.', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80' },
   { title: 'Adventure Escapes', desc: 'Mountain treks, desert safaris, and off-the-beaten-path discoveries.', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80' },
   { title: 'Group Tours', desc: 'Curated group journeys to Vietnam, Baku, and Central Asia.', img: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80' },
   { title: 'Beach Vacations', desc: 'Sun-kissed shores in Thailand, Bali, and the Maldives.', img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80' },
-  { title: 'Central Asia Tours', desc: 'Silk Road heritage through Kazakhstan, Uzbekistan, and Baku.', img: 'https://images.unsplash.com/photo-1555881405-7d51b4f9cd4c?w=600&q=80' },
+  { title: 'Central Asia Tours', desc: 'Silk Road heritage through Kazakhstan, Uzbekistan, and Baku.', img: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=600&q=80' },
 ];
 
 const services = [
@@ -95,9 +95,10 @@ export default function ContentSections() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1476514525535-07fb3b4e5a1e?w=900&q=85"
-                alt="Luxury travel beyond the ordinary"
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900&q=85"
+                alt="Scenic mountain valley at sunrise — curated luxury travel"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1f2a1d]/50 to-transparent" />
             </div>
