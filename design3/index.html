@@ -98,6 +98,57 @@ tailwind.config = {
   .safe-bottom { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
   .safe-pad-bottom { padding-bottom: max(4rem, calc(env(safe-area-inset-bottom) + 3.5rem)); }
   @media (min-width: 640px) { .safe-pad-bottom { padding-bottom: 0; } }
+  /* Hero — vintage map background */
+  .hero-map {
+    min-height: 34rem;
+    background-color: #1a1208;
+  }
+  @media (min-width: 640px) { .hero-map { min-height: 38rem; } }
+  @media (min-width: 1024px) { .hero-map { min-height: 42rem; } }
+  .hero-map__image {
+    object-fit: cover;
+    object-position: center 42%;
+  }
+  @media (max-width: 1023px) {
+    .hero-map__image { object-position: 58% center; }
+  }
+  .hero-map__shade {
+    background:
+      linear-gradient(105deg, rgba(26, 18, 10, 0.92) 0%, rgba(35, 24, 14, 0.78) 38%, rgba(35, 24, 14, 0.35) 62%, rgba(26, 18, 10, 0.2) 100%),
+      linear-gradient(to top, rgba(26, 18, 10, 0.65) 0%, transparent 45%);
+  }
+  .hero-copy {
+    background: rgba(26, 18, 10, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 168, 83, 0.22);
+    border-radius: 1rem;
+    padding: 1.35rem 1.25rem;
+    box-shadow: 0 18px 50px rgba(12, 8, 4, 0.28);
+  }
+  @media (min-width: 640px) {
+    .hero-copy { padding: 1.75rem 1.5rem; }
+  }
+  @media (min-width: 1024px) {
+    .hero-copy {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+  .hero-eyebrow { color: #D4A853; }
+  .hero-title { color: #FBF7EF; text-shadow: 0 2px 18px rgba(12, 8, 4, 0.45); }
+  .hero-lead { color: rgba(251, 247, 239, 0.9); }
+  .hero-stat-title { color: #FBF7EF; }
+  .hero-stat-sub { color: rgba(251, 247, 239, 0.68); }
+  .hero-form-card {
+    box-shadow: 0 22px 60px rgba(12, 8, 4, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+  }
 </style>
 </head>
 <body class="bg-white text-navy antialiased">
@@ -154,30 +205,30 @@ tailwind.config = {
 </header>
 
 <!-- Hero -->
-<section class="relative bg-navy-dark overflow-hidden">
+<section class="hero-map relative overflow-hidden">
   <div class="absolute inset-0">
-    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=85" alt="Scenic mountain road trip" class="w-full h-full object-cover opacity-50"/>
-    <div class="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/85 to-navy-dark/40"></div>
+    <img src="assets/hero-map-bg.png" alt="Vintage world map with compass — plan your journey" class="hero-map__image w-full h-full" width="1920" height="1080" fetchpriority="high"/>
+    <div class="hero-map__shade absolute inset-0" aria-hidden="true"></div>
   </div>
   <div class="relative max-w-wrap mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 lg:py-24">
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:items-center">
-      <div class="text-white order-2 lg:order-1">
-        <p class="text-accent-light text-[11px] sm:text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4">We organize your trip · Discover engaging places</p>
-        <h1 class="font-serif text-[1.65rem] leading-[1.15] sm:text-4xl lg:text-[2.75rem] sm:leading-tight mb-4 sm:mb-5">
+      <div class="hero-copy order-2 lg:order-1">
+        <p class="hero-eyebrow text-[11px] sm:text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4">We organize your trip · Discover engaging places</p>
+        <h1 class="hero-title font-serif text-[1.65rem] leading-[1.15] sm:text-4xl lg:text-[2.75rem] sm:leading-tight mb-4 sm:mb-5">
           Get best deals, budget-friendly tour packages &amp; tickets
         </h1>
-        <p class="text-white/75 text-sm sm:text-lg leading-relaxed max-w-lg mb-6 sm:mb-8">
+        <p class="hero-lead text-sm sm:text-lg leading-relaxed max-w-lg mb-6 sm:mb-8">
           Book with Travels Mantra for flight tickets, hotels, visa, sightseeing, transfers and travel insurance — everything covered in one place.
         </p>
-        <div class="grid grid-cols-3 gap-2 sm:gap-6 text-sm border-t border-white/15 pt-5 sm:pt-6">
-          <div><p class="text-xs sm:text-lg font-bold leading-snug">Best Price Guarantee</p><p class="text-white/55 text-[10px] sm:text-xs mt-0.5 hidden sm:block">No hidden fees</p></div>
-          <div><p class="text-xs sm:text-lg font-bold leading-snug">Easy Booking</p><p class="text-white/55 text-[10px] sm:text-xs mt-0.5 hidden sm:block">Few clicks to book</p></div>
-          <div><p class="text-xs sm:text-lg font-bold leading-snug">Best Tours</p><p class="text-white/55 text-[10px] sm:text-xs mt-0.5 hidden sm:block">Expert-curated</p></div>
+        <div class="grid grid-cols-3 gap-2 sm:gap-6 text-sm border-t border-[#D4A853]/30 pt-5 sm:pt-6">
+          <div><p class="hero-stat-title text-xs sm:text-lg font-bold leading-snug">Best Price Guarantee</p><p class="hero-stat-sub text-[10px] sm:text-xs mt-0.5 hidden sm:block">No hidden fees</p></div>
+          <div><p class="hero-stat-title text-xs sm:text-lg font-bold leading-snug">Easy Booking</p><p class="hero-stat-sub text-[10px] sm:text-xs mt-0.5 hidden sm:block">Few clicks to book</p></div>
+          <div><p class="hero-stat-title text-xs sm:text-lg font-bold leading-snug">Best Tours</p><p class="hero-stat-sub text-[10px] sm:text-xs mt-0.5 hidden sm:block">Expert-curated</p></div>
         </div>
       </div>
 
       <!-- Trip form first on mobile for faster enquiries -->
-      <div class="bg-white rounded-xl shadow-2xl p-5 sm:p-7 order-1 lg:order-2" id="search">
+      <div class="hero-form-card bg-white rounded-xl p-5 sm:p-7 order-1 lg:order-2" id="search">
         <h2 class="font-semibold text-lg text-navy mb-1">Plan your trip</h2>
         <p class="text-stone text-sm mb-5">Get a callback with package options within 4 hours.</p>
         <form class="space-y-4" id="trip-form">
