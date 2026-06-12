@@ -433,7 +433,7 @@ export default function ContentSections() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-10">
             <div className="sm:col-span-2 lg:col-span-1">
-              <a href="#" className="brand-logo brand-logo--on-dark mb-4">
+              <a href="#" className="brand-logo brand-logo--stack brand-logo--on-dark mb-4">
                 <span className="brand-travels">Travels</span>
                 <span className="brand-mantra"><em>M</em>antra</span>
               </a>

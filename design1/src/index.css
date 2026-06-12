@@ -27,7 +27,7 @@ body,
   font-family: 'Fraunces', Georgia, serif;
 }
 
-.brand-logo {
+.brand-logo--stack {
   font-family: 'Fraunces', Georgia, serif;
   line-height: 1.05;
   display: inline-flex;
@@ -35,7 +35,7 @@ body,
   text-decoration: none;
 }
 
-.brand-logo .brand-travels {
+.brand-logo--stack .brand-travels {
   font-family: 'Outfit', system-ui, sans-serif;
   font-size: 0.625rem;
   font-weight: 600;
@@ -44,7 +44,7 @@ body,
   color: #4b5b47;
 }
 
-.brand-logo .brand-mantra {
+.brand-logo--stack .brand-mantra {
   font-size: 1.45rem;
   font-weight: 700;
   font-style: italic;
@@ -52,14 +52,14 @@ body,
   letter-spacing: -0.02em;
 }
 
-.brand-logo .brand-mantra em {
+.brand-logo--stack .brand-mantra em {
   font-style: normal;
   color: #336443;
 }
 
 @media (min-width: 640px) {
-  .brand-logo .brand-travels { font-size: 0.6875rem; }
-  .brand-logo .brand-mantra { font-size: 1.625rem; }
+  .brand-logo--stack .brand-travels { font-size: 0.6875rem; }
+  .brand-logo--stack .brand-mantra { font-size: 1.625rem; }
 }
 
 .brand-logo--on-dark .brand-travels { color: rgba(255, 255, 255, 0.55); }

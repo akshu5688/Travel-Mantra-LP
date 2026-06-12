@@ -6,7 +6,7 @@
 <title>Travels Mantra | Curated Luxury International Holidays</title>
 <meta name="description" content="Where your dream journey begins. Curated international holidays, luxury escapes, visa support, and personalized travel experiences by Travels Mantra."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
@@ -24,9 +24,9 @@ tailwind.config = {
         warm: '#9A9288',
       },
       fontFamily: {
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
         sans: ['Outfit', 'system-ui', 'sans-serif'],
-        display: ['Fraunces', 'Georgia', 'serif'],
+        display: ['Cormorant Garamond', 'Georgia', 'serif'],
       },
       maxWidth: { content: '1280px' },
     },
@@ -38,14 +38,33 @@ tailwind.config = {
   body { font-family: 'Outfit', sans-serif; background: #0A0A0A; color: #F5F0E8; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
   img { max-width: 100%; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  .font-serif { font-family: 'Fraunces', Georgia, serif; }
-  .brand-logo { font-family: 'Fraunces', Georgia, serif; line-height: 1.05; display: inline-flex; flex-direction: column; text-decoration: none; }
-  .brand-logo .brand-travels { font-family: 'Outfit', sans-serif; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(245, 240, 232, 0.5); }
-  .brand-logo .brand-mantra { font-size: 1.45rem; font-weight: 700; font-style: italic; color: #F5F0E8; letter-spacing: -0.02em; }
-  .brand-logo .brand-mantra em { font-style: normal; color: #C9A962; }
+  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  /* Design 2 — Luxury single-line wordmark with gold rules */
+  .brand-logo--luxury { display: inline-flex; align-items: center; text-decoration: none; }
+  .brand-logo--luxury .brand-luxury-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    color: #F5F0E8;
+    position: relative;
+    padding: 0 1.125rem;
+    white-space: nowrap;
+  }
+  .brand-logo--luxury .brand-luxury-text::before,
+  .brand-logo--luxury .brand-luxury-text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0.65rem;
+    height: 1px;
+    background: #C9A962;
+  }
+  .brand-logo--luxury .brand-luxury-text::before { left: 0; }
+  .brand-logo--luxury .brand-luxury-text::after { right: 0; }
   @media (min-width: 768px) {
-    .brand-logo .brand-travels { font-size: 0.6875rem; }
-    .brand-logo .brand-mantra { font-size: 1.625rem; }
+    .brand-logo--luxury .brand-luxury-text { font-size: 1.45rem; padding: 0 1.25rem; }
   }
   .gold-line { height: 1px; background: linear-gradient(90deg, transparent, #C9A962, transparent); }
   .label-caps { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
@@ -75,9 +94,8 @@ tailwind.config = {
 <!-- Header -->
 <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500" id="main-nav">
   <div class="max-w-content mx-auto page-x flex justify-between items-center h-16 md:h-20">
-    <a href="#" class="brand-logo" aria-label="Travels Mantra Home">
-      <span class="brand-travels">Travels</span>
-      <span class="brand-mantra"><em>M</em>antra</span>
+    <a href="#" class="brand-logo--luxury" aria-label="Travels Mantra Home">
+      <span class="brand-luxury-text">Travels Mantra</span>
     </a>
     <div class="hidden lg:flex items-center gap-7 xl:gap-9 text-xs font-medium tracking-widest uppercase text-beige/80">
       <a href="#destinations" class="hover:text-gold transition-colors">Destinations</a>
@@ -484,9 +502,8 @@ tailwind.config = {
   <div class="max-w-content mx-auto page-x">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-10 md:mb-12">
       <div class="sm:col-span-2 lg:col-span-1">
-        <a href="#" class="brand-logo mb-4">
-          <span class="brand-travels">Travels</span>
-          <span class="brand-mantra"><em>M</em>antra</span>
+        <a href="#" class="brand-logo--luxury mb-4">
+          <span class="brand-luxury-text">Travels Mantra</span>
         </a>
         <p class="text-warm text-sm leading-relaxed font-light">Crafting memorable journeys with expert planning, curated experiences, and trusted travel support.</p>
       </div>

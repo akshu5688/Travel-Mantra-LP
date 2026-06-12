@@ -44,7 +44,7 @@ function App() {
           navSolid ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-[#E5E5E5]/60' : ''
         }`}
       >
-        <a href="#" className="brand-logo shrink-0" aria-label="Travels Mantra Home">
+        <a href="#" className="brand-logo brand-logo--stack shrink-0" aria-label="Travels Mantra Home">
           <span className="brand-travels">Travels</span>
           <span className="brand-mantra"><em>M</em>antra</span>
         </a>
@@ -185,26 +185,26 @@ function App() {
           </div>
         </div>
 
-        <div className="absolute left-4 right-4 sm:right-auto sm:left-6 md:left-10 bottom-6 sm:bottom-8 md:bottom-10 z-10 max-w-sm">
-          <div className="flex items-center gap-2 text-[#3d5638] sm:text-white/95 mb-3">
+        <div className="absolute left-4 right-4 sm:right-auto sm:left-6 md:left-10 bottom-20 sm:bottom-8 md:bottom-10 z-10 max-w-sm">
+          <div className="flex items-center gap-2 text-[#F5F2EB] mb-3 drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-semibold sm:font-medium">
+            <span className="text-sm font-semibold">
               Travel Concierge<sup className="text-[10px]">TM</sup>
             </span>
           </div>
-          <p className="text-[#3d5638]/90 sm:text-white/85 text-xs leading-relaxed mb-6 max-w-xs font-medium sm:font-normal">
+          <p className="text-[#F5F2EB]/92 text-xs sm:text-sm leading-relaxed mb-6 max-w-xs drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
             Travels Mantra unites flights, hotels, visa, and insurance into seamless itineraries — without the hassle of planning every detail yourself.
           </p>
           <div className="flex items-center gap-4 flex-wrap">
             <a
               href="#enquiry"
-              className="bg-[#3d5638] sm:bg-white hover:bg-[#2d4228] sm:hover:bg-white/90 text-white sm:text-[#1f2a1d] text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-colors shadow-sm"
+              className="bg-[#F5F2EB] hover:bg-white text-[#1f2a1d] text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-colors shadow-md"
             >
               Plan My Trip
             </a>
             <a
               href="#about"
-              className="text-[#3d5638] sm:text-white text-sm font-semibold sm:font-medium hover:opacity-80 transition-opacity"
+              className="text-[#F5F2EB] text-sm font-semibold hover:opacity-80 transition-opacity drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]"
             >
               Know More.
             </a>
@@ -223,7 +223,7 @@ function App() {
 
         <a
           href="#about"
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-[#3d5638] sm:text-white/70 hover:opacity-80 transition-opacity animate-bounce"
+          className="absolute bottom-24 sm:bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-[#F5F2EB]/85 hover:opacity-80 transition-opacity animate-bounce drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]"
           aria-label="Scroll to learn more"
         >
           <span className="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
