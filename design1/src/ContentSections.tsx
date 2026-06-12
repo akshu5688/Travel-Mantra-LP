@@ -103,12 +103,12 @@ export default function ContentSections() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#1f2a1d]/50 to-transparent" />
             </div>
             <div className="lg:pl-4">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">The Travels Mantra Way</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85AB8B] mb-4">The Travel Mantra Way</p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-[#336443] leading-tight mb-6">
                 Travel beyond the ordinary
               </h2>
               <p className="text-[#4b5b47] leading-relaxed mb-4">
-                From romantic beach escapes to cultural city adventures, Travels Mantra creates journeys designed around
+                From romantic beach escapes to cultural city adventures, Travel Mantra creates journeys designed around
                 your dreams, comfort, and style — with the same editorial care you expect from a luxury travel house.
               </p>
               <p className="text-[#4b5b47] leading-relaxed mb-8">
@@ -295,7 +295,7 @@ export default function ContentSections() {
       {/* Why Choose — LP2 icon grid */}
       <section id="why" className="py-16 sm:py-20 md:py-24 bg-white border-t border-[#E5E5E5]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10">
-          <SectionHeader label="Why Travels Mantra" title="Why choose Travels Mantra" />
+          <SectionHeader label="Why Travel Mantra" title="Why choose Travel Mantra" />
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {whyUs.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="text-center p-4 sm:p-6">
@@ -435,7 +435,7 @@ export default function ContentSections() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-10">
             <div className="sm:col-span-2 lg:col-span-1">
               <a href="#" className="brand-logo brand-logo--stack brand-logo--on-dark mb-4">
-                <span className="brand-travels">Travels</span>
+                <span className="brand-travels">Travel</span>
                 <span className="brand-mantra"><em>M</em>antra</span>
               </a>
               <p className="text-sm leading-relaxed">
@@ -461,7 +461,7 @@ export default function ContentSections() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-6 text-center text-xs text-white/50">
-            <p>© 2026 Travels Mantra Holidays (P) Ltd. All rights reserved.</p>
+            <p>© 2026 Travel Mantra Holidays (P) Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>

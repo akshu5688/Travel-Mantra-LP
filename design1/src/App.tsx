@@ -47,9 +47,9 @@ function App() {
         <a
           href="#"
           className={`brand-logo brand-logo--stack shrink-0 ${navSolid ? '' : 'brand-logo--on-dark'}`}
-          aria-label="Travels Mantra Home"
+          aria-label="Travel Mantra Home"
         >
-          <span className="brand-travels">Travels</span>
+          <span className="brand-travels">Travel</span>
           <span className="brand-mantra"><em>M</em>antra</span>
         </a>
 
@@ -195,10 +195,10 @@ function App() {
 
         <div className="absolute left-4 right-4 sm:right-auto sm:left-6 md:left-10 bottom-20 sm:bottom-8 md:bottom-10 z-10 max-w-sm rounded-2xl bg-black/35 backdrop-blur-sm p-4 sm:p-5">
           <div className="text-white mb-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
-            <span className="text-sm font-semibold">Travels Mantra</span>
+            <span className="text-sm font-semibold">Travel Mantra</span>
           </div>
           <p className="text-white/95 text-sm leading-relaxed mb-6 max-w-xs drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
-            Travels Mantra unites flights, hotels, visa, and insurance into seamless itineraries — without the hassle of planning every detail yourself.
+            Travel Mantra unites flights, hotels, visa, and insurance into seamless itineraries — without the hassle of planning every detail yourself.
           </p>
           <div className="flex items-center gap-4 flex-wrap">
             <a
