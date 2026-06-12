@@ -6,7 +6,7 @@
 <title>Travels Mantra | Curated Luxury International Holidays</title>
 <meta name="description" content="Where your dream journey begins. Curated international holidays, luxury escapes, visa support, and personalized travel experiences by Travels Mantra."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Canadian+Aboriginal:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
@@ -39,32 +39,24 @@ tailwind.config = {
   img { max-width: 100%; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
   .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-  /* Design 2 — Luxury single-line wordmark with gold rules */
-  .brand-logo--luxury { display: inline-flex; align-items: center; text-decoration: none; }
-  .brand-logo--luxury .brand-luxury-text {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.25rem;
+  /* Design 2 — Stylized TRAVEL MANTRA wordmark */
+  .brand-logo--native {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .brand-logo--native .brand-native-word {
+    font-family: 'Noto Sans Canadian Aboriginal', 'Outfit', system-ui, sans-serif;
+    font-size: 0.95rem;
     font-weight: 600;
-    font-style: italic;
-    letter-spacing: 0.06em;
-    color: #F5F0E8;
-    position: relative;
-    padding: 0 1.125rem;
+    letter-spacing: 0.14em;
     white-space: nowrap;
   }
-  .brand-logo--luxury .brand-luxury-text::before,
-  .brand-logo--luxury .brand-luxury-text::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 0.65rem;
-    height: 1px;
-    background: #C9A962;
-  }
-  .brand-logo--luxury .brand-luxury-text::before { left: 0; }
-  .brand-logo--luxury .brand-luxury-text::after { right: 0; }
+  .brand-logo--native .brand-accent { color: #FACC15; }
+  .brand-logo--native .brand-base { color: #F5F2EB; }
   @media (min-width: 768px) {
-    .brand-logo--luxury .brand-luxury-text { font-size: 1.45rem; padding: 0 1.25rem; }
+    .brand-logo--native .brand-native-word { font-size: 1.05rem; letter-spacing: 0.16em; }
   }
   .gold-line { height: 1px; background: linear-gradient(90deg, transparent, #C9A962, transparent); }
   .label-caps { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
@@ -94,8 +86,12 @@ tailwind.config = {
 <!-- Header -->
 <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500" id="main-nav">
   <div class="max-w-content mx-auto page-x flex justify-between items-center h-16 md:h-20">
-    <a href="#" class="brand-logo--luxury" aria-label="Travels Mantra Home">
-      <span class="brand-luxury-text">Travels Mantra</span>
+    <a href="#" class="brand-logo--native" aria-label="Travels Mantra Home">
+      <span class="brand-native-word" aria-hidden="true">
+        <span class="brand-accent">T</span><span class="brand-base">ᖇᗩᐯEᒪ</span>
+        <span class="brand-base"> </span>
+        <span class="brand-accent">ᗰ</span><span class="brand-base">ᗩᑎTᖇᗩ</span>
+      </span>
     </a>
     <div class="hidden lg:flex items-center gap-7 xl:gap-9 text-xs font-medium tracking-widest uppercase text-beige/80">
       <a href="#destinations" class="hover:text-gold transition-colors">Destinations</a>
@@ -502,8 +498,12 @@ tailwind.config = {
   <div class="max-w-content mx-auto page-x">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-10 md:mb-12">
       <div class="sm:col-span-2 lg:col-span-1">
-        <a href="#" class="brand-logo--luxury mb-4">
-          <span class="brand-luxury-text">Travels Mantra</span>
+        <a href="#" class="brand-logo--native mb-4" aria-label="Travels Mantra Home">
+          <span class="brand-native-word" aria-hidden="true">
+            <span class="brand-accent">T</span><span class="brand-base">ᖇᗩᐯEᒪ</span>
+            <span class="brand-base"> </span>
+            <span class="brand-accent">ᗰ</span><span class="brand-base">ᗩᑎTᖇᗩ</span>
+          </span>
         </a>
         <p class="text-warm text-sm leading-relaxed font-light">Crafting memorable journeys with expert planning, curated experiences, and trusted travel support.</p>
       </div>
