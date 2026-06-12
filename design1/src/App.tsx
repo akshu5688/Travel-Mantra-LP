@@ -197,7 +197,7 @@ function App() {
           <div className="flex items-center gap-2 text-white mb-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
             <Sparkles className="w-4 h-4 shrink-0" />
             <span className="text-sm font-semibold">
-              Travel Concierge<sup className="text-[10px]">TM</sup>
+              Travels Mantra<sup className="text-[10px]">TM</sup>
             </span>
           </div>
           <p className="text-white/95 text-sm leading-relaxed mb-6 max-w-xs drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
