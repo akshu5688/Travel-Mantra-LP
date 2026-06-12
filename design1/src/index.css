@@ -19,6 +19,49 @@ body,
 #root {
   min-height: 100%;
   margin: 0;
-  font-family: 'Neue Haas Grotesk Display Pro 55 Roman', 'Neue Haas Grotesk Text Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+.font-display {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.brand-logo {
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.05;
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.brand-logo .brand-travels {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #4b5b47;
+}
+
+.brand-logo .brand-mantra {
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #1f2a1d;
+  letter-spacing: -0.02em;
+}
+
+.brand-logo .brand-mantra em {
+  font-style: normal;
+  color: #336443;
+}
+
+@media (min-width: 640px) {
+  .brand-logo .brand-travels { font-size: 0.6875rem; }
+  .brand-logo .brand-mantra { font-size: 1.625rem; }
+}
+
+.brand-logo--on-dark .brand-travels { color: rgba(255, 255, 255, 0.55); }
+.brand-logo--on-dark .brand-mantra { color: #fff; }
+.brand-logo--on-dark .brand-mantra em { color: #85AB8B; }

@@ -8,7 +8,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
   theme: {
@@ -21,9 +21,10 @@ tailwind.config = {
         line: '#E8E4DC',
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-        brand: ['Cormorant Garamond', 'Georgia', 'serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        brand: ['Fraunces', 'Georgia', 'serif'],
       },
       maxWidth: { wrap: '1180px' },
     },
@@ -32,10 +33,10 @@ tailwind.config = {
 </script>
 <style>
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
-  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-  .brand-logo { font-family: 'Cormorant Garamond', Georgia, serif; line-height: 1.05; display: inline-flex; flex-direction: column; }
-  .brand-logo .brand-travels { font-size: 0.625rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #5C6470; }
+  body { font-family: 'Outfit', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+  .font-serif { font-family: 'Fraunces', Georgia, serif; }
+  .brand-logo { font-family: 'Fraunces', Georgia, serif; line-height: 1.05; display: inline-flex; flex-direction: column; }
+  .brand-logo .brand-travels { font-family: 'Outfit', system-ui, sans-serif; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: #5C6470; }
   .brand-logo .brand-mantra { font-size: 1.5rem; font-weight: 700; font-style: italic; color: #0B1F3A; letter-spacing: -0.02em; }
   .brand-logo .brand-mantra em { font-style: normal; color: #C45C2E; }
   @media (min-width: 640px) {

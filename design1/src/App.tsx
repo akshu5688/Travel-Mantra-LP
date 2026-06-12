@@ -44,10 +44,9 @@ function App() {
           navSolid ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-[#E5E5E5]/60' : ''
         }`}
       >
-        <a href="#" className="flex items-center gap-2 text-[#2d3a2a]">
-          <span className="text-lg sm:text-xl md:text-2xl font-semibold tracking-tight">
-            Travels Mantra<sup className="text-[10px] sm:text-xs font-medium">TM</sup>
-          </span>
+        <a href="#" className="brand-logo shrink-0" aria-label="Travels Mantra Home">
+          <span className="brand-travels">Travels</span>
+          <span className="brand-mantra"><em>M</em>antra</span>
         </a>
 
         <div className="hidden lg:flex items-center gap-1 bg-white/70 backdrop-blur-md rounded-full pl-6 pr-1 py-1 shadow-sm border border-white/60">
@@ -162,12 +161,8 @@ function App() {
 
         <div className="relative z-10 flex flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 px-4 sm:px-6">
           <h1
-            className="font-normal leading-[0.95] text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.75rem] xl:text-[5.25rem] max-w-5xl drop-shadow-sm"
-            style={{
-              fontFamily:
-                '"Neue Haas Grotesk Display Pro 55 Roman", "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif',
-              letterSpacing: '-0.035em',
-            }}
+            className="font-display font-normal leading-[0.95] text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.75rem] xl:text-[5.25rem] max-w-5xl drop-shadow-sm"
+            style={{ letterSpacing: '-0.035em' }}
           >
             Close the gap{' '}
             <span className="text-[#1f2a1d]">

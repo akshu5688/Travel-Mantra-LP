@@ -6,11 +6,11 @@
   <title>Travels Mantra | Design Variations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,600;0,700;1,600;1,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Outfit', sans-serif;
       min-height: 100dvh;
       background: linear-gradient(145deg, #141428 0%, #1e1b4b 42%, #312e81 78%, #4c1d3a 100%);
       color: #fff;
@@ -39,11 +39,26 @@
       .cards { gap: 32px; }
     }
     .hub h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Fraunces', Georgia, serif;
       font-size: clamp(2rem, 5vw, 3rem);
       margin-bottom: 48px;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -0.02em;
     }
-    .hub h1 span { color: #F9A8D4; font-style: italic; }
+    .hub h1 .hub-travels {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 0.35rem;
+    }
+    .hub h1 .hub-mantra em { font-style: normal; color: #FBBF24; }
+    .hub h1 span { color: #F9A8D4; font-style: italic; font-size: 0.85em; }
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
     .card {
       background: rgba(99, 102, 241, 0.08);
@@ -79,7 +94,7 @@
 </head>
 <body>
   <div class="hub">
-    <h1>Travels Mantra <span>Design Hub</span></h1>
+    <h1><span class="hub-travels">Travels</span><span class="hub-mantra"><em>M</em>antra</span> <span>Design Hub</span></h1>
     <div class="cards">
       <a href="design1/" class="card design1">
         <span class="card-tag">Design1</span>

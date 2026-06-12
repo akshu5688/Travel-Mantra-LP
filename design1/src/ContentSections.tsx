@@ -21,7 +21,7 @@ function SectionHeader({ label, title, subtitle }: { label: string; title: strin
   return (
     <div className="text-center mb-12 md:mb-16">
       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85AB8B] mb-3">{label}</p>
-      <h2 className="text-3xl sm:text-4xl font-semibold text-[#336443] leading-tight">{title}</h2>
+      <h2 className="font-display text-3xl sm:text-4xl font-semibold text-[#336443] leading-tight">{title}</h2>
       {subtitle && <p className="text-[#4b5b47] mt-4 max-w-xl mx-auto leading-relaxed">{subtitle}</p>}
       <div className="h-px max-w-xs mx-auto mt-6 bg-gradient-to-r from-transparent via-[#85AB8B]/70 to-transparent" />
     </div>
@@ -433,7 +433,10 @@ export default function ContentSections() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-10">
             <div className="sm:col-span-2 lg:col-span-1">
-              <p className="text-xl font-semibold text-white mb-4">Travels Mantra</p>
+              <a href="#" className="brand-logo brand-logo--on-dark mb-4">
+                <span className="brand-travels">Travels</span>
+                <span className="brand-mantra"><em>M</em>antra</span>
+              </a>
               <p className="text-sm leading-relaxed">
                 Crafting memorable journeys with expert planning, curated experiences, and trusted travel support.
               </p>
