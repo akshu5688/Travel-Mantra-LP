@@ -90,7 +90,7 @@ export default function ContentSections() {
   return (
     <>
       {/* About — LP2 "Travel Beyond" editorial idea */}
-      <section id="about" className="py-16 sm:py-20 md:py-24 bg-[#FAFAFA]">
+      <section id="about" className="relative z-10 -mt-8 sm:-mt-10 py-16 sm:py-20 md:py-24 bg-[#FAFAFA]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[480px] overflow-hidden rounded-2xl">

@@ -159,9 +159,13 @@ function App() {
       </div>
 
       {/* Hero */}
-      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden bg-[#1f2a1d] flex flex-col sm:block">
-        <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 z-0 w-full h-full" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/30 via-transparent to-[#1f2a1d]/50 pointer-events-none" />
+      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden bg-[#FAFAFA] flex flex-col sm:block">
+        <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 z-0 h-full w-full" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/40 via-[#1f2a1d]/10 via-50% to-transparent pointer-events-none" />
+        <div
+          className="hero-scroll-fade absolute inset-x-0 bottom-0 z-[2] h-36 sm:h-44 pointer-events-none"
+          aria-hidden="true"
+        />
 
         <div className="relative z-10 flex flex-1 flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 px-4 sm:px-6 sm:flex-none">
           <h1

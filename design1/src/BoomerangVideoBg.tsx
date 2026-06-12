@@ -15,12 +15,12 @@ export default function BoomerangVideoBg({ src, className, poster = FALLBACK_POS
         src={poster}
         alt=""
         aria-hidden="true"
-        className="hero-video-media absolute inset-0 w-full h-full object-cover"
+        className="hero-video-media absolute inset-0 h-full w-full object-cover"
       />
       <video
         src={src}
         poster={poster}
-        className="hero-video-media absolute inset-0 w-full h-full object-cover"
+        className="hero-video-media absolute inset-0 h-full w-full object-cover"
         autoPlay
         muted
         loop
