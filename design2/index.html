@@ -39,24 +39,42 @@ tailwind.config = {
   img { max-width: 100%; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
   .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-  /* Design 2 — Stylized TRAVEL MANTRA wordmark */
+  /* Design 2 — Stylized stacked TRAVEL / MANTRA wordmark */
   .brand-logo--native {
     display: inline-flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     text-decoration: none;
     line-height: 1;
+    gap: 0.2rem;
   }
   .brand-logo--native .brand-native-word {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
     font-family: 'Noto Sans Canadian Aboriginal', 'Outfit', system-ui, sans-serif;
-    font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.14em;
+  }
+  .brand-logo--native .brand-native-line {
+    display: block;
+    line-height: 1.05;
     white-space: nowrap;
+  }
+  .brand-logo--native .brand-native-line--travel {
+    font-size: 0.82rem;
+  }
+  .brand-logo--native .brand-native-line--mantra {
+    font-size: 0.95rem;
+    padding-left: 0.2em;
+    letter-spacing: 0.16em;
   }
   .brand-logo--native .brand-accent { color: #FACC15; }
   .brand-logo--native .brand-base { color: #F5F2EB; }
   @media (min-width: 768px) {
-    .brand-logo--native .brand-native-word { font-size: 1.05rem; letter-spacing: 0.16em; }
+    .brand-logo--native .brand-native-line--travel { font-size: 0.88rem; }
+    .brand-logo--native .brand-native-line--mantra { font-size: 1.05rem; padding-left: 0.25em; letter-spacing: 0.18em; }
   }
   .gold-line { height: 1px; background: linear-gradient(90deg, transparent, #C9A962, transparent); }
   .label-caps { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
@@ -88,9 +106,12 @@ tailwind.config = {
   <div class="max-w-content mx-auto page-x flex justify-between items-center h-16 md:h-20">
     <a href="#" class="brand-logo--native" aria-label="Travels Mantra Home">
       <span class="brand-native-word" aria-hidden="true">
-        <span class="brand-accent">T</span><span class="brand-base">ᖇᗩᐯEᒪ</span>
-        <span class="brand-base"> </span>
-        <span class="brand-accent">ᗰ</span><span class="brand-base">ᗩᑎTᖇᗩ</span>
+        <span class="brand-native-line brand-native-line--travel">
+          <span class="brand-accent">T</span><span class="brand-base">ᖇᗩᐯEᒪ</span>
+        </span>
+        <span class="brand-native-line brand-native-line--mantra">
+          <span class="brand-accent">ᗰ</span><span class="brand-base">ᗩᑎTᖇᗩ</span>
+        </span>
       </span>
     </a>
     <div class="hidden lg:flex items-center gap-7 xl:gap-9 text-xs font-medium tracking-widest uppercase text-beige/80">
