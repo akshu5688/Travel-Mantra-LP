@@ -159,11 +159,11 @@ function App() {
       </div>
 
       {/* Hero */}
-      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden bg-[#1f2a1d]">
+      <section className="relative w-full min-h-screen sm:h-screen overflow-hidden bg-[#1f2a1d] flex flex-col sm:block">
         <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 z-0 w-full h-full" />
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/30 via-transparent to-[#1f2a1d]/50 pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 px-4 sm:px-6">
+        <div className="relative z-10 flex flex-1 flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 px-4 sm:px-6 sm:flex-none">
           <h1
             className="font-display font-normal leading-tight text-white max-w-5xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
             style={{ letterSpacing: '-0.02em' }}
@@ -193,7 +193,7 @@ function App() {
           </div>
         </div>
 
-        <div className="absolute left-4 right-4 sm:right-auto sm:left-6 md:left-10 bottom-20 sm:bottom-8 md:bottom-10 z-10 max-w-sm rounded-2xl bg-black/35 backdrop-blur-sm p-4 sm:p-5">
+        <div className="relative z-10 mx-4 mt-6 max-w-sm rounded-2xl bg-black/35 backdrop-blur-sm p-4 sm:absolute sm:mx-0 sm:mt-0 sm:left-6 md:left-10 sm:right-auto sm:bottom-8 md:bottom-10 sm:p-5">
           <div className="text-white mb-3 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
             <span className="text-sm font-semibold">Travel Mantra</span>
           </div>
@@ -228,7 +228,7 @@ function App() {
 
         <a
           href="#about"
-          className="absolute bottom-24 sm:bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/90 hover:opacity-80 transition-opacity animate-bounce drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]"
+          className="relative z-10 flex flex-col items-center gap-1 mx-auto mt-3 mb-[max(1.25rem,env(safe-area-inset-bottom))] text-white/90 hover:opacity-80 transition-opacity animate-bounce drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)] sm:absolute sm:mt-0 sm:mb-0 sm:bottom-4 sm:left-1/2 sm:-translate-x-1/2"
           aria-label="Scroll to learn more"
         >
           <span className="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
