@@ -6,7 +6,7 @@
   <title>Travel Mantra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@0,600;0,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Canadian+Aboriginal:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --red: #C41E3A;
@@ -39,15 +39,50 @@
       .hub { max-width: 1200px; }
       .cards { gap: 32px; }
     }
-    .hub h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+
+    /* Design 2 — stacked TRAVEL / MANTRA wordmark */
+    .brand-logo--native {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      line-height: 1;
+      gap: 0.2rem;
       margin-bottom: 48px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--ink);
     }
-    .hub h1 em { font-style: normal; color: var(--red); }
+    .brand-logo--native .brand-native-word {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      font-family: 'Noto Sans Canadian Aboriginal', 'Outfit', system-ui, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+    }
+    .brand-logo--native .brand-native-line {
+      display: block;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
+    .brand-logo--native .brand-native-line--travel {
+      font-size: clamp(1.35rem, 4vw, 1.85rem);
+    }
+    .brand-logo--native .brand-native-line--mantra {
+      font-size: clamp(1.55rem, 4.5vw, 2.1rem);
+      padding-left: 0.2em;
+      letter-spacing: 0.16em;
+    }
+    .brand-logo--native .brand-accent { color: var(--red); }
+    .brand-logo--native .brand-base { color: var(--ink); }
+    @media (min-width: 768px) {
+      .brand-logo--native .brand-native-line--travel { font-size: clamp(1.5rem, 3vw, 2rem); }
+      .brand-logo--native .brand-native-line--mantra {
+        font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+        padding-left: 0.25em;
+        letter-spacing: 0.18em;
+      }
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -95,7 +130,16 @@
 </head>
 <body>
   <div class="hub">
-    <h1>Travel <em>Mantra</em></h1>
+    <div class="brand-logo--native" aria-label="Travel Mantra">
+      <span class="brand-native-word" aria-hidden="true">
+        <span class="brand-native-line brand-native-line--travel">
+          <span class="brand-accent">T</span><span class="brand-base">ᖇᗩᐯEᒪ</span>
+        </span>
+        <span class="brand-native-line brand-native-line--mantra">
+          <span class="brand-accent">ᗰ</span><span class="brand-base">ᗩᑎTᖇᗩ</span>
+        </span>
+      </span>
+    </div>
     <div class="cards">
       <a href="design1/" class="card design1 js-design-link" target="_blank" rel="noopener noreferrer">
         <span class="card-tag">Design1</span>
