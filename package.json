@@ -1,0 +1,9 @@
+{
+  "name": "travelmantra-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix \"../Travel-Mantra-Final\"",
+    "build": "npm run build --prefix \"../Travel-Mantra-Final\"",
+    "preview": "npm run preview --prefix \"../Travel-Mantra-Final\""
+  }
+}
