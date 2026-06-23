@@ -1,0 +1,14 @@
+---
+description: Travels Mantra live site edits go to Travel-Mantra-Final with auto git push
+alwaysApply: true
+---
+
+# Travels Mantra — workspace routing
+
+The **live** Travels Mantra site is **not** `design1/` in this repo. Implement homepage and site changes in the sibling project:
+
+`C:\Users\aksha\Travel-Mantra-Final`
+
+After each change there: save files, keep `npm run dev` preview in sync, then **commit and push** to GitHub without waiting for a separate push request.
+
+Live URL: https://travel-mantra-final-rc6o.vercel.app/
